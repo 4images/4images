@@ -1,0 +1,120 @@
+  ==========================================================
+                        CAPTCHA
+  ==========================================================
+
+  Since version 1.7.3, 4images is able to protect forms by
+  CAPTCHA.
+  You'll find general informations about CAPTCHAS at:
+  http://en.wikipedia.org/wiki/Captcha
+
+  The following form can be protected by CAPTCHA:
+    - Registration
+    - E-Cards
+    - Comments
+    - Image-Upload
+    
+  Users logged in as administrators do not have to enter
+  any CAPTCHA code.
+
+  The folder "captcha" contains all files for generating
+  the CAPTCHA images.
+
+  The folder "captcha/backgrounds" constain images
+  for the background of the CAPTCHA images.
+  A background is selected randomly from this folder.
+  New images can be added to this folder and will be used
+  for generation.
+
+  The folder "images/fonts" contains fonts for generating
+  the display CAPTCHA text.
+  A font is selected randomly from this folder.
+  New fonts can be added to this folder and will be used
+  for generation.
+
+  The file "captcha/words.txt" contains a list of
+  words which can be used instead of randomly generated
+  strings. This function can be activated with the
+  configuration option $captcha_wordfile.
+
+  ----------------------------------------------------------
+  How to enable the CAPTCHA system:
+  ----------------------------------------------------------
+
+  The CAPTCHA System is enabled by default.
+
+  -- Advanced control of the CAPTCHA system ----------------
+
+  You can control the CAPTCHA system in your config.php with
+  the following configuration variables:
+
+  - $captcha_enable = 1;
+      A value of 1 enables the CAPTCHA system, 0 disables it.
+      Default value is 1.
+
+  - $captcha_enable_comments = 1;
+      A value of 1 enables the CAPTCHA system for the comments
+      form, 0 disables it.
+      Default value is 1.
+
+  - $captcha_enable_upload = 1;
+      A value of 1 enables the CAPTCHA system for the upload
+      form, 0 disables it.
+      Default value is 1.
+
+  - $captcha_enable_registration = 1;
+      A value of 1 enables the CAPTCHA system for the
+      registration form, 0 disables it.
+      Default value is 1.
+
+  - $captcha_enable_postcards = 1;
+      A value of 1 enables the CAPTCHA system for the e-cards
+      form, 0 disables it.
+      Default value is 1.
+
+  - $captcha_path = './captcha';
+      Path to the folder which conatins the CAPTCHA files
+      (backgrounds, fonts).
+
+  - $captcha_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      A list of letters which will be used for the
+      randomly generated CAPTCHA strings
+      Default value is "abcdefghijklmnopqrstuvwxyz123456789".
+
+  - $captcha_length = 6;
+      Number of letters of the CAPTCHA strings
+      Default value is 6.
+
+  - $captcha_wordfile = 0;
+      If this option is set to 1, a word from
+      "captcha/wordlist.txt" is used.
+      Default value is 0.
+
+  - $captcha_width = 200;
+      Width of the CAPTCHA image in pixel.
+      Default value is 200.
+
+  - $captcha_height = 70;
+      Height of the CAPTCHA image in pixel.
+      Default value is 70.
+
+  - $captcha_text_color = "#000000";
+      Color (Hex) of the CAPTCHA text.
+      Default value is "#000000" (black).
+
+  - $captcha_text_size = 25;
+      Size of the CAPTCHA text.
+      Default value is 25.
+
+  - $captcha_text_transparency = 65;
+      Transparency of the CAPTCHA text.
+      Default value is 65.
+
+  - $captcha_filter_text = 1;
+      If this option is set to 1, the CAPTCHA text will
+      be filtered ("obscured").
+      Default value is 1.
+
+  - $captcha_filter_bg = 1;
+      If this option is set to 1, the CAPTCHA background
+      image will be filtered ("obscured").
+      Default value is 1.

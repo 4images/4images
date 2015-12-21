@@ -1,0 +1,61 @@
+<form method="post" action="{url_search}">
+  <table width="100%" border="0" cellspacing="0" cellpadding="1">
+    <tr>
+      <td class="head1">
+        <table width="100%" border="0" cellpadding="4" cellspacing="0">
+          <tr>
+            <td colspan="2" valign="top" class="head1">{lang_search}</td>
+          </tr>
+          <tr>
+            <td valign="top" class="row1"><b>{lang_search_by_keyword}</b></td>
+            <td class="row1" valign="top">
+              <input type="text" name="search_keywords" size="40" value="{search_keywords}" class="input" />
+              <br />
+              <input type="checkbox" name="search_new_images" value="1" />
+              {lang_new_images_only}</td>
+          </tr>
+		  <tr>
+            <td valign="top" class="row2"><b>{lang_search_by_username}</b></td>
+            <td class="row2" valign="top">
+              <input type="text" name="search_user" size="40" value="{search_user}" class="input" />
+            </td>
+          </tr>
+          <tr>
+            <td class="row1"><b>{lang_search_terms}</b></td>
+            <td class="row1">
+              <input type="radio" name="search_terms" value="any" checked="checked" />
+              {lang_or}&nbsp;&nbsp;
+							<input type="radio" name="search_terms" value="all" />
+              {lang_and}
+            </td>
+          </tr>
+          <tr>
+            <td class="row2"><b>{lang_category}</b></td>
+            <td class="row2">{category_dropdown}</td>
+          </tr>
+          <tr>
+            <td valign="top" class="row1"><b>{lang_search_fields}</b></td>
+            <td class="row1">
+              <table border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td nowrap="nowrap"><input type="radio" name="search_fields" value="all" checked="checked" /> {lang_all_fields}</td>
+                  <td nowrap="nowrap">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                  <td nowrap="nowrap"><input type="radio" name="search_fields" value="image_name" /> {lang_name_only}</td>
+                </tr>
+                <tr>
+                  <td nowrap="nowrap"><input type="radio" name="search_fields" value="image_description" /> {lang_description_only}</td>
+                  <td nowrap="nowrap">&nbsp;</td>
+                  <td nowrap="nowrap"><input type="radio" name="search_fields" value="image_keywords" /> {lang_keywords_only}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="row1">&nbsp;</td>
+            <td class="row1"><input type="submit" value="{lang_search}" class="button" /></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>

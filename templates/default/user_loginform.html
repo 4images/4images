@@ -1,0 +1,23 @@
+<table width="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr> 
+    <td valign="top" align="left"> 
+      <form action="{url_login}" method="post">
+        {lang_user_name}<br />
+        <input type="text" size="10" name="user_name" class="logininput" />
+        <br />
+        {lang_password}<br />
+        <input type="password" size="10" name="user_password" class="logininput" />
+        <br />
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr valign="top"> 
+            <td><input type="checkbox" name="auto_login" value="1" /></td>
+            <td><span class="smalltext">{lang_auto_login}</span></td>
+          </tr>
+        </table>
+        <br />
+		<input type="submit" value="{lang_login}" class="button" />
+      </form>
+      » <a href="{url_lost_password}">{lang_lost_password}</a><br />
+	  » <a href="{url_register}">{lang_register}</a><br>&nbsp;</td>
+  </tr>
+</table>

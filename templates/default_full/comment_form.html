@@ -1,0 +1,68 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="1" align="center">
+  <tr> 
+    <td valign="top" class="head1"> 
+      <table width="100%" border="0" cellpadding="3" cellspacing="0">
+        <tr> 
+          <td valign="top" class="head1">{lang_post_comment}</td>
+        </tr>
+        <tr> 
+          <td valign="top" class="row1"> 
+            <form name="commentform" action="{self}" method="post" onsubmit="postbutton.disabled=true;">
+              <table width="100%" cellpadding="4" cellspacing="0" border="0">
+                <tr> 
+                  <td width="90"><b>{lang_name}</b></td>
+                  <td><input type="text" name="user_name" size="30" value="{user_name}" class="commentinput" /></td>
+                </tr>
+                <tr> 
+                  <td width="90"><b>{lang_headline}</b></td>
+                  <td><input type="text" name="comment_headline" size="30" value="{comment_headline}" class="commentinput" /></td>
+                </tr>
+                <tr> 
+                  <td width="140" valign="top"><b>{lang_comment}</b></td>
+                  <td><textarea name="comment_text" cols="35" rows="10" class="commenttextarea">{comment_text}</textarea></td>
+                </tr>
+                <tr> 
+                  <td width="90" valign="top">&nbsp;</td>
+                  <td>{bbcode}</td>
+                </tr>
+                            <tr>
+                                <td>{if captcha_comments}</td>
+                                <td></td>
+                            </tr>
+
+								<tr> 
+                  <td width="90" valign="top"><b>{lang_captcha}</b></td>
+                  <td>
+									  <a href="javascript:new_captcha_image();"><img src="{url_captcha_image}" border="0" id="captcha_image" alt="" /></a>
+									  <br />
+										<input type="text" name="captcha" size="30" value="" class="captchainput" id="captcha_input" />
+										<br />
+										<table cellpadding="0" cellspacing="0" width="210">
+                                        <tr>
+                                            <td width="258">									  {lang_captcha_desc}</td>
+                                        </tr>
+                                    </table>
+
+									</td>
+                </tr>
+                        <tr>
+                            <td>{endif captcha_comments}</td>
+                            <td></td>
+                        </tr>
+
+                <tr> 
+                  <td width="90" valign="top">&nbsp;</td>
+                  <td>
+                    <input type="hidden" name="action" value="postcomment" />
+                    <input type="hidden" name="id" value="{image_id}" />
+                    <input type="submit" name="postbutton" value="{lang_post_comment}" class="button" />
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

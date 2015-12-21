@@ -1,0 +1,78 @@
+{header}
+<p align="center">{if msg}<b>{msg}</b>{endif msg}</p>
+<form action="{url_postcard}" method="post">
+  <table border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr>
+      <td>
+        <table border="0" cellspacing="0" cellpadding="1">
+          <tr>
+            <td bgcolor="{border_color}">
+              <table border="0" cellspacing="0" cellpadding="10" bgcolor="{bg_color}">
+                <tr>
+                  <td valign="top">{image}</td>
+                  <td valign="top" width="200" height="250">
+                    <div align="right"><img src="{template_url}/images/stamp.gif" border="0" /></div>
+                    <br />
+                    <br />
+                    <b><font face="{font_face}" color="{font_color}" size="4">{headline}</font></b> <br />
+                    <br />
+                    <font face="{font_face}" color="{font_color}" size="2">{message_hidden}</font> <br />
+                    <br />
+                    <font face="{font_face}" color="{font_color}" size="2">{sender_name}</font><br />
+                    <a href="mailto:{sender_email}"><font face="{font_face}" color="{font_color}" size="2">{sender_email}</font></a> </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <br />
+        
+        <b>{lang_sender}:</b> {sender_name} ({sender_email})<br />
+        <b>{lang_recipient}:</b> {recipient_name} ({recipient_email})<br><br>&nbsp;
+			</td>
+    </tr>
+  </table>
+  {if captcha_postcards}
+	<br />
+  <table width="204" border="0" cellspacing="0" cellpadding="1" align="center">
+    <tr>
+      <td valign="top" class="">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td class="">
+						  <a href="javascript:new_captcha_image();"><img src="{url_captcha_image}" border="0" id="captcha_image" /></a> <br />
+              <input type="text" name="captcha" size="30" value="" class="captchainput" id="captcha_input" />
+              <br />
+              
+                            <table cellpadding="0" cellspacing="0" width="204">
+                                <tr>
+                                    <td width="289">						  {lang_captcha_desc}</td>
+                                </tr>
+                            </table>
+
+						</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  {endif captcha_postcards}
+  <p align="center">
+    <input type="hidden" name="bg_color" value="{bg_color}" />
+    <input type="hidden" name="border_color" value="{border_color}" />
+    <input type="hidden" name="font_color" value="{font_color}" />
+    <input type="hidden" name="font_face" value="{font_face}" />
+    <input type="hidden" name="sender_name" value="{sender_name}" />
+    <input type="hidden" name="sender_email" value="{sender_email}" />
+    <input type="hidden" name="recipient_name" value="{recipient_name}" />
+    <input type="hidden" name="recipient_email" value="{recipient_email}" />
+    <input type="hidden" name="headline" value="{headline}" />
+    <input type="hidden" name="message" value="{message_hidden}" />
+    <input type="hidden" name="action" value="sendcard" />
+    <input type="hidden" name="image_id" value="{image_id}" />
+    <input type="hidden" name="back_url" value="{back_url}" />
+    <input type="submit" name="modifycard" value="{lang_edit_postcard}" class="button" />
+    <input type="submit" value="{lang_send_postcard}" class="button" />
+  </p>
+</form>
+{footer}

@@ -1,0 +1,428 @@
+{header}
+<table width="960" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tablehead">
+        <tr> 
+          <td width="100%" colspan="4"><table cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td width="6"><img src="{template_url}/images/header_top_left.gif" width="6" height="6" alt="" /></td>
+        <td width="100%"><img src="{template_url}/images/header_top.gif" width="100%" height="6" alt="" /></td>
+	<td width="6"><img src="{template_url}/images/header_top_right.gif" width="6" height="6" alt="" /></td>
+    </tr>
+</table>
+</td>
+        </tr>
+        <tr> 
+          <td width="6"><img src="{template_url}/images/header_left.gif" width="6" height="60" alt="" /></td>
+          <td width="100%"><img src="{template_url}/images/header_logo.gif" width="405" height="60" alt="" /></td>
+          <td width="225" align="right"> 
+            <form method="post" action="{url_search}">
+              <table border="0" cellspacing="0" cellpadding="1">
+                <tr> 
+                  <td> 
+                    <input type="text" name="search_keywords" size="15" class="searchinput" />
+                  </td>
+                  <td> 
+                    <input type="submit" value="{lang_search}" class="button" name="submit" />
+                  </td>
+                </tr>
+                <tr valign="top"> 
+                  <td colspan="2"><a href="{url_search}" class="smalltext">{lang_advanced_search}</a></td>
+                </tr>
+              </table>
+            </form>
+          </td>
+          <td align="right" width="6"><img src="{template_url}/images/header_right.gif" width="6" height="60" alt="" /></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td class="bordercolor"> 
+      <table width="100%" border="0" cellspacing="1" cellpadding="0">
+        <tr> 
+          <td class="tablebgcolor"> 
+            <table width="100%" border="0" cellspacing="1" cellpadding="0">
+              <tr> 
+                <td class="navbar" height="23"> 
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td><img src="{template_url}/images/spacer.gif" width="4" height="4" alt="" />{clickstream}</td>
+                      <td align="right">
+						<a href="{url_top_images}"><b>{lang_top_images}</b></a>&nbsp;
+						<a href="{url_new_images}"><b>{lang_new_images}</b></a>&nbsp;
+					  </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="150" class="row2" valign="top"> 
+                  <table width="150" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td class="head2" height="20"><img src="{template_url}/images/spacer.gif" alt="" width="4" height="4" />{lang_registered_user}</td>
+                    </tr>
+                    <tr> 
+                      <td class="tablebgcolor"><img src="{template_url}/images/spacer.gif" alt="" width="1" height="1" /></td>
+                    </tr>
+                    <tr> 
+                      <td align="center" class="row1">{user_box}</td>
+                    </tr>
+                    <tr> 
+                      <td class="tablebgcolor"><img src="{template_url}/images/spacer.gif" alt="" width="1" height="1" /></td>
+                    </tr>
+                  </table>
+                  {if random_image} 
+                  <table width="150" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td class="head2" height="20"> <img src="{template_url}/images/spacer.gif" alt="" width="4" height="4" />{lang_random_image}</td>
+                    </tr>
+                    <tr> 
+                      <td class="tablebgcolor"><img src="{template_url}/images/spacer.gif" alt="" width="1" height="1" /></td>
+                    </tr>
+                    <tr> 
+                      <td align="center" class="row1">
+					    <br />
+                        {random_image}
+						<br />
+                        <br />
+                      </td>
+                    </tr>
+                    <tr> 
+                      <td class="tablebgcolor"><img src="{template_url}/images/spacer.gif" alt="" width="1" height="1" /></td>
+                    </tr>
+                  </table>
+                  {endif random_image}
+                </td>
+                <td width="1" class="bordercolor" valign="top"><img src="{template_url}/images/spacer.gif" alt="" width="1" height="1" /></td>
+                <td width="18" valign="top"><img src="{template_url}/images/spacer.gif" alt="" width="18" height="18" /></td>
+                <td width="100%" valign="top">
+				  <br />
+                  <span class="title">{lang_top_images}</span> 
+                  <hr size="1" />
+                  <table width="100%" border="0" cellspacing="0" cellpadding="1">
+                    <tr> 
+                      <td class="bordercolor"> 
+                        <table width="100%" border="0" cellpadding="3" cellspacing="0">
+                          <tr> 
+                            <td class="head1" valign="top" colspan="5">{lang_top_image_rating}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>1</b></td>
+                            <td valign="top" class="row1">{image_rating_1}</td>
+                            <td valign="top" class="row1">{image_rating_user_1}</td>
+                            <td valign="top" class="row1">{image_rating_cat_1}</td>
+                            <td valign="top" class="row1" nowrap>{image_rating_number_1}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>2</b></td>
+                            <td valign="top" class="row2">{image_rating_2}</td>
+                            <td valign="top" class="row2">{image_rating_user_2}</td>
+                            <td valign="top" class="row2">{image_rating_cat_2}</td>
+                            <td valign="top" class="row2" nowrap>{image_rating_number_2}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>3</b></td>
+                            <td valign="top" class="row1">{image_rating_3}</td>
+                            <td valign="top" class="row1">{image_rating_user_3}</td>
+                            <td valign="top" class="row1">{image_rating_cat_3}</td>
+                            <td valign="top" class="row1" nowrap>{image_rating_number_3}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>4</b></td>
+                            <td valign="top" class="row2">{image_rating_4}</td>
+                            <td valign="top" class="row2">{image_rating_user_4}</td>
+                            <td valign="top" class="row2">{image_rating_cat_4}</td>
+                            <td valign="top" class="row2" nowrap>{image_rating_number_4}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>5</b></td>
+                            <td valign="top" class="row1">{image_rating_5}</td>
+                            <td valign="top" class="row1">{image_rating_user_5}</td>
+                            <td valign="top" class="row1">{image_rating_cat_5}</td>
+                            <td valign="top" class="row1" nowrap>{image_rating_number_5}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>6</b></td>
+                            <td valign="top" class="row2">{image_rating_6}</td>
+                            <td valign="top" class="row2">{image_rating_user_6}</td>
+                            <td valign="top" class="row2">{image_rating_cat_6}</td>
+                            <td valign="top" class="row2" nowrap>{image_rating_number_6}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>7</b></td>
+                            <td valign="top" class="row1">{image_rating_7}</td>
+                            <td valign="top" class="row1">{image_rating_user_7}</td>
+                            <td valign="top" class="row1">{image_rating_cat_7}</td>
+                            <td valign="top" class="row1" nowrap>{image_rating_number_7}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>8</b></td>
+                            <td valign="top" class="row2">{image_rating_8}</td>
+                            <td valign="top" class="row2">{image_rating_user_8}</td>
+                            <td valign="top" class="row2">{image_rating_cat_8}</td>
+                            <td valign="top" class="row2" nowrap>{image_rating_number_8}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>9</b></td>
+                            <td valign="top" class="row1">{image_rating_9}</td>
+                            <td valign="top" class="row1">{image_rating_user_9}</td>
+                            <td valign="top" class="row1">{image_rating_cat_9}</td>
+                            <td valign="top" class="row1" nowrap>{image_rating_number_9}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>10</b></td>
+                            <td valign="top" class="row2">{image_rating_10}</td>
+                            <td valign="top" class="row2">{image_rating_user_10}</td>
+                            <td valign="top" class="row2">{image_rating_cat_10}</td>
+                            <td valign="top" class="row2" nowrap>{image_rating_number_10}</td>
+                          </tr>
+                          <tr> 
+                            <td class="head1" valign="top" colspan="5">{lang_top_image_votes}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>1</b></td>
+                            <td valign="top" class="row1">{image_votes_1}</td>
+                            <td valign="top" class="row1">{image_votes_user_1}</td>
+                            <td valign="top" class="row1">{image_votes_cat_1}</td>
+                            <td valign="top" class="row1" nowrap>{image_votes_number_1}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>2</b></td>
+                            <td valign="top" class="row2">{image_votes_2}</td>
+                            <td valign="top" class="row2">{image_votes_user_2}</td>
+                            <td valign="top" class="row2">{image_votes_cat_2}</td>
+                            <td valign="top" class="row2" nowrap>{image_votes_number_2}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>3</b></td>
+                            <td valign="top" class="row1">{image_votes_3}</td>
+                            <td valign="top" class="row1">{image_votes_user_3}</td>
+                            <td valign="top" class="row1">{image_votes_cat_3}</td>
+                            <td valign="top" class="row1" nowrap>{image_votes_number_3}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>4</b></td>
+                            <td valign="top" class="row2">{image_votes_4}</td>
+                            <td valign="top" class="row2">{image_votes_user_4}</td>
+                            <td valign="top" class="row2">{image_votes_cat_4}</td>
+                            <td valign="top" class="row2" nowrap>{image_votes_number_4}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>5</b></td>
+                            <td valign="top" class="row1">{image_votes_5}</td>
+                            <td valign="top" class="row1">{image_votes_user_5}</td>
+                            <td valign="top" class="row1">{image_votes_cat_5}</td>
+                            <td valign="top" class="row1" nowrap>{image_votes_number_5}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>6</b></td>
+                            <td valign="top" class="row2">{image_votes_6}</td>
+                            <td valign="top" class="row2">{image_votes_user_6}</td>
+                            <td valign="top" class="row2">{image_votes_cat_6}</td>
+                            <td valign="top" class="row2" nowrap>{image_votes_number_6}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>7</b></td>
+                            <td valign="top" class="row1">{image_votes_7}</td>
+                            <td valign="top" class="row1">{image_votes_user_7}</td>
+                            <td valign="top" class="row1">{image_votes_cat_7}</td>
+                            <td valign="top" class="row1" nowrap>{image_votes_number_7}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>8</b></td>
+                            <td valign="top" class="row2">{image_votes_8}</td>
+                            <td valign="top" class="row2">{image_votes_user_8}</td>
+                            <td valign="top" class="row2">{image_votes_cat_8}</td>
+                            <td valign="top" class="row2" nowrap>{image_votes_number_8}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>9</b></td>
+                            <td valign="top" class="row1">{image_votes_9}</td>
+                            <td valign="top" class="row1">{image_votes_user_9}</td>
+                            <td valign="top" class="row1">{image_votes_cat_9}</td>
+                            <td valign="top" class="row1" nowrap>{image_votes_number_9}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>10</b></td>
+                            <td valign="top" class="row2">{image_votes_10}</td>
+                            <td valign="top" class="row2">{image_votes_user_10}</td>
+                            <td valign="top" class="row2">{image_votes_cat_10}</td>
+                            <td valign="top" class="row2" nowrap>{image_votes_number_10}</td>
+                          </tr>
+                          <tr> 
+                            <td class="head1" valign="top" colspan="5">{lang_top_image_hits}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>1</b></td>
+                            <td valign="top" class="row1">{image_hits_1}</td>
+                            <td valign="top" class="row1">{image_hits_user_1}</td>
+                            <td valign="top" class="row1">{image_hits_cat_1}</td>
+                            <td valign="top" class="row1" nowrap>{image_hits_number_1}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>2</b></td>
+                            <td valign="top" class="row2">{image_hits_2}</td>
+                            <td valign="top" class="row2">{image_hits_user_2}</td>
+                            <td valign="top" class="row2">{image_hits_cat_2}</td>
+                            <td valign="top" class="row2" nowrap>{image_hits_number_2}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>3</b></td>
+                            <td valign="top" class="row1">{image_hits_3}</td>
+                            <td valign="top" class="row1">{image_hits_user_3}</td>
+                            <td valign="top" class="row1">{image_hits_cat_3}</td>
+                            <td valign="top" class="row1" nowrap>{image_hits_number_3}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>4</b></td>
+                            <td valign="top" class="row2">{image_hits_4}</td>
+                            <td valign="top" class="row2">{image_hits_user_4}</td>
+                            <td valign="top" class="row2">{image_hits_cat_4}</td>
+                            <td valign="top" class="row2" nowrap>{image_hits_number_4}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>5</b></td>
+                            <td valign="top" class="row1">{image_hits_5}</td>
+                            <td valign="top" class="row1">{image_hits_user_5}</td>
+                            <td valign="top" class="row1">{image_hits_cat_5}</td>
+                            <td valign="top" class="row1" nowrap>{image_hits_number_5}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>6</b></td>
+                            <td valign="top" class="row2">{image_hits_6}</td>
+                            <td valign="top" class="row2">{image_hits_user_6}</td>
+                            <td valign="top" class="row2">{image_hits_cat_6}</td>
+                            <td valign="top" class="row2" nowrap>{image_hits_number_6}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>7</b></td>
+                            <td valign="top" class="row1">{image_hits_7}</td>
+                            <td valign="top" class="row1">{image_hits_user_7}</td>
+                            <td valign="top" class="row1">{image_hits_cat_7}</td>
+                            <td valign="top" class="row1" nowrap>{image_hits_number_7}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>8</b></td>
+                            <td valign="top" class="row2">{image_hits_8}</td>
+                            <td valign="top" class="row2">{image_hits_user_8}</td>
+                            <td valign="top" class="row2">{image_hits_cat_8}</td>
+                            <td valign="top" class="row2" nowrap>{image_hits_number_8}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>9</b></td>
+                            <td valign="top" class="row1">{image_hits_9}</td>
+                            <td valign="top" class="row1">{image_hits_user_9}</td>
+                            <td valign="top" class="row1">{image_hits_cat_9}</td>
+                            <td valign="top" class="row1" nowrap>{image_hits_number_9}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>10</b></td>
+                            <td valign="top" class="row2">{image_hits_10}</td>
+                            <td valign="top" class="row2">{image_hits_user_10}</td>
+                            <td valign="top" class="row2">{image_hits_cat_10}</td>
+                            <td valign="top" class="row2" nowrap>{image_hits_number_10}</td>
+                          </tr>
+                          <tr> 
+                            <td class="head1" valign="top" colspan="5">{lang_top_image_downloads}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>1</b></td>
+                            <td valign="top" class="row1">{image_downloads_1}</td>
+                            <td valign="top" class="row1">{image_downloads_user_1}</td>
+                            <td valign="top" class="row1">{image_downloads_cat_1}</td>
+                            <td valign="top" class="row1" nowrap>{image_downloads_number_1}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>2</b></td>
+                            <td valign="top" class="row2">{image_downloads_2}</td>
+                            <td valign="top" class="row2">{image_downloads_user_2}</td>
+                            <td valign="top" class="row2">{image_downloads_cat_2}</td>
+                            <td valign="top" class="row2" nowrap>{image_downloads_number_2}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>3</b></td>
+                            <td valign="top" class="row1">{image_downloads_3}</td>
+                            <td valign="top" class="row1">{image_downloads_user_3}</td>
+                            <td valign="top" class="row1">{image_downloads_cat_3}</td>
+                            <td valign="top" class="row1" nowrap>{image_downloads_number_3}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>4</b></td>
+                            <td valign="top" class="row2">{image_downloads_4}</td>
+                            <td valign="top" class="row2">{image_downloads_user_4}</td>
+                            <td valign="top" class="row2">{image_downloads_cat_4}</td>
+                            <td valign="top" class="row2" nowrap>{image_downloads_number_4}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>5</b></td>
+                            <td valign="top" class="row1">{image_downloads_5}</td>
+                            <td valign="top" class="row1">{image_downloads_user_5}</td>
+                            <td valign="top" class="row1">{image_downloads_cat_5}</td>
+                            <td valign="top" class="row1" nowrap>{image_downloads_number_5}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>6</b></td>
+                            <td valign="top" class="row2">{image_downloads_6}</td>
+                            <td valign="top" class="row2">{image_downloads_user_6}</td>
+                            <td valign="top" class="row2">{image_downloads_cat_6}</td>
+                            <td valign="top" class="row2" nowrap>{image_downloads_number_6}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>7</b></td>
+                            <td valign="top" class="row1">{image_downloads_7}</td>
+                            <td valign="top" class="row1">{image_downloads_user_7}</td>
+                            <td valign="top" class="row1">{image_downloads_cat_7}</td>
+                            <td valign="top" class="row1" nowrap>{image_downloads_number_7}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>8</b></td>
+                            <td valign="top" class="row2">{image_downloads_8}</td>
+                            <td valign="top" class="row2">{image_downloads_user_8}</td>
+                            <td valign="top" class="row2">{image_downloads_cat_8}</td>
+                            <td valign="top" class="row2" nowrap>{image_downloads_number_8}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row1" align="center"><b>9</b></td>
+                            <td valign="top" class="row1">{image_downloads_9}</td>
+                            <td valign="top" class="row1">{image_downloads_user_9}</td>
+                            <td valign="top" class="row1">{image_downloads_cat_9}</td>
+                            <td valign="top" class="row1" nowrap>{image_downloads_number_9}</td>
+                          </tr>
+                          <tr> 
+                            <td valign="top" class="row2" align="center"><b>10</b></td>
+                            <td valign="top" class="row2">{image_downloads_10}</td>
+                            <td valign="top" class="row2">{image_downloads_user_10}</td>
+                            <td valign="top" class="row2">{image_downloads_cat_10}</td>
+                            <td valign="top" class="row2" nowrap>{image_downloads_number_10}</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <p>&nbsp;</p>
+                </td>
+                <td width="19" valign="top"><img src="{template_url}/images/spacer.gif" alt="" width="19" height="19" /></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tablebottom">
+        <tr> 
+          <td width="6" nowrap><img src="{template_url}/images/footer_left.gif" width="6" height="19" alt="" /></td>
+          <td width="100%"></td>
+          <td width="6" nowrap><img src="{template_url}/images/footer_right.gif" width="6" height="19" alt="" /></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+{footer}

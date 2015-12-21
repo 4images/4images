@@ -1,0 +1,31 @@
+{header} 
+<p align="center">{if msg}<b>{msg}</b>{endif msg}</p>
+<p align="center">&nbsp;</p>
+<table border="0" cellspacing="0" cellpadding="1" align="center">
+  <tr> 
+    <td bgcolor="{border_color}"> 
+      <table border="0" cellspacing="0" cellpadding="10" bgcolor="{bg_color}">
+        <tr> 
+          <td valign="top">{image}<br />{image_name_link}</td>
+          <td valign="top" width="200" height="250"> 
+            <div align="right"><img src="{template_url}/images/stamp.gif" border="0" /></div>
+            <br />
+            <br />
+            <b><font face="{font_face}" color="{font_color}" size="4">{headline}</font></b> 
+            <br />
+            <br />
+            <font face="{font_face}" color="{font_color}" size="2">{message}</font> 
+            <br />
+            <br />
+            <font face="{font_face}" color="{font_color}" size="2">{sender_name}</font><br />
+            <a href="mailto:{sender_email}"><font face="{font_face}" color="{font_color}" size="2">{sender_email}</font></a> 
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><a href="{url_home}">{site_name}</a></p>
+{footer}

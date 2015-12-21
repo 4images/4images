@@ -1,0 +1,27 @@
+<form method="post" action="{self}">
+  <table border="0" cellspacing="0" cellpadding="1">
+    <tr>
+      <td class="head1">
+        <table border="0" cellspacing="0" cellpadding="3" class="row1">
+          <tr> 
+            <td valign="bottom"> 
+              <select name="rating" class="select">
+                <option value="">--</option>
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+              </select>
+            </td>
+            <td> 
+              <input type="hidden" name="action" value="rateimage" />
+              <input type="hidden" name="id" value="{image_id}" />
+              <input type="submit" value="{rate}" class="button" name="submit" />
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>

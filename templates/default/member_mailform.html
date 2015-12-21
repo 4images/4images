@@ -1,0 +1,27 @@
+<form method="post" action="{url_member}">
+  <table width="100%" border="0" cellspacing="0" cellpadding="1">
+    <tr> 
+      <td valign="top" class="head1"> 
+        <table width="100%" border="0" cellpadding="4" cellspacing="0">
+          <tr> 
+            <td colspan="2" valign="top" class="head1">{lang_send_email_to} {user_name}</td>
+          </tr>
+          <tr> 
+            <td class="row2"><b>{lang_subject}</b></td>
+            <td class="row2"><input type="text" name="subject"  size="30" value="{subject}" class="input" /></td>
+          </tr>
+          <tr> 
+            <td class="row1" valign="top"><b>{lang_message}</b></td>
+            <td class="row1"><textarea name="message" cols="30" rows="10" wrap="virtual" class="textarea">{message}</textarea></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <input type="hidden" name="action" value="emailuser" />
+  <input type="hidden" name="user_id" value="{user_id}" />
+  <p align="center"> 
+    <input type="submit" value="{lang_submit}" class="button" />
+    <input type="reset" value="{lang_reset}" class="button" />
+  </p>
+</form>

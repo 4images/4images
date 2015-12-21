@@ -1,0 +1,950 @@
+=========================================================
+ChangeLog Version 1.7.13
+=========================================================
+- Multiple security fixes
+- Regression fixes introduced in 1.7.12
+
+
+=========================================================
+ChangeLog Version 1.7.12
+=========================================================
+- [1.7 - 1.7.11] Security fix for XSS issue in global.php
+- [1.7 - 1.7.11] Security fix for XSS in /admin/index.php
+- [1.7 - 1.7.11] Security fix for open redirect / XSS (persistent)
+- [1.7 - 1.7.11] Security fix for code execution in /admin/templates.php (Admin)
+- [1.7 - 1.7.11] Security fix for sql injection in /admin/backup.php (Admin)
+- [1.7 - 1.7.11] Security fix for directory traversal using backups (Admin)
+- [1.7 - 1.7.11] Security fix for stored XSS in /admin/categories.php
+
+
+=========================================================
+ChangeLog Version 1.7.11
+=========================================================
+- [1.7 - 1.7.10] Security fix for XSS issue in admin/categories.php
+- [1.7 - 1.7.10] Security fix for sql injection in admin/categories.php
+- [1.7 - 1.7.10] Security fix for open redirect vulnerability in admin/index.php
+- [1.7 - 1.7.10] Security fix for XSS issue
+- Fixed auto-login in sessions.php
+- Fixed email notification to user after activation by admin (http://www.4homepages.de/forum/index.php?topic=29623.0)
+- Fixed sql error if apostrophe in name of image (http://www.4homepages.de/forum/index.php?topic=29950.0)
+- Changed DB default settings from TYPE to ENGINE (http://www.4homepages.de/forum/index.php?topic=29627.0)
+- template with 960px width used as default
+
+
+=========================================================
+ChangeLog Version 1.7.10
+=========================================================
+- [1.7 - 1.7.9] Security fix for Multiple Path disclousure (http://www.4homepages.de/forum/index.php?topic=29470.0)
+- [1.7 - 1.7.9] Security fix for sql injection in admin/categories.php (http://www.4homepages.de/forum/index.php?topic=29469.0)
+- [1.7 - 1.7.9] Security fix for path disclosure in paging.php (http://www.4homepages.de/forum/index.php?topic=28481.0)
+- [1.7 - 1.7.9] Security fix for input validation error (http://www.4homepages.de/forum/index.php?topic=29504.0)
+- [1.7.7 - 1.7.9] Fixed {categories},{details},{index},{lightbox},etc tags don't work (http://www.4homepages.de/forum/index.php?topic=28321.0)
+- [1.7.9] Fixed DB Error: Bad SQL Query: INSERT INTO 4images_wordmatch (image_id, ... (http://www.4homepages.de/forum/index.php?topic=28430.0)
+- Improved password encryption using salted hashes (new file includes/security_utils.php)
+- New Version of Rebuild Search Index Plugin (http://www.4homepages.de/forum/index.php?topic=6718.0)
+- Added settings to define type of indexing of fields (fulltext, keywords, phrase)
+- Fixed search in additional fields
+- Fixed wrong width in error.html template
+- Fixed issue calculating ExposureTime in EXIF data
+- Fixed orphan search words are not deleted correctly if multiple image ids are passed to remove_searchwords()
+- Minor fixes in text fixes in lang/deutsch/admin.php
+- Changed default settings for CAPTCHA
+
+Neue Dateien / New Files:
+---------------------------------------
+- includes/security_utils.php
+
+
+=========================================================
+ChangeLog Version 1.7.9
+=========================================================
+- Added CSRF protection system (see docs/CSRF.english.txt or docs/CSRF.deutsch.txt)
+- Security Fix for XSS issue in admin/admin_functions.php
+- Fixed "Support for PHP4" (http://www.4homepages.de/forum/index.php?topic=27939.0)
+- Fixed "multi-word search in 1.7.8" (http://www.4homepages.de/forum/index.php?topic=28028.0)
+- Fixed "Uploadfehler nach Update von 1.7.7 auf 1.78" (http://www.4homepages.de/forum/index.php?topic=27829.0)
+- Fixed "Can't login" (http://www.4homepages.de/forum/index.php?topic=27782.0)
+- Fixed "Check new images - thumbnail not saved if already existed." (http://www.4homepages.de/forum/index.php?topic=27739.0)
+- Fixed "Database Backup shows only *.sql files (no *.sql.gz)" (http://www.4homepages.de/forum/index.php?topic=27757.0)
+- Fixed "Beschreibung nicht in Suche eingeschlossen" (http://www.4homepages.de/forum/index.php?topic=27747.0)
+
+Neue Dateien / New Files:
+---------------------------------------
+- includes/csrf_utils.php
+
+
+Geänderte Dateien / Changed Files:
+---------------------------------------
+global.php
+member.php
+admin/admin_functions.php
+admin/admin_global.php
+admin/backup.php
+admin/checkimages.php
+admin/images.php
+admin/validateimages.php
+admin/plugins/migrate_keywords.php
+includes/constants.php
+includes/page_header.php
+includes/search_utils.php
+includes/sessions.php
+
+
+Sprache / Language:
+---------------------------------------
+- admin.php
+    - edited: $lang['field_keywords_ext']
+    - added: $lang['cni_thumbnail_rename_success']
+    - added: $lang['cni_thumbnail_rename_error']
+    - added: $lang['cni_copy_success']
+    - added: $lang['cni_copy_error']
+    - added: $lang['cni_copy_thumb_success']
+    - added: $lang['cni_copy_thumb_error']
+    - added: $lang['file_not_found']
+
+
+=========================================================
+ChangeLog Version 1.7.8
+=========================================================
+- PHP 5.3 compatibility fixes
+- Improved security level of captcha handling
+- Removed error reporting overriding in search.php
+- Fixed typo in example of DB fields definitions
+- Fixed German translation typos and misspellings across language files
+- Fixed EXIF exposure time issue
+- Fixed use of double quoted string in configuration file (http://www.4homepages.de/forum/index.php?topic=25792.0)
+- Fixed an issue when max height has no affect on image resize (http://www.4homepages.de/forum/index.php?topic=7058.0)
+- Fixed showing username containing curly braces in who is online box
+- Fixed editing of templates into subdirectories from ACP (http://www.4homepages.de/forum/index.php?topic=25403.0)
+- Fixed an issue when .zip files can be corrupt on download (http://www.4homepages.de/forum/index.php?topic=25893.0)
+- Fixed an issue when some templating feature can not work properly if server auto prepends content prior output
+- Fixed an issue when due missing MIME type thumbnail upload may fail (http://www.4homepages.de/forum/index.php?topic=27012.0)
+- Fixed an issue when trying to edit media/* templates (http://www.4homepages.de/forum/index.php?topic=27669.0)
+- Implemeted population of alt and title attributes for thumbnail images with image name
+- Extended number of possible template variables for media/* templates (http://www.4homepages.de/forum/index.php?topic=26279.0)
+- Implemented comma separated keywords and plugin for migration from white-space separated keywords
+- Enchanced "Check new images" feature in ACP with V@no's mod (http://www.4homepages.de/forum/index.php?topic=4754.0)
+- Added plugin "Check files" (http://www.4homepages.de/forum/index.php?topic=6760.0)
+- Fixed a visual glitch when adding multiple users from ACP
+
+Neue Dateien / New Files:
+---------------------------------------
+- admin/plugins/files_check.php
+- admin/plugins/migrate_keywords.php
+
+
+Geänderte Dateien / Changed Files:
+---------------------------------------
+config.new.php
+categories.php
+details.php
+download.php
+global.php
+index.php
+install.php
+member.php
+login.php
+logout.php
+postcards.php
+register.php
+rss.php
+search.php
+top.php
+admin/admin_functions.php
+admin/admin_global.php
+admin/backup.php
+admin/checkimages.php
+admin/home.php
+admin/images.php
+admin/index.php
+admin/resizer.php
+admin/templates.php
+admin/thumbnailer.php
+admin/users.php
+admin/validateimages.php
+admin/plugins/clear_cache.php
+includes/captcha_utils.php
+includes/db_field_definitions.php
+includes/db_utils.php
+includes/email.php
+includes/functions.php
+includes/image_utils.php
+includes/page_footer.php
+includes/page_header.php
+includes/paging.php
+includes/upload.php
+includes/search_utils.php
+includes/sessions.php
+lang/deutsch/admin.php
+lang/deutsch/install.php
+lang/deutsch/main.php
+lang/english/admin.php
+lang/english/install.php
+lang/english/main.php
+lang/spanish/install.php
+lang/spanish/main.php
+
+
+Sprache / Language:
+---------------------------------------
+- admin.php
+    - added new section for "check new images" (english and deutsch only)
+
+- install.php
+    - added new variable for timezone selector $lang['timezone_select']
+
+
+=========================================================
+ChangeLog Version 1.7.7
+=========================================================
+- Security fix for local inclusion vulnerability (http://www.4homepages.de/forum/index.php?topic=24526.0)
+- Security Fix for XSS issue in member.php
+- Fixed issue for search stop in english language (http://www.4homepages.de/forum/index.php?topic=24453.0)
+- Fixed issue for accepting blank new password when changing password (http://www.4homepages.de/forum/index.php?topic=24503.0)
+- Fixed incorrect text in additional fields in register.php (http://www.4homepages.de/forum/index.php?topic=19206.0)
+- Fix for redirects on sites with non-standard port (http://www.4homepages.de/forum/index.php?topic=23081.0)
+- Fix for losing IPTC data if converting images with ImageMagick
+- Fixed issue with wrong Administrator joindate after installation of 4images
+- Fixed issue Comments count not updated after user was deleted (http://www.4homepages.de/forum/index.php?topic=22606.0)
+- Fix for additional user fields not being used for guests (http://www.4homepages.de/forum/index.php?topic=22727.0)
+- Fix issue in top.php if the name of an image is an URL
+- Fix for wrong message in ACP if image was not deleted from database (http://www.4homepages.de/forum/index.php?topic=23392.0)
+- Fix for issue that redirects after login always to index.php (http://www.4homepages.de/forum/index.php?topic=22950)
+- Fixed issue if users submits a non existing email address in the password forgotten form
+- Fixed width of columns in detailed view (detail, EXIF, IPTC)
+- Change of the displayed error information if the MySQL connection does not work
+- Change from POST to GET in category dropdown
+- Changed <link rel="stylesheet"...> in header.html template for being W3C valid
+- Added favicon
+- Added thumbnails to RSS-feed
+- Added feature to sort categories
+- Added more conditional tags (categories, details,index, member, postcards, register, search, top) for using {if index}...{if index} for homepage, {if details}...{endif details} for details.php page, etc.
+- Added META-Tags in header.html template: robots, description, keywords, revisit-after, imagetoolbar.
+- Added spanish language pack by default
+- Added 2 new templates: 960 pixel width, 100 % width
+
+Neue Dateien / New Files:
+---------------------------------------
+- Folder: lang/spanish/
+- Folder: templates/default_960px/
+- Folder: templates/default_full/
+- favicon.ico
+
+Geänderte Dateien / Changed Files:
+---------------------------------------
+global.php
+install.php
+member.php
+top.php
+admin/users.php
+includes/constants.php
+includes/db_mysql.php
+includes/image_utils.php
+includes/page_header.php
+includes/sessions.php
+lang/deutsch/admin.php
+lang/deutsch/main.php
+lang/english/admin.php
+lang/english/stop_searchterms.txt renamed to /lang/english/search_stopterms.txt
+
+
+Geänderte Templates / Changed Templates:
+---------------------------------------
+- header.html
+- category_dropdown_form.html
+- postcard_preview.html
+
+
+Sprache / Language:
+---------------------------------------
+- admin.php
+    geändert/edited: $lang['permissions_edit_success'] (lang/deutsch/admin.php only)
+- main.php
+    geändert/edited: $lang['activation_success'] (lang/deutsch/main.php only)
+
+
+=========================================================
+ChangeLog Version 1.7.6
+=========================================================
+- Fixed bugs reported at http://www.4homepages.de/forum/index.php?topic=20352.0
+- Added success message after posting a comment
+- Disabled download button in lightbox if there are no download permissions for all images in the lightbox
+- "Delete lightbox" link is now hidden if the lightbox is empty
+- Added possibility to sort by filenames in CP image search form
+- Added onchange javascript for "per page" dropdown
+
+Geänderte Dateien / Changed Files:
+---------------------------------------
+- admin/admin_global.php
+- admin/images.php
+- includes/constants.php
+- includes/functions.php
+- includes/page_header.php
+- detail.php
+- download.php
+- lightbox.php
+- postcard.php
+
+Geänderte Templates / Changed Templates:
+---------------------------------------
+- postcard_preview.html
+- lightbox.html
+- setperpage_dropdown_form.html
+
+Sprache / Language:
+---------------------------------------
+- main.php
+    translated iptc_* strings to german (lang/deutsch/main.php only)
+    new: $lang['comment_success']
+
+=========================================================
+ChangeLog Version 1.7.5
+=========================================================
+- Fixed issue with paging tags (http://www.4homepages.de/forum/index.php?topic=15220.0)
+- Fixed missing image name escaping in alt tags of thumbnails
+- Fixed redirect bug in admin/admin_global.php
+- Fixed problem with brackets in template vars
+- Updated URL for ICQ status image
+- Fixed sql query in download.php
+- Fixed logout problem where guests can delete other guests sessions
+- Fixed displaying non-active images on details.php
+- Improved download of big files
+- Bugfix: [1.7.4] BUG in userqroups.php & solution (http://www.4homepages.de/forum/index.php?topic=15550.0)
+- Bugfix: Bug im APC gefunden: "Bilder bearbeiten" in Vers. 1.7.4 (http://www.4homepages.de/forum/index.php?topic=17813.0)
+- Bugfix: 1.7.4 mit Umlauten in Kommentaren-/Suche - Comments-/Search (http://www.4homepages.de/forum/index.php?topic=18256.0)
+- Bugfix: [BUG] 1.7.4 Postcard Vorschau | Postcard Preview (http://www.4homepages.de/forum/index.php?topic=19925.0)
+- Bugfix: Cache Problem 1.7.4 | Index Seite Error 404 (http://www.4homepages.de/forum/index.php?topic=16886.0)
+
+Geänderte Dateien / Changed Files:
+---------------------------------------
+- admin/admin_global.php
+- admin/images.php
+- admin/usergroups.php
+- includes/cache_utils.php
+- includes/constants.php
+- includes/functions.php
+- includes/page_header.php
+- details.php
+- download.php
+- global.php
+- logout.php
+- member.php
+- postcard.php
+
+=========================================================
+ChangeLog Version 1.7.4
+=========================================================
+- Fixed bug with &nbsp; in settings
+- Fixed bug with wildcard search
+- Removed phpinfo() from page_footer.php
+- Switched radio buttons in search_form.html to set search_terms to OR by default
+- Changed "Control Panel" to "Admin Control Panel" to avoid confusions with user control panel
+- Removed browser detection for Opera in download.php
+- Added "checkall"-checkbox to assign permissions to all categories at once
+- Bugfix: [1.7 - 1.7.3] Security fix for SQL injection in global.php (http://www.4homepages.de/forum/index.php?topic=14604.0)
+- Bugfix: [1.7 - 1.7.3] Security fix for Cross-Site Scripting Vulnerability (http://www.4homepages.de/forum/index.php?topic=15042.0)
+- Bugfix: [1.7.3] RSS feed not valid (http://www.4homepages.de/forum/index.php?topic=13960.0)
+- Bugfix: [1.7 - 1.7.3] Wrong postcard ID shows a random image. (http://www.4homepages.de/forum/index.php?topic=13958.0)
+- Bugfix: [1.7 - 1.7.3] Thumbnailer in ACP doesnt work with single quote ( ' ) in filenames (http://www.4homepages.de/forum/index.php?topic=14417.0)
+- Bugfix [1.7.3] Kleiner Fehler in 1.7.3 (http://www.4homepages.de/forum/index.php?topic=14912.0)
+
+Geänderte Dateien / Changed Files:
+---------------------------------------
+- details.php
+- download.php
+- global.php
+- postcards.php
+- rss.php
+- search.php
+- includes/constants.php
+- includes/functions.php
+- includes/page_footer.php
+- includes/page_header.php
+- includes/search_utils.php
+- admin/settings.php
+- admin/thumbnailer.php
+- admin/usergroups.php
+
+Geänderte Templates / Changed Templates:
+---------------------------------------
+- search_form.html
+
+=========================================================
+ChangeLog Version 1.7.3
+=========================================================
+- New feature: RSS Feeds (see docs/RSS.english.txt or docs/RSS.deutsch.txt)
+- New feature: CAPTCHA protection of forms (see docs/CAPTCHA.english.txt or docs/CAPTCHA.deutsch.txt)
+- New feature: Protection against hotlinking.
+- Important security fixes (XSS and SQL injection issues)
+- Small fix for <br> in postcard messages
+- Small fix for parse errors when having <?xml in templates
+- Fixed fatal error when third parameter of imagepng is higher than 9 with PHP5
+- Fixed wrong sorting for next/prev image
+- Fixed sharing sessions for multiple installations under the same domain
+- Fixed bug for wrong bbcode url parsing
+- Added new tag {image_url} which points to the detail page of an image and can be used in templates (ie. thumbmail_bit.html)
+- Added EXIF support (similar to IPTC support, thanks to Dennis Häfner)
+- Added rel="nofollow" attribute in automatically parsed urls (http://googleblog.blogspot.com/2005/01/preventing-comment-spam.html)
+- Added support for {ifno ..} tags in addition to {ifnot ..}
+- Added anchor for direct access to comments in comment_bit.html (ie. for RSS)
+- Updated right-click-disable javascript in header.html to work with Firefox
+- Updated url for ICQ detail pages (http://www.icq.com/people/about_me.php?uin=12345)
+- Database errors are now shown to admins only. Users will get a general error message.
+- Parsing of header and footer are  moved into template class to allow assigning vars to them during script runtime
+- Bugfix: [1.7.2] Security fix for global.php (http://www.4homepages.de/forum/index.php?topic=12720.0)
+- Bugfix: [1.7.1 / 1.7.2] Security fix for SQL injection in session.php (http://www.4homepages.de/forum/index.php?topic=12807.0)
+- Bugfix: [1.7 - 1.7.2] Extra backslash in URLs ( http://example.com\/index.php ) (http://www.4homepages.de/forum/index.php?topic=12530.0)
+- Bugfix: [1.7.2] Fehler bei Registrierung, wenn User bereits existiert (http://www.4homepages.de/forum/index.php?topic=12534.0)
+- Bugfix: Weird problem when downloading from 4images (http://www.4homepages.de/forum/index.php?topic=12013.0)
+- Bugfix: http://www.4homepages.de/forum/index.php?topic=8186.0
+
+Neue Dateien / New Files:
+---------------------------------------
+- captcha.php
+- includes/captcha_utils.php
+- Folder: /captcha/
+- rss.php
+
+Geänderte Dateien / Changed Files:
+---------------------------------------
+- categories.php
+- details.php
+- download.php
+- global.php
+- lightbox.php
+- index.php
+- member.php
+- postcards.php
+- register.php
+- search.php
+- top.php
+- includes/cache_utils.php
+- includes/constants.php
+- includes/db_mysql.php
+- includes/functions.php
+- includes/image_utils.php
+- includes/page_header.php
+- includes/sessions.php
+- includes/template.php
+- admin/admin_functions.php
+- admin/admin_global.php
+- admin/categories.php
+- admin/checkimages.php
+- admin/comments.php
+- admin/email.php
+- admin/home.php
+- admin/images.php
+- admin/thumbnailer.php
+- admin/usergroups.php
+- admin/users.php
+- admin/validateimages.php
+
+Sprache / Language:
+---------------------------------------
+- main.php
+    new: $lang['captcha']
+    new: $lang['captcha_desc']
+    new: $lang['captcha_required']
+    new: $lang['exif_datetime']
+    new: $lang['exif_isospeed']
+    new: $lang['exif_exposure']
+    new: $lang['exif_aperture']
+    new: $lang['exif_focallen']
+
+Geänderte Templates / Changed Templates:
+---------------------------------------
+- comment_bit.html
+- comment_form.html
+- details.html
+- footer.html
+- header.html
+- member_profile.html
+- member_uploadform.html
+- postcard_preview.html
+- register_form.html
+
+Neue Templates / New Templates:
+---------------------------------------
+- exif_bit.html
+- rss.xml
+- rss_item.xml
+- images/rss.gif
+
+=========================================================
+ChangeLog Version 1.7.2
+=========================================================
+- Security fixes
+- Subcategories in Control Panel categories overview can be expanded/collapsed
+- Tags in templates are only parsed if a value is assigned.
+- Bugfix for warning "Undefined index:  Type  in..." (DB Backup)
+- Fixed duplicated subjects in emails
+- Updated function for ICQ status
+- BBCode list items are now closed by [/*] for easier regular expressions matching by RSS tools/scrapers/mods
+- Bugfix to avoid assigning a category as subcat to an existing subcategory
+- In Control Panel, a small javascript calendar is shown next to each date input field
+- Added phpinfo() page to Control Panel
+- Added Logout link to Control Panel
+- Improved zip file creation
+- Improved support for other charsets
+- {ifno ...}{endifno ...} are now possible in templates
+- Bugfix: query problems with MySQL 5.0.x (http://www.4homepages.de/forum/index.php?topic=10184.msg53697#msg53697)
+- Bugfix: [1.7.1] Small error in functions.php (http://www.4homepages.de/forum/index.php?topic=7031.0)
+- Bugfix: 1.7, 1.7.1: "Modify eCard" / "eCard bearbeiten" button (http://www.4homepages.de/forum/index.php?topic=6805.0)
+  -> Solution differs from forum post
+- Bugfix: 1.7.1: {if blah} {endif blah} left in templates (http://www.4homepages.de/forum/index.php?topic=6806.0)
+- Bugfix: [FIX v1.7 / v1.7.1] Sending a postcard does not check image/cat view permissions (http://www.4homepages.de/forum/index.php?topic=6715.0)
+- Bugfix: [FIX v1.7 / v1.7.1] Media directory size shows negative value (ACP) (http://www.4homepages.de/forum/index.php?topic=6714.0)
+  -> Solution differs from forum post
+- Bugfix: [FIX v1.7 / v1.7.1] Blank page when trying create thumbnails. (http://www.4homepages.de/forum/index.php?topic=6664.0)
+  -> Solution differs from forum post (replacement function in functions.php)
+- Bugfix: [1.7.1] Conditional tags inside other conditional tags + {ifno ...}{endifno ...} (http://www.4homepages.de/forum/index.php?topic=7493.0)
+  -> Solution differs from forum post
+- Bugfix: [1.7 / 1.7.1] Changes in user permissions might update a usergroup the user in (http://www.4homepages.de/forum/index.php?topic=10961.0)
+- Bugfix: [1.7 / 1.7.1] GET requests override POST requests (http://www.4homepages.de/forum/index.php?topic=10336.0)
+- Bugfix: [1.7 / 1.7.1] "eCard" sends random image (http://www.4homepages.de/forum/index.php?topic=10649.0)
+- Bugfix: [1.7 / 1.7.1] Download images that not allowed to be viewed (http://www.4homepages.de/forum/index.php?topic=10404.0)
+- Bugfix: [1.7 / 1.7.1] Admin CP>Settings: anchor text links do not work (http://www.4homepages.de/forum/index.php?topic=8202.0)
+- Bugfix: [1.7 / 1.7.1] Deleting an image does not remove it from lightboxes (http://www.4homepages.de/forum/index.php?topic=6809.0)
+
+Neue Dateien / New Files:
+---------------------------------------
+- admin/calendar.js
+- admin/browserSniffer.js
+- admin/images/arrow_back.gif
+- admin/images/minus.gif
+- admin/images/plus.gif
+- admin/phpinfo.php
+
+Geänderte Dateien / Changed Files:
+---------------------------------------
+- categories.php
+- details.php
+- download.php
+- global.php
+- index.php
+- lightbox.php
+- login.php
+- logout.php
+- member.php
+- postcards.php
+- register.php
+- search.php
+- top.php
+- includes/auth.php
+- includes/db_utils.php
+- includes/email.php
+- includes/functions.php
+- includes/image_utils.php
+- includes/search_utils.php
+- includes/template.php
+- includes/zip.php
+- admin/admin_functions.php
+- admin/admin_global.php
+- admin/backup.php
+- admin/categories.php
+- admin/cpstyle.css
+- admin/comments.php
+- admin/images.php
+- admin/index.php
+- admin/settings.php
+- admin/templates.php
+- admin/usergroups.php
+- admin/users.php
+- admin/validateimages.php
+
+Geänderte Templates / Changed Templates:
+---------------------------------------
+- postcard_create.html
+- postcard_preview.html
+- bbcode.html
+
+=========================================================
+ChangeLog Version 1.7.1
+=========================================================
+- New caching system (Read docs/Cache.english.txt for further informations)
+- Changed session handling to PHP native sessions
+- The database table 4images_sessionvars is not longer in use. Its still referenced
+  in the database dump, admin/backup.php and includes/contants.php for backward compatibility
+  with integrations (phpBB, vBulletin)
+- Random category image is now disabled by default (define('SHOW_RANDOM_CAT_IMAGE', 0);)
+- PHP5 compatibility
+- Improved GD2 detection
+- Improvements on functions in includes/functions.php (i.e. replaced preg_match() with faster str*() functions)
+- Replaced preg_match() with faster strpos() in class method Session::url() (includes/sessions.php)
+- Change input type to "password" for admin password in installation screen
+- Moved registration of {lang_user_online} and {lang_user_online_detail} from includes/page_header.php to includes/sessions.php
+- Added display of the category ID in the overview in Control Panel
+- Splitted query for $cat_cache due to performance reasons (global.php)
+- SMTP patch for includes/email.php. Thanks to blueshift (http://www.4homepages.de/forum/viewtopic.php?t=15413)
+- Bugfix: Deleting of not activated users (http://www.4homepages.de/forum/viewtopic.php?t=9508)
+- Bugfix: Database backup failing (http://www.4homepages.de/forum/viewtopic.php?t=13487)
+- Bugfix: Back btn fails in Admin CP Edit Users/Images (http://www.4homepages.de/forum/viewtopic.php?t=8452)
+- Bugfix: Subcategories columns dont show proportionaly? (http://www.4homepages.de/forum/viewtopic.php?t=3160)
+- Bugfix: ACP - cant find images uploaded by not exist users (http://www.4homepages.de/forum/viewtopic.php?t=9585)
+- Bugfix: Additional fields not being autofilled in "edit image" (http://www.4homepages.de/forum/viewtopic.php?t=12326)
+- Bugfix: Cant display \\# (i.e \\2 or \\4 or \\9) (http://www.4homepages.de/forum/viewtopic.php?t=6270)
+- Bugfix: Changed tag {remote_file} to {remote_media_file} in templates/default/member_uploadform.html
+- Bugfix: Cant upload images when not cat_id specifyed (http://www.4homepages.de/forum/viewtopic.php?t=5935)
+- Bugfix: details.php with mode=lightbox next/prev maybe wrong (http://www.4homepages.de/forum/viewtopic.php?t=7338)
+- Bugfix: Error msg when update/delete user with ' in his name (http://www.4homepages.de/forum/viewtopic.php?t=8248)
+- Bugfix: Image dl counter doesnt update when dl from lightbox (http://www.4homepages.de/forum/viewtopic.php?t=7850)
+- Bugfix: Quotes in category names (http://www.4homepages.de/forum/viewtopic.php?t=13749)
+
+Neue Dateien / New Files:
+---------------------------------------
+- includes/cache_utils.php
+
+Geänderte Dateien / Changed Files:
+---------------------------------------
+- categories.php
+- details.php
+- download.php
+- global.php
+- index.php
+- install.php
+- member.php
+- register.php
+- sessions.php
+- top.php
+- includes/constants.php
+- includes/email.php
+- includes/functions.php
+- includes/image_utils.php
+- includes/page_header.php
+- includes/page_footer.php
+- includes/template.php
+- includes/upload.php
+- admin/backup.php
+- admin/categories.php
+- admin/images.php
+- admin/users.php
+
+Geänderte Templates / Changed Templates:
+---------------------------------------
+- member_uploadform.html
+
+
+=========================================================
+ChangeLog Version 1.7
+=========================================================
+- Auto-Login gilt auch für Control Panel (ADMIN_SAFE_LOGIN auf 1 setzen in constants.php macht diese -nderung rückgängig)
+- Stylesheet für Clickstream
+- beim Hinzufügen/Bearbeiten von Bildern User wählbar
+- Statistiken zurücksetzen für einzelne Kategorien
+- System-Buttons (Leuchtkasten, Download etc.) können jetzt sprachabhängig angezeigt werden.
+  Einen neue Ordner erstellen ("templates/<template_pack>/images_<language_name>") und Bilder darin plazieren.
+  Darüberhinaus kann nun das Tag {template_lang_image_url} in den Templates verwendet werden welches den Pfad
+  zu diesem Ordner sprachabhängig erzeugt.
+- Bilder freischalten: Bilddateien werden nun beim vom Server gelöscht wenn "löschen" gewählt wurde
+- Nächstes/vorheriges Bild auf der Detailseite werde nun abhängig davon abgezeigt woher der User kommt
+  (Kategorien, Leuchtkasten, Suche)
+- Auto-Thumbaniler und Auto-Resizer erlauben nun Bildverkleinerung proportional oder mit fester Höhe oder Breite.
+- Es gibt jetzt drei Optionen für die Userfreischaltung: Keine, per Email, durch den Admin
+- Es wird nun auch eine Email mit den Zugangsdaten an neu registrierte User gesendet,
+  wenn Account Aktivierung auf "Keine" steht.
+- Charset und direction können nun in den Sprachdateien für einzelne Sprachen festgelegt werden.
+- User können nun ihre eigenen Bilder un zugehörigen Kommentare bearbeiten/löschen.
+  Jede Funktion kann einzeln in den Einstellungen deaktiviert werden.
+- Es könne nun mehrere Bilder/Kommentare/User auf einmal gelöscht werden.
+
+
+Geänderte Dateien / Changes files:
+---------------------------------------
+- admin/admin_functions.php
+- admin/admin_global.php
+- admin/backup.php
+- admin/categories.php
+- admin/checkimages.php
+- admin/comments.php
+- admin/email.php
+- admin/home.php
+- admin/images.php
+- admin/index.php
+- admin/resizer.php
+- admin/settings.php
+- admin/stats.php
+- admin/templates.php
+- admin/thumbnailer.php
+- admin/usergroups.php
+- admin/users.php
+- admin/validateimages.php
+- includes/auth.php
+- includes/constants.php
+- includes/db_utils.php
+- includes/email.php
+- includes/functions.php
+- includes/image_utils.php
+- inlcudes/page_footer.php
+- inlcudes/page_header.php
+- includes/search_utils.php
+- includes/sessions.php
+- includes/template.php
+- includes/upload.php
+- includes/upload_definitions.php
+- includes/zip.php
+- categories.php
+- details.php
+- download.php
+- global.php
+- index.php
+- install.php
+- lightbox.php
+- login.php
+- member.php
+- postcards.php
+- register.php
+- search.php
+- top.php
+
+Sprache / Language:
+---------------------------------------
+main.php
+  neu: $lang['charset']
+  neu: $lang['direction']
+  gelöscht: $lang['invalid_username'] und $lang['invalid_passwort']
+  neu: $lang['invalid_login']
+  neu: $lang['image_edit']
+  neu: $lang['image_edit_success']
+  neu: $lang['image_edit_error']
+  neu: $lang['image_delete']
+  neu: $lang['image_delete_success']
+  neu: $lang['image_delete_error']
+  neu: $lang['image_delete_confirm']
+  neu: $lang['comment_edit']
+  neu: $lang['comment_edit_success']
+  neu: $lang['comment_edit_error']
+  neu: $lang['comment_delete_success']
+  neu: $lang['comment_delete_error']
+  neu: $lang['comment_delete_confirm']
+  geändert: $lang['register_success']
+  neu: $lang['register_success_none']
+  neu: $lang['register_success_admin']
+
+admin.php
+  geändert: $lang['resize_dimension_desc']
+  geändert: $lang['convert_thumbnail_dimension']
+  neu: $lang['resize_proportions_desc']
+  neu: $lang['resize_proportionally']
+  neu: $lang['resize_fixed_width']
+  neu: $lang['resize_fixed_height']
+  neu: $setting['user_edit_image']
+  neu: $setting['user_delete_image']
+  neu: $setting['user_edit_comments']
+  neu: $setting['user_delete_comments']
+  geändert: $setting['auto_thumbnail_dimension']
+  neu: $setting['auto_thumbnail_resize_type']
+  neu: $auto_thumbnail_resize_type_optionlist
+  geändert: $setting['account_activation']
+  neu: $account_activation_optionlist
+
+Email templates:
+  neu: register_activation_none.html
+  neu: activation_success.html
+  neu: admin_activation.html
+  neu: register_activation_admin.html
+  geändert: upload_notify.html ({validation_url} hinzugefügt)
+
+Templates:
+---------------------------------------
+- style.css (.clickstream hinzugefügt)
+- header.html
+  {charset} und {direction} hinzugefügt
+- comment_bit.html
+    bild tags angepasst
+- neu: member_editimage.html
+- neu: member_deleteimage.html
+- neu: member_editcomment.html
+- neu: member_deletecomment.html
+
+
+=========================================================
+ChangeLog Version 1.6.1
+=========================================================
+- Bugs in search.php gefixt
+  http://www.4homepages.de/forum/viewtopic.php?t=839
+  http://www.4homepages.de/forum/viewtopic.php?t=840
+- Bugfix bei der Suche mit "AND"
+- Bug beim Upload von mehreren verschiedenen Dateien über das CP gefixt
+- Sprachausgabe gefixt wenn Account-Aktivierung abgeschaltet ist
+- Bildbeschreibung erlaubt wieder HTML-Code
+- Bugfix bei der _berprüfung der Dateigröîe bei Bilderupload
+- Bugfix beim Auslesen der Bildgröîe und der IPTC-Tags
+- Bugfix beim Parsen der Email-Templates
+- Bugfix beim Verkleinern von Thumbnails
+- Bugfix bei "Check new images" bei Hinzufügen aus dem media-Verzeichnis
+
+  Geänderte Dateien / Changed files:
+  ---------------------------------------
+  - includes/functions.php
+  - includes/upload.php
+  - includes/email.php
+  - includes/db_utils.php
+  - includes/constants.php
+  - search.php
+  - member.php
+  - admin/admin_global.php
+  - admin/admin_functions.php
+  - admin/images.php
+  - admin/resizer.php
+
+  Sprache /Language:
+  ---------------------------------------
+  - main.php
+      gesplittet: $lang['edit_profile_msg'] zu $lang['edit_profile_msg'] und $lang['edit_profile_email_msg']
+
+
+=========================================================
+ChangeLog Version 1.6
+=========================================================
+- Bugs beim Download von Medien mit aktiviertem Safe Mode gefixt
+- User können wählen ob Sie Emails von den Administratoren empfangen wollen
+- Administratoren können nun einstellen, ob User nach der Registrierung
+  Ihren Account per Email aktivieren müssen
+- In der Suchmaske kann jetzt auch nach Usernamen gesucht werden
+- Individuelle Befugnisse für jeden User
+- Leichtes Hinzufügen von neuen User-Feldern (siehe "includes/db_field_definitions.php")
+- URL Felder bei Bildern und Download URL akzeptieren relative Pfade
+- Automatische Thumbnailerstellung bei User-Uploads
+- Optimierung bezüglich des Suchindex
+
+  Geänderte Dateien / Changed files:
+  ---------------------------------------
+  - includes/constants.php
+  - includes/db_field_definitions.php
+  - includes/db_mysql.php
+  - includes/db_utils.php
+  - includes/email.php
+  - includes/functions.php
+  - includes/search_utils.php
+  - includes/sessions.php
+  - includes/template.php
+  - includes/upload.php
+  - includes/upload_definitions.php
+  - download.php
+  - global.php
+  - lightbox.php
+  - login.php
+  - member.php
+  - postcards.php
+  - register.php
+  - search.php
+  - admin/admin_functions.php
+  - admin/admin_global.php
+  - admin/backup.php
+  - admin/categories.php
+  - admin/checkimages.php
+  - admin/email.php
+  - admin/home.php
+  - admin/images.php
+  - admin/resizer.php
+  - admin/settings.php
+  - admin/thumbnailer.php
+  - admin/usergroups.php
+  - admin/users.php
+  - admin/validateimages.php
+
+  Neue Dateien / New files:
+  ---------------------------------------
+  - includes/image_utils.php
+
+  SPrache / Languages:
+  ---------------------------------------
+  - admin.php
+      neu: $setting['account_activation']
+      neu: $setting['auto_thumbnail']
+      neu: $setting['auto_thumbnail_dimension']
+      neu: $setting['auto_thumbnail_quality']
+      geändert: $setting['im_convert_path'] zu $setting['convert_tool_path']
+
+  - main.php
+      neu: $lang['allow_admin_emails']
+      neu: $lang['search_by_username']
+      zusammengefasst: $lang['keyword'] und $lang['search_desc'] zu $lang['search_by_keyword']
+
+  Templates:
+  ---------------------------------------
+  - search_form.html
+      Name der "search_field" Radios geändert
+      Neues Textfeld für die Suche nach Usernamen
+  - member_editprofile.html
+      Zeile hinzugefügt für die Einstellung ob der User Emails vom Admin erhalten will
+  - member_profile.html
+      Schreibfehler: tarbet zu target
+
+
+=========================================================
+ChangeLog Version 1.5
+=========================================================
+- Geschwindigkeits-Optimierung
+- Poskarten-Modul
+- Usergruppenverwaltung mit detailierter Rechtevergabe für jede Kategorie
+- Upload durch User möglich
+- Parsen von IPTC-Tags (http://www.iptc.org)
+- vereinfachte Integration von neuen Datenbankfelder für Bilder
+  (siehe "inludes/db_field_definitions.php" für nähere Informationen)
+- Freies Anordnen der Kategorie-Reihenfolge
+- Statt Upload von Bilder können URLs als Quelle angegeben werden
+- Optionale Angabe einer URL für den Download-Link (z.B. zur Verlinkung auf Websites)
+- Medien können optional gezippt heruntergeladen werden
+- Alle im Leuchtkasten befindlichen Medien können in einem .zip heruntergeladen werden
+
+  Geänderte Templates / Changed Templates:
+  ---------------------------------------
+  - category_bit.html
+  - details.php
+  - header.html
+  - home.html
+  - lightbox.html
+  - member.html
+  - member_profile.html
+  - rate_form.html
+  - register.html
+  - search.html
+  - thumbnail_bit.html
+
+  Neue Templates / New Templates:
+  ---------------------------------------
+  - iptc_bit.html
+  - member_upload_form.html
+  - postcard_create.html
+  - postcard_preview.html
+  - postcard_send.html
+  - top.html
+
+
+=========================================================
+ChangeLog Version 1.0
+=========================================================
+- Bug bezüglich Erkennung von Dateiendungen in Groîbuchstaben
+  gefixt.
+- In der Detailansicht der Bilder kann nun bei den Links zum
+  nächsten oder vorherigen Bild zusätzlich zum Link die Bilddatei
+  angezeigt werden.
+- Bug bezüglich doppelter Session Variablen in der Datenbank gefixt
+- Anzeige der neue Bilder erfolgt nun über die Suchfunktion.
+  Datei new.php und entsprechendes Template new.html wurden entfernt.
+- Bilddateien werden bei fehlgeschlagener Bildverkleinerung
+  nicht mehr gelöscht.
+
+
+=========================================================
+ChangeLog Version 1.0 RC-2
+=========================================================
+- Language File und Template Verwaltung umgestellt.
+  Keine Sprachausgabe mehr in den Templates.
+- Englisches Sprach-File hinzugefügt.
+- Eigene Templates für JPG, GIF und PNG
+- Suche komplett umgestellt. Suche erfolgt nun über einen
+  Index und nicht mehr über die komplette Datenbank.
+- Kategorieverwaltung umgestellt. Es wird nun ein Ordner für jede
+  Kategorie erstellt (Name ist identisch mit der ID der Kategorie).
+  Grund: Linux hat einen erhöhten Verwaltungswaufwand bei Ordner
+  mit mehr als 1024 Dateien.
+- Auf manchen Servern ging die Weiterleitung nach dem Einloggen
+  ins Control Panel ins Leere. Dieser Bug ist (hoffentlich) gefixt.
+- Bugfix bezüglich MimeType-Erkennung bei Opera gefixt.
+
+=========================================================
+ChangeLog Version 1.0 RC-1
+=========================================================
+First release

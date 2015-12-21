@@ -1,0 +1,35 @@
+<form name="commentform" action="{url_member}" method="post" onsubmit="uploadbutton.disabled=true;">
+  <input type="hidden" name="action" value="updatecomment" />
+  <input type="hidden" name="comment_id" value="{comment_id}" />
+  <table width="100%" border="0" cellspacing="0" cellpadding="1" align="center">
+    <tr> 
+      <td valign="top" class="head1"> 
+        <table width="100%" border="0" cellpadding="4" cellspacing="0">
+          <tr> 
+            <td colspan="2" valign="top" class="head1">{lang_edit_comment}</td>
+          </tr>
+          <tr> 
+            <td class="row2"><b>{lang_headline}</b></td>
+            <td class="row2"> 
+              <input type="text" name="comment_headline" size="30" value="{comment_headline}" class="commentinput" />
+            </td>
+          </tr>
+          <tr> 
+            <td class="row1" valign="top"><b>{lang_comment}</b></td>
+            <td class="row1"> 
+              <textarea name="comment_text" cols="30" rows="10" wrap="virtual" class="commenttextarea">{comment_text}</textarea>
+            </td>
+          </tr>
+          <tr> 
+            <td class="row2" valign="top">&nbsp;</td>
+            <td class="row2">{bbcode}</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <p align="center"> 
+    <input type="submit" name="uploadbutton" value="{lang_submit}" class="button" />
+    <input type="reset" value="{lang_reset}" class="button" />
+  </p>
+</form>

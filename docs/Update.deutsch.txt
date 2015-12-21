@@ -1,0 +1,108 @@
+  ==========================================================
+                      4images Update
+  ==========================================================
+
+  1. Machen Sie ein Backup Ihrer Daten!
+
+  2. Machen Sie zuerst eine Kopie von der existierenden "config.php" (benennen Sie die
+     Datei um oder kopieren Sie diese an eine andere Stelle auf Ihrem Webserver).
+
+  3. Entpacken Sie das .zip Archiv und laden Sie ALLE Dateien in das Verzeichnis
+     Ihrer bestehenden Version. Ersetzen sie alle existierenden Dateien.
+
+  4. Löschen Sie nun die neue "config.php" und ersetzen Sie diese mit der existierenden
+     Kopie von der Sie zuvor ein Backup erstellt haben.
+
+  5. Wenn Sie von einer Version älter als 1.5 updaten oder die Verzeichnisse noch nicht existieren,
+     erstellen Sie im Ordner "data" zwei neue Verzeichnisse "tmp_media" und "tmp_thumbnails".
+     Setzen die angegebenen Zugriffsrechte für diese Verzeichnisse:
+
+     chmod 777 (drwxrwxrwx) : data/tmp_media
+     chmod 777 (drwxrwxrwx) : data/tmp_thumbnails
+
+  6. Rufen Sie die folgenden Update-Scripts nacheinander in Ihrem Browser auf und folgen
+     Sie den Hinweisen.
+
+       Update RC-1 -> 1.7.13
+       ...............................
+       1. update_RC-1_to_RC-2.php
+       2. update_1.0_to_1.5.php
+       3. update_1.5_to_1.6.php
+       4. update_1.6.1_to_1.7.php
+
+       Update RC-2 -> 1.7.13
+       ...............................
+       1. update_1.0_to_1.5.php
+       2. update_1.5_to_1.6.php
+       3. update_1.6.1_to_1.7.php
+
+       Update 1.0 -> 1.7.13
+       ...............................
+       1. update_1.0_to_1.5.php
+       2. update_1.5_to_1.6.php
+       3. update_1.6.1_to_1.7.php
+
+       Update 1.5 -> 1.7.13
+       ...............................
+       1. update_1.5_to_1.6.php
+       2. update_1.6.1_to_1.7.php
+
+       Update 1.6 -> 1.7.13
+       ...............................
+       1. update_1.6.1_to_1.7.php
+
+       Update 1.6.1 -> 1.7.13
+       ...............................
+       1. update_1.6.1_to_1.7.php
+
+       Update 1.7 -> 1.7.13
+       ...............................
+       - Es wird kein Update-Script benötigt
+
+       Update 1.7.1 -> 1.7.13
+       ...............................
+       - Es wird kein Update-Script benötigt
+
+       Update 1.7.2 -> 1.7.13
+       ...............................
+       - Es wird kein Update-Script benötigt
+
+       Update 1.7.3 -> 1.7.13
+       ...............................
+       - Es wird kein Update-Script benötigt
+
+       Update 1.7.4 -> 1.7.13
+       ...............................
+       - Es wird kein Update-Script benötigt
+
+       Update 1.7.5 -> 1.7.13
+       ...............................
+       - Es wird kein Update-Script benötigt
+       
+       Update 1.7.6 -> 1.7.13
+       ...............................
+       - Es wird kein Update-Script benötigt       
+
+       Update 1.7.7 -> 1.7.13
+       ...............................
+       - Es wird kein Update-Script benötigt
+
+       Update 1.7.8 -> 1.7.13
+       ...............................
+       - Es wird kein Update-Script benötigt
+       
+       Update 1.7.9 -> 1.7.13
+       ...............................
+       - Es wird kein Update-Script benötigt       
+       
+       Update 1.7.10 -> 1.7.13
+       ...............................
+       - Es wird kein Update-Script benötigt       
+
+  7. Löschen Sie die Datei "install.php" und alle "update_*_to_*.php" von Ihrem Server.
+     Zusäztlich können Sie die Dateien im Ordner "data/database/default" und den
+     Ordner "docs" löschen.
+     
+  8. Seit Version 1.7.8 werden Keywords in einem anderen Format gespeichert. Wenn Sie 
+     von einer Version älter als 1.7.8 updaten, führen Sie bitte "Migrate Keywords" im
+     Admin Control Panel aus um die Keywords in das neue Format zu konvertieren.

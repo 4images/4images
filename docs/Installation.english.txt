@@ -1,0 +1,91 @@
+  ==========================================================
+                  4images Installation
+  ==========================================================
+
+  ----------------------------------------------------------
+  System Requirements:
+  ----------------------------------------------------------
+  - A webserver or web hosting account (Linux/Apache recommended).
+  - PHP version 4.0.5 or higher (we recommend to use always the latest stable version).
+    To ensure that 4images is functioning properly, "safe_mode" should be disabled
+    ("safe_mode = off" in your php.ini).
+  - MySQL version 3.23 or higher (we recommend MySQL version 3.23.33)
+
+  Optional:
+  - In order to make thumbnails and reduced size images you need PHP compiled with
+    the support for the GD library (http://www.boutell.com/gd) or the ImageMagick
+    "convert" utility (http://www.imagemagick.org) or NetPBM (http://netpbm.sourceforge.net).
+
+
+  ----------------------------------------------------------
+  Installation:
+  ----------------------------------------------------------
+  (For updating from earlier versions see Update.english.txt)
+
+  1. Decompress the .zip archive to a local directory on your system and FTP all
+     the files it contains (being sure to retain the directory structure) to your host.
+     Once all the files have been uploaded to your site you should point your browser
+     at this location.
+
+  2. Now, the Install-Screen comes up. Fill out the required fields and press
+     "Start Installation".
+
+  3. The installation script will create and populate all the necessary tables in
+     your database and some basics settings.
+
+  4. The Install-Script will then attempt to write to the config.php file which will
+     contain the basic configuration data . If the installer cannot write config.php
+     directly you will be given the option of downloading the file. You should then
+     re-upload the file to your server, overwriting the existing config.php in the
+     process.
+
+  5. Set permissions for the following directories:
+
+     chmod 777 (drwxrwxrwx) : data
+     chmod 777 (drwxrwxrwx) : data/database
+     chmod 777 (drwxrwxrwx) : data/media
+     chmod 777 (drwxrwxrwx) : data/thumbnails
+     chmod 777 (drwxrwxrwx) : data/tmp_media
+     chmod 777 (drwxrwxrwx) : data/tmp_thumbnails
+     chmod 777 (drwxrwxrwx) : templates
+     chmod 777 (drwxrwxrwx) : templates/default
+     chmod 777 (drwxrwxrwx) : templates/default/media
+     chmod 777 (drwxrwxrwx) : templates/default_960px
+     chmod 777 (drwxrwxrwx) : templates/default_960px/media
+     chmod 777 (drwxrwxrwx) : templates/default_full
+     chmod 777 (drwxrwxrwx) : templates/default_full/media          
+
+     Set permissions for the following files:
+
+     chmod 666 (-rw-rw-rw-) : all files in the directory "templates/default"
+     chmod 666 (-rw-rw-rw-) : all files in the directory "templates/default/media"
+     chmod 666 (-rw-rw-rw-) : all files in the directory "templates/default_960px"
+     chmod 666 (-rw-rw-rw-) : all files in the directory "templates/default_960px/media"
+     chmod 666 (-rw-rw-rw-) : all files in the directory "templates/default_full"
+     chmod 666 (-rw-rw-rw-) : all files in the directory "templates/default_full/media"          
+
+     You can do this with FTP programs such as Filezilla, CuteFTP or WS_FTP.
+
+  6. You must ensure you remove "install.php" and any "update_*_to_*.php" files.
+     Additionally you may delete all files in "data/database/default" and
+     the "docs" directory if you wish.
+
+  7. At this point your basic installation is complete. Please be sure to check the
+     General Configuration details and make any required changes in your Control Panel.
+
+  8. Since version 1.7.1, 4images has an internal caching system.
+     Please read docs/Cache.english.txt for further informations.
+     
+     Since version 1.7.9, 4images includes an automatic protection against Cross-Site
+     Request Forgery (CSRF) attacks.
+     Please read docs/CSRF.english.txt for further informations.
+     
+     Since version 1.7.10 it is possible to define how the fields should be index
+     for the search. The settings can be changed in includes/search_utils.php
+     There are 3 types:
+
+     "fulltext": Content will be split up by whitespaces. Words will be normalized and cleaned up.
+     "keywords": Content will be split up by comma. Words will NOT be normalized and cleaned up.
+     "phrase":   Content will NOT be split up. Words will NOT be normalized and cleaned up.
+
+     The values can also be set in the config.php.

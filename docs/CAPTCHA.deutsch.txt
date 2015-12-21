@@ -1,0 +1,125 @@
+  ==========================================================
+                        CAPTCHA
+  ==========================================================
+
+  Seit Version 1.7.3 verfügt 4images über die Möglichkeit,
+  Formulare per CAPTCHA zu schützen.
+  Allgemeine Informationen zu CAPTCHAS finden Sie hier:
+  http://de.wikipedia.org/wiki/Captcha
+
+  Folgende Formulare lassen sich per CAPTCHA schützen:
+    - Registrierung
+    - E-Cards
+    - Kommentare
+    - Bild-Upload
+    
+  User die als Administratoren eingeloggt sind, brauchen
+  die CAPTCHA Code nicht eingeben.
+
+  Im Ordner "captcha" befinden sie die Basis-Dateien die
+  zur Generierung der CAPTCHA Bilder verwendet werden.
+
+  Der Ordner "captcha/backgrounds" enthält Bild-Vorlagen
+  für den Hintergrund. Es wird zufallsmäßig ein Bild aus
+  diesem Ordner gewählt. Neue Hintergrund-Bilder können
+  einfach diesem Ordner hinzugefügt werden und werden
+  sofort verwendet.
+
+  Der Ordner "captcha/fonts" enthält Schriftarten die für
+  den dargestellten Text verwendet werden. Es wird
+  zufallsmäßig eine Schriftart aus diesem Ordner gewählt.
+  Neue Schriftarten können einfach diesem Ordner hinzugefügt
+  werden und werden sofort verwendet.
+
+  Die Datei "captcha/wordlist.txt" enthält eine Liste mit
+  Worten welche an Stelle von zufällig generierten
+  Zeichenfolgen verwendet werden können. Diese Funktion wird
+  über die Konfigurationseinstellung $captcha_wordfile
+  aktiviert.
+
+  ----------------------------------------------------------
+  Das CAPTCHA System aktivieren:
+  ----------------------------------------------------------
+
+  Das CAPTCHA System ist standardmäßig aktiviert.
+
+  -- Erweiterte Kontrolle des CAPTCHA Systems ------------
+
+  Sie können das CAPTCHA System in der config.php mit den 
+  folgende Anweisungen konfigurieren:
+
+  - $captcha_enable = 1;
+      Ein Wert von 1 aktiviert das CAPTCHA System,
+      0 deaktiviert es.
+      Der Standard-Wert ist 1.
+
+  - $captcha_enable_comments = 1;
+      Ein Wert von 1 aktiviert das CAPTCHA System für das
+      Kommentar-Formular, 0 deaktiviert es.
+      Der Standard-Wert ist 1.
+
+  - $captcha_enable_upload = 1;
+      Ein Wert von 1 aktiviert das CAPTCHA System für das
+      Upload-Formular, 0 deaktiviert es.
+      Der Standard-Wert ist 1.
+
+  - $captcha_enable_registration = 1;
+      Ein Wert von 1 aktiviert das CAPTCHA System für das
+      Registrierungs-Formular, 0 deaktiviert es.
+      Der Standard-Wert ist 1.
+
+  - $captcha_enable_postcards = 1;
+      Ein Wert von 1 aktiviert das CAPTCHA System für das
+      E-Cards-Formular, 0 deaktiviert es.
+      Der Standard-Wert ist 1.
+
+  - $captcha_path = './captcha';
+      Der Pfad zum Ordern in welchem die CAPTCHA-Dateien
+      (backgrounds, fonts) liegen.
+
+  - $captcha_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      Eine Liste mit Zeichen und/oder Ziffern die für
+      die zufällig generierten Zeichenfolgen verwendet
+      werden.
+      Der Standard-Wert ist "abcdefghijklmnopqrstuvwxyz123456789".
+
+  - $captcha_length = 6;
+      Anzahl der Zeichen und/oder Ziffern der zufällig
+      generierten Zeichenfolgen.
+      Der Standard-Wert ist 6.
+
+  - $captcha_wordfile = 0;
+      Ist diese Anweisung auf 1 gesetzt, wird anstatt einer
+      generierten Zeichenfolge ein zufällig ausgewähltes Wort
+      aus der Datei "captcha/words.txt" verwendet.
+      Der Standard-Wert ist 0.
+
+  - $captcha_width = 200;
+      Breite des angezeigte CAPTCHA Bilder in Pixel.
+      Der Standard-Wert ist 200.
+
+  - $captcha_height = 70;
+      Höhe des angezeigte CAPTCHA Bilder in Pixel.
+      Der Standard-Wert ist 70.
+
+  - $captcha_text_color = "#000000";
+      Farbangabe (Hex) des angezeigte CAPTCHA Textes.
+      Der Standard-Wert ist "#000000" (schwarz).
+
+  - $captcha_text_size = 25;
+      Schriftgröße des angezeigten CAPTCHA Textes.
+      Der Standard-Wert ist 25.
+
+  - $captcha_text_transparency = 65;
+      Transparenz-Wert für den CAPTCHA Text.
+      Der Standard-Wert ist 65.
+
+  - $captcha_filter_text = 1;
+      Ein Wert von 1 bewirkt einen Filterung des angezeigten
+      CAPTCHA Textes ("Verschleierung").
+      Der Standard-Wert ist 1.
+
+  - $captcha_filter_bg = 1;
+      Ein Wert von 1 bewirkt einen Filterung des Hintergrund
+      des CAPTCHA Bildes ("Verschleierung").
+      Der Standard-Wert ist 1.

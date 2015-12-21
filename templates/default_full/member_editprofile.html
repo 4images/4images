@@ -1,0 +1,95 @@
+{lang_edit_profile_msg}<br />
+<br><form method="post" action="{url_member}">
+  <table width="100%" border="0" cellspacing="0" cellpadding="1">
+    <tr> 
+      <td valign="top" class="head1"> 
+        <table width="100%" border="0" cellpadding="4" cellspacing="0">
+          <tr> 
+            <td colspan="2" valign="top" class="head1">{lang_profile_of} {user_name}</td>
+          </tr>
+          <tr> 
+            <td class="row1"><b>{lang_email}</b></td>
+            <td class="row1"><input type="text" name="user_email"  size="30" value="{user_email}" class="input" /></td>
+          </tr>
+          <tr> 
+            <td class="row2"><b>{lang_email_confirm}</b></td>
+            <td class="row2"><input type="text" name="user_email2"  size="30" value="{user_email2}" class="input" /></td>
+          </tr>
+          <tr> 
+            <td class="row1"><b>{lang_show_email}</b></td>
+            <td class="row1"> 
+              <input type="radio" name="user_showemail" value="1" {user_showemail_yes} />
+              {lang_yes}&nbsp;&nbsp;&nbsp; 
+              <input type="radio" name="user_showemail" value="0" {user_showemail_no} />
+              {lang_no}</td>
+          </tr>
+		  <tr> 
+            <td class="row2"><b>{lang_allow_emails}</b></td>
+            <td class="row2"> 
+              <input type="radio" name="user_allowemails" value="1" {user_allowemails_yes} />
+              {lang_yes}&nbsp;&nbsp;&nbsp; 
+              <input type="radio" name="user_allowemails" value="0" {user_allowemails_no} />
+              {lang_no}
+			</td>
+          </tr>
+          <tr> 
+            <td class="row1"><b>{lang_invisible}</b></td>
+            <td class="row1"> 
+              <input type="radio" name="user_invisible" value="1" {user_invisible_yes} />
+              {lang_yes}&nbsp;&nbsp;&nbsp; 
+              <input type="radio" name="user_invisible" value="0" {user_invisible_no} />
+              {lang_no}
+			</td>
+          </tr>
+          <tr> 
+            <td colspan="2" class="head1">{lang_optional_infos}</td>
+          </tr>
+          <tr> 
+            <td class="row1"><b>{lang_homepage}</b></td>
+            <td class="row1"><input type="text" name="user_homepage"  size="30" value="{user_homepage}" class="input" /></td>
+          </tr>
+          <tr> 
+            <td class="row2"><b>{lang_icq}</b></td>
+            <td class="row2"><input type="text" name="user_icq"  size="30" value="{user_icq}" class="input" /></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <input type="hidden" name="action" value="updateprofile" />
+  <p align="center"> 
+    <input type="submit" value="{lang_save}" class="button" />
+    <input type="reset" value="{lang_reset}" class="button" />
+  </p>
+</form>
+<br />
+<form method="post" action="{url_member}">
+  <table width="100%" border="0" cellspacing="0" cellpadding="1">
+    <tr> 
+      <td valign="top" class="head1"> 
+        <table width="100%" border="0" cellpadding="4" cellspacing="0">
+          <tr> 
+            <td colspan="2" valign="top" class="head1">{lang_change_password}</td>
+          </tr>
+          <tr> 
+            <td class="row1"><b>{lang_old_password}</b></td>
+            <td class="row1"><input type="password" name="current_user_password" size="30" class="input" /></td>
+          </tr>
+          <tr> 
+            <td class="row2"><b>{lang_new_password}</b></td>
+            <td class="row2"><input type="password" name="user_password" size="30" class="input" /></td>
+          </tr>
+          <tr> 
+            <td class="row1"><b>{lang_new_password_confirm}</b></td>
+            <td class="row1"><input type="password" name="user_password2" size="30" class="input" /></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <input type="hidden" name="action" value="updatepassword" />
+  <p align="center"> 
+    <input type="submit" value="{lang_change_password}" class="button" />
+    <input type="reset" value="{lang_reset}" class="button" />
+  </p>
+</form>

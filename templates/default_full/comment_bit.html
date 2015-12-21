@@ -1,0 +1,33 @@
+<tr> 
+  <td class="commentrow{row_bg_number}" valign="top" nowrap="nowrap">
+    <a name="comment{comment_id}"></a>
+		<b>{comment_user_name}</b><br />
+	{comment_user_info}
+	{if comment_user_ip}<br /><br /><b>IP:</b> {comment_user_ip}{endif comment_user_ip}
+  </td>
+  <td width="100%" class="commentrow{row_bg_number}" valign="top">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td valign="top"><b>{comment_headline}</b></td>
+        <td valign="top" align="right">{if admin_links}{admin_links}{endif admin_links}</td>
+      </tr>
+    </table>
+    <hr size="1" />
+    {comment_text}
+  </td>
+</tr>
+<tr>
+  <td class="commentrow{row_bg_number}" nowrap="nowrap">
+    <span class="smalltext">{comment_date}</span>
+  </td>
+  <td class="commentrow{row_bg_number}">
+    {comment_user_status_img}
+    {comment_user_profile_button}
+    {comment_user_email_button}
+    {comment_user_homepage_button}
+    {comment_user_icq_button}
+  </td>
+</tr>
+<tr>
+  <td colspan="2" class="commentspacerrow"><img src="{template_url}/images/spacer.gif" width="1" height="1" alt="" /></td>
+</tr>

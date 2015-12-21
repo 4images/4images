@@ -1,0 +1,14 @@
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td valign="top">
+	  <img src="{template_url}/images/folder.gif" width="20" height="13" alt="" /> 
+      <!-- {if random_cat_image_file}<a href="{cat_url}"><img src="{random_cat_image_file}" border="1"></a>{endif random_cat_image_file}  -->
+    </td>
+    <td>
+	  <a href="{cat_url}" class="maincat">{cat_name}</a>&nbsp;({num_images}) 
+      {if cat_is_new}<sup class="new">{lang_new}</sup>{endif cat_is_new}
+	</td>
+  </tr>
+</table>
+{if cat_description}<span class="smalltext">{cat_description}</span><br />{endif cat_description}
+{if sub_cats}{sub_cats}{endif sub_cats}

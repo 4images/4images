@@ -1,0 +1,36 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="1">
+  <tr> 
+    <td valign="top" class="head1"> 
+      <table width="100%" border="0" cellpadding="4" cellspacing="0">
+        <tr> 
+          <td valign="top" class="head1">{lang_profile_of} {user_name}</td>
+          <td valign="top" class="head1" align="right"><a href="{url_show_user_images}" class="head1">{lang_show_user_images}</a></td>
+        </tr>
+        <tr> 
+          <td class="row1"><b>{lang_join_date}</b></td>
+          <td class="row1">{user_join_date}</td>
+        </tr>
+        <tr> 
+          <td class="row2"><b>{lang_last_action}</b></td>
+          <td class="row2">{user_last_action}</td>
+        </tr>
+        <tr> 
+          <td class="row1"><b>{lang_comments}</b></td>
+          <td class="row1">{user_comments}</td>
+        </tr>
+        <tr> 
+          <td class="row2"><b>{lang_email}</b></td>
+          <td class="row2">{if user_email}<a href="{user_mailform_link}">{user_email_save}</a>{endif user_email}</td>
+        </tr>
+        <tr> 
+          <td class="row1"><b>{lang_homepage}</b></td>
+          <td class="row1">{if user_homepage}<a href="{user_homepage}" target="_blank">{user_homepage}</a>{endif user_homepage}</td>
+        </tr>
+        <tr> 
+          <td class="row2"><b>{lang_icq}</b></td>
+          <td class="row2">{if user_icq}<a href="http://www.icq.com/people/about_me.php?uin={user_icq}" target="_blank">{user_icq}</a> (<b>{user_icq_status}</b>){endif user_icq}</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

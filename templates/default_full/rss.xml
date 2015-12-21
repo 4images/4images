@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="{charset}"?>
+<rss version="2.0">
+  <channel>
+
+    <title>{channel_title}</title>
+    <link>{channel_link}</link>
+    <description><![CDATA[{channel_description}]]></description>
+    <pubDate>{channel_pubdate}</pubDate>
+  {if channel_image}
+    <image>
+      <url>{channel_image_url}</url>
+      <title>{channel_image_title}</title>
+      <link>{channel_image_link}</link>
+    </image>
+  {endif channel_image}
+  {if channel_ttl}
+    <ttl>{channel_ttl}</ttl>
+  {endif channel_ttl}
+
+{if items}
+{items}
+{endif items}
+
+  </channel>
+</rss>

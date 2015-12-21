@@ -1,0 +1,385 @@
+{header}
+<table width="960" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tablehead">
+        <tr> 
+          <td width="100%" colspan="4"><table cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td width="6"><img src="{template_url}/images/header_top_left.gif" width="6" height="6" alt="" /></td>
+        <td width="100%"><img src="{template_url}/images/header_top.gif" width="100%" height="6" alt="" /></td>
+	<td width="6"><img src="{template_url}/images/header_top_right.gif" width="6" height="6" alt="" /></td>
+    </tr>
+</table>
+</td>
+        </tr>
+        <tr> 
+          <td width="6"><img src="{template_url}/images/header_left.gif" width="6" height="60" alt="" /></td>
+          <td width="100%"><img src="{template_url}/images/header_logo.gif" width="405" height="60" alt="" /></td>
+          <td width="225" align="right"> 
+            <form method="post" action="{url_search}">
+              <table border="0" cellspacing="0" cellpadding="1">
+                <tr> 
+                  <td> 
+                    <input type="text" name="search_keywords" size="15" class="searchinput" />
+                  </td>
+                  <td> 
+                    <input type="submit" value="{lang_search}" class="button" name="submit" />
+                  </td>
+                </tr>
+                <tr valign="top"> 
+                  <td colspan="2"><a href="{url_search}" class="smalltext">{lang_advanced_search}</a></td>
+                </tr>
+              </table>
+            </form>
+          </td>
+          <td align="right" width="6"><img src="{template_url}/images/header_right.gif" width="6" height="60" alt="" /></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td class="bordercolor"> 
+      <table width="100%" border="0" cellspacing="1" cellpadding="0">
+        <tr> 
+          <td class="tablebgcolor"> 
+            <table width="100%" border="0" cellspacing="1" cellpadding="0">
+              <tr> 
+                <td class="navbar" height="23"> 
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td><img src="{template_url}/images/spacer.gif" width="4" height="4" alt="" />{clickstream}</td>
+                      <td align="right">
+						<a href="{url_top_images}"><b>{lang_top_images}</b></a>&nbsp;
+						<a href="{url_new_images}"><b>{lang_new_images}</b></a>&nbsp;
+					  </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="150" class="row2" valign="top"> 
+                  <table width="150" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td class="head2" height="20"><img src="{template_url}/images/spacer.gif" alt="" width="4" height="4" />{lang_registered_user}</td>
+                    </tr>
+                    <tr> 
+                      <td class="tablebgcolor"><img src="{template_url}/images/spacer.gif" alt="" width="1" height="1" /></td>
+                    </tr>
+                    <tr> 
+                      <td align="center" class="row1">{user_box}</td>
+                    </tr>
+                    <tr> 
+                      <td class="tablebgcolor"><img src="{template_url}/images/spacer.gif" alt="" width="1" height="1" /></td>
+                    </tr>
+                  </table>
+				  {if random_image}
+                  <table width="150" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td class="head2" height="20"> <img src="{template_url}/images/spacer.gif" alt="" width="4" height="4" />{lang_random_image}</td>
+                    </tr>
+                    <tr> 
+                      <td class="tablebgcolor"><img src="{template_url}/images/spacer.gif" alt="" width="1" height="1" /></td>
+                    </tr>
+                    <tr> 
+                      <td align="center" class="row1">
+					    <br />
+                        {random_image}
+						<br />
+                        <br />
+                      </td>
+                    </tr>
+                    <tr> 
+                      <td class="tablebgcolor"><img src="{template_url}/images/spacer.gif" alt="" width="1" height="1" /></td>
+                    </tr>
+                  </table>
+				  {endif random_image}
+                </td>
+                <td width="1" class="bordercolor" valign="top"><img src="{template_url}/images/spacer.gif" alt="" width="1" height="1" /></td>
+                <td width="18" valign="top"><img src="{template_url}/images/spacer.gif" alt="" width="18" height="18" /></td>
+                <td width="100%" valign="top">
+				  <br />
+                  <span class="title">{lang_send_postcard}</span> 
+                  <hr size="1" />
+                  {if msg}<b>{msg}</b>{endif msg} 
+                  <form method="post" action="{url_postcard}" name="createCard">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="1">
+                      <tr> 
+                        <td valign="top" class="head1"> 
+                          <table width="100%" border="0" cellpadding="4" cellspacing="0">
+                            <tr> 
+                              <td colspan="2" class="head1" valign="top">{image_name}</td>
+                            </tr>
+                            <tr align="center"> 
+                              <td class="row1" colspan="2">{image}</td>
+                            </tr>
+                            <tr> 
+                              <td class="row2" valign="top"><b>{lang_bg_color}</b></td>
+                              <td class="row2" valign="top"> 
+                                <table cellspacing=3 cellpadding="3">
+                                  <tr> 
+                                    <td bgcolor="#ffffff" align=center>&nbsp;</td>
+                                    <td bgcolor="#ffcc00" align=center>&nbsp;</td>
+                                    <td bgcolor="#FF9900" align=center>&nbsp;</td>
+                                    <td bgcolor="#FF9999" align=center>&nbsp;</td>
+                                    <td bgcolor="#CCCC00" align=center>&nbsp;</td>
+                                    <td bgcolor="#99CC00" align=center>&nbsp;</td>
+                                    <td bgcolor="#66CCCC" align=center>&nbsp;</td>
+                                    <td bgcolor="#000000" align=center>&nbsp;</td>
+                                  </tr>
+                                  <tr> 
+                                    <td align=center> 
+                                      <input type="radio" name="bg_color" value="#ffffff" checked />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="bg_color" value="#ffcc00" />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="bg_color" value="#FF9900" />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="bg_color" value="#FF9999" />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="bg_color" value="#CCCC00" />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="bg_color" value="#99CC00" />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="bg_color" value="#66CCCC" />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="bg_color" value="#000000" />
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr> 
+                              <td class="row1" valign="top"><b>{lang_border_color}</b></td>
+                              <td class="row1" valign="top"> 
+                                <table cellspacing=3 cellpadding="3">
+                                  <tr> 
+                                    <td bgcolor="#000000" align=center>&nbsp;</td>
+                                    <td bgcolor="#666666" align=center>&nbsp;</td>
+                                    <td bgcolor="#003366" align=center>&nbsp;</td>
+                                    <td bgcolor="#660099" align=center>&nbsp;</td>
+                                    <td bgcolor="#FF0000" align=center>&nbsp;</td>
+                                    <td bgcolor="#006600" align=center>&nbsp;</td>
+                                    <td bgcolor="#FF0066" align=center>&nbsp;</td>
+                                    <td bgcolor="#FFFFFF" align=center>&nbsp;</td>
+                                  </tr>
+                                  <tr> 
+                                    <td align=center> 
+                                      <input type="radio" name="border_color" value="#000000" checked />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="border_color" value="#666666" />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="border_color" value="#003366" />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="border_color" value="#660099" />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="border_color" value="#FF0000" />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="border_color" value="#006600" />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="border_color" value="#FF0066" />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="border_color" value="#FFFFFF" />
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr> 
+                              <td class="row2" valign="top"><b>{lang_font_color}</b></td>
+                              <td class="row2" valign="top"> 
+                                <table cellspacing=3 cellpadding="3">
+                                  <tr> 
+                                    <td bgcolor="#000000" align=center>&nbsp;</td>
+                                    <td bgcolor="#666666" align=center>&nbsp;</td>
+                                    <td bgcolor="#003366" align=center>&nbsp;</td>
+                                    <td bgcolor="#660099" align=center>&nbsp;</td>
+                                    <td bgcolor="#FF0000" align=center>&nbsp;</td>
+                                    <td bgcolor="#006600" align=center>&nbsp;</td>
+                                    <td bgcolor="#FF0066" align=center>&nbsp;</td>
+                                    <td bgcolor="#FFFFFF" align=center>&nbsp;</td>
+                                  </tr>
+                                  <tr> 
+                                    <td align=center> 
+                                      <input type="radio" name="font_color" value="#000000" checked />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="font_color" value="#666666" />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="font_color" value="#003366" />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="font_color" value="#660099" />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="font_color" value="#FF0000" />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="font_color" value="#006600" />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="font_color" value="#FF0066" />
+                                    </td>
+                                    <td align=center> 
+                                      <input type="radio" name="font_color" value="#FFFFFF" />
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr> 
+                              <td class="row1" valign="top"><b>{lang_font_face}</b></td>
+                              <td class="row1" valign="top"> 
+                                <table border=0 cellspacing=3 cellpadding=1>
+                                  <tr> 
+                                    <td> 
+                                      <input name="font_face" type="radio" value="arial" checked />
+                                    </td>
+                                    <td><font face="arial">Arial</font></td>
+                                    <td> 
+                                      <input name="font_face" type="radio" value="verdana" />
+                                    </td>
+                                    <td><font face="verdana">Verdana</font></td>
+                                  </tr>
+                                  <tr> 
+                                    <td> 
+                                      <input name="font_face" type="radio" value="times new roman" />
+                                    </td>
+                                    <td><font face="times new roman">Times&nbsp;New&nbsp;Roman</font></td>
+                                    <td> 
+                                      <input name="font_face" type="radio" value="helvetica" />
+                                    </td>
+                                    <td><font face="helvetica">Helvetica</font></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr> 
+                              <td colspan="2" class="head1" valign="top">{lang_sender}</td>
+                            </tr>
+                            <tr> 
+                              <td class="row1" valign="top"><b>{lang_name}</b></td>
+                              <td class="row1" valign="top"> 
+                                <input type=text name="sender_name" value="{sender_name}" class="input" />
+                              </td>
+                            </tr>
+                            <tr> 
+                              <td class="row2" valign="top"><b>{lang_email}</b></td>
+                              <td class="row2" valign="top"> 
+                                <input type=text name="sender_email" value="{sender_email}" class="input" />
+                              </td>
+                            </tr>
+                            <tr> 
+                              <td colspan="2" class="head1" valign="top">{lang_recipient}</td>
+                            </tr>
+                            <tr> 
+                              <td class="row1"><b>{lang_name}</b></td>
+                              <td class="row1"> 
+                                <input type=text name="recipient_name" value="{recipient_name}" class="input" />
+                              </td>
+                            </tr>
+                            <tr> 
+                              <td class="row2"><b>{lang_email}</b></td>
+                              <td class="row2"> 
+                                <input type=text name="recipient_email" value="{recipient_email}" class="input" />
+                              </td>
+                            </tr>
+                            <tr> 
+                              <td class="row1"><b>{lang_headline}</b></td>
+                              <td class="row1"> 
+                                <input type=text name="headline" value="{headline}" class="input" />
+                              </td>
+                            </tr>
+                            <tr> 
+                              <td class="row2" valign="top"><b>{lang_message}</b></td>
+                              <td class="row2" valign="top"> 
+                                <textarea name="message" wrap="virtual" class="textarea" cols="30" rows="7">{message}</textarea>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <input type="hidden" name="action" value="previewcard" />
+                    <input type="hidden" name="image_id" value="{image_id}" />
+					          <input type="hidden" name="back_url" value="{back_url}" />
+                    <p align="center"> 
+                      <input type="submit" value="{lang_preview_postcard}" class="button" />
+                    </p>
+                  </form>
+<script language="javascript" type="text/javascript">
+var bg_color = "{bg_color}";
+var border_color = "{border_color}";
+var font_color = "{font_color}";
+var font_face = "{font_face}";
+    
+function RestoreUserValues()
+{
+  var x = document.forms.createCard;
+  for (i=0;i<x.bg_color.length;i++) {
+    if (x.bg_color[i].value == bg_color) {
+      x.bg_color[i].checked = true;
+      break;
+    }
+  }
+  for (i=0;i<x.border_color.length;i++) {
+    if (x.border_color[i].value == border_color) {
+      x.border_color[i].checked = true;
+      break;
+    }
+  }
+  for (i=0;i<x.font_color.length;i++) {
+    if (x.font_color[i].value == font_color) {
+      x.font_color[i].checked = true;
+      break;
+    }
+  }
+  for (i=0;i<x.font_face.length;i++) {
+    if (x.font_face[i].value == font_face) {
+      x.font_face[i].checked = true;
+      break;
+    }
+  }
+}
+if( bg_color != "" )
+  RestoreUserValues();
+</script>
+				         </td>
+                <td width="19" valign="top"><img src="{template_url}/images/spacer.gif" alt="" width="19" height="19" /></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tablebottom">
+        <tr> 
+          <td width="6" nowrap><img src="{template_url}/images/footer_left.gif" width="6" height="19" alt="" /></td>
+          <td width="100%"></td>
+          <td width="6" nowrap><img src="{template_url}/images/footer_right.gif" width="6" height="19" alt="" /></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+{footer}

@@ -1,0 +1,103 @@
+  ==========================================================
+                         CSRF-Schutz
+  ==========================================================
+
+  Seit Version 1.7.9 verfügt 4images über einen eingbauten
+  Schutz gegen Cross-Site Request Forgery (CSRF) Angriffe.
+  Allgemeine Informationen zu CSRF finden Sie hier:
+  http://de.wikipedia.org/wiki/CSRF
+
+  ----------------------------------------------------------
+  Den CSRF-Schutz aktivieren:
+  ----------------------------------------------------------
+
+  Der CSRF-Schutz ist standardmäßig aktiviert.
+
+  -- Erweiterte Kontrolle des CSRF-Schutzes ---------------
+
+  Sie können den CSRF-Schutz in der config.php mit den
+  folgende Anweisungen konfigurieren:
+
+  - $csrf_protection_enable = 1;
+      Ein Wert von 1 aktiviert den CSRF-Schutz,
+      0 deaktiviert ihn.
+      Der Standard-Wert ist 1.
+
+  - $csrf_protection_frontend = 1;
+      Ein Wert von 1 aktiviert das CAPTCHA System für das
+      Frontend, 0 deaktiviert es.
+      Der Standard-Wert ist 1.
+
+  - $csrf_protection_backend = 1;
+      Ein Wert von 1 aktiviert das CAPTCHA System für das
+      Backend (Admin Control Panel), 0 deaktiviert es.
+      Der Standard-Wert ist 1.
+
+  - $csrf_protection_expires = 7200;
+      Gibt an wie lange ein "Token" gültig sein soll.
+      Der Standard-Wert ist 7200 (2 Stunden).
+
+  - $csrf_protection_name = '__csrf';
+      Name des Input-Feldes (hidden) welches das "Token"
+      enthält.
+      Der Standard-Wert ist '__csrf'.
+
+  - $csrf_protection_xhtml = 1;
+      Ein Wert von 1 erstellt das Input-Feld (hidden) als
+      gültiges XHTML, 0 als normales HTML.
+      Der Standard-Wert ist 1.
+
+  ----------------------------------------------------------
+  CSRF-Schutz für ältere Versionen von 4images:
+  ----------------------------------------------------------
+
+  1. Lade die neueste Version von 4images herunter und
+     kopiere die Datei includes/csrf_utils.php aus dem ZIP
+     in den entsprechenden Ordner Deiner 4images-Installation.
+
+  2. Öffne global.php und suche nach der folgenden Zeile:
+
+         @include(ROOT_PATH.'config.php');
+
+     Füge den folgenden Code VOR dieser Zeile ein:
+
+         // Initialize CSRF protection configuration
+         $csrf_protection_enable      = 1;
+         $csrf_protection_frontend    = 1;
+         $csrf_protection_backend     = 1;
+         $csrf_protection_expires     = 7200;
+         $csrf_protection_name        = '__csrf';
+         $csrf_protection_xhtml       = 1;
+
+     In der selben Datei, suche nach der Zeile:
+
+         include_once(ROOT_PATH.'includes/captcha_utils.php');
+
+     Füge den folgenden Code NACH dieser Zeile ein:
+
+         //-----------------------------------------------------
+         //--- CSRF protection ---------------------------------
+         //-----------------------------------------------------
+         include_once(ROOT_PATH.'includes/csrf_utils.php');
+
+  3. Öffne die Datei includes/page_header.php und suche nach der
+     Zeile (am Ende der Datei):
+
+         ?>
+
+     Füge den folgenden Code VOR dieser Zeile ein:
+
+         if ($csrf_protection_enable && $csrf_protection_frontend) {
+           csrf_start(true);
+         }
+
+  4. Öffne die Datei admin/admin_global.php und suche nach der
+     Zeile:
+
+         include_once(ROOT_PATH.'admin/admin_functions.php');
+
+     Füge den folgenden Code NACH dieser Zeile ein:
+
+         if ($csrf_protection_enable && $csrf_protection_backend) {
+           csrf_start();
+         }

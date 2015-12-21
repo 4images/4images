@@ -1,0 +1,129 @@
+{header}
+<table width="960" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tablehead">
+        <tr> 
+          <td width="100%" colspan="4"><table cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td width="6"><img src="{template_url}/images/header_top_left.gif" width="6" height="6" alt="" /></td>
+        <td width="100%"><img src="{template_url}/images/header_top.gif" width="100%" height="6" alt="" /></td>
+	<td width="6"><img src="{template_url}/images/header_top_right.gif" width="6" height="6" alt="" /></td>
+    </tr>
+</table>
+</td>
+        </tr>
+        <tr> 
+          <td width="6"><img src="{template_url}/images/header_left.gif" width="6" height="60" alt="" /></td>
+          <td width="100%"><img src="{template_url}/images/header_logo.gif" width="405" height="60" alt="" /></td>
+          <td width="225" align="right"> 
+            <form method="post" action="{url_search}">
+              <table border="0" cellspacing="0" cellpadding="1">
+                <tr> 
+                  <td> 
+                    <input type="text" name="search_keywords" size="15" class="searchinput" />
+                  </td>
+                  <td> 
+                    <input type="submit" value="{lang_search}" class="button" name="submit" />
+                  </td>
+                </tr>
+                <tr valign="top"> 
+                  <td colspan="2"><a href="{url_search}" class="smalltext">{lang_advanced_search}</a></td>
+                </tr>
+              </table>
+            </form>
+          </td>
+          <td align="right" width="6"><img src="{template_url}/images/header_right.gif" width="6" height="60" alt="" /></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td class="bordercolor"> 
+      <table width="100%" border="0" cellspacing="1" cellpadding="0">
+        <tr> 
+          <td class="tablebgcolor"> 
+            <table width="100%" border="0" cellspacing="1" cellpadding="0">
+              <tr> 
+                <td class="navbar" height="23"> 
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td><img src="{template_url}/images/spacer.gif" width="4" height="4" alt="" />{clickstream}</td>
+                      <td align="right">
+						<a href="{url_top_images}"><b>{lang_top_images}</b></a>&nbsp;
+						<a href="{url_new_images}"><b>{lang_new_images}</b></a>&nbsp;
+					  </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="150" class="row2" valign="top">
+                  <table width="150" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td class="head2" height="20"><img src="{template_url}/images/spacer.gif" alt="" width="4" height="4" />{lang_registered_user}</td>
+                    </tr>
+                    <tr> 
+                      <td class="tablebgcolor"><img src="{template_url}/images/spacer.gif" alt="" width="1" height="1" /></td>
+                    </tr>
+                    <tr> 
+                      <td align="center" class="row1">{user_box}</td>
+                    </tr>
+                    <tr> 
+                      <td class="tablebgcolor"><img src="{template_url}/images/spacer.gif" alt="" width="1" height="1" /></td>
+                    </tr>
+                  </table>
+				  {if random_image}
+                  <table width="150" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td class="head2" height="20"> <img src="{template_url}/images/spacer.gif" alt="" width="4" height="4" />{lang_random_image}</td>
+                    </tr>
+                    <tr> 
+                      <td class="tablebgcolor"><img src="{template_url}/images/spacer.gif" alt="" width="1" height="1" /></td>
+                    </tr>
+                    <tr> 
+                      <td align="center" class="row1">
+					    <br />
+                        {random_image}
+						<br />
+                        <br />
+                      </td>
+                    </tr>
+                    <tr> 
+                      <td class="tablebgcolor"><img src="{template_url}/images/spacer.gif" alt="" width="1" height="1" /></td>
+                    </tr>
+                  </table>
+				  {endif random_image}
+                </td>
+                <td width="1" class="bordercolor" valign="top"><img src="{template_url}/images/spacer.gif" alt="" width="1" height="1" /></td>
+                <td width="18" valign="top"><img src="{template_url}/images/spacer.gif" alt="" width="18" height="18" /></td>
+                <td width="100%" valign="top"><br />
+                  <b class="title">{lang_register}</b> 
+                  <hr size="1" />
+                  {if msg}<b>{msg}</b><br /><br />{endif msg}
+				  {content} 
+                  <p>&nbsp;</p>
+				</td>
+                <td width="19" valign="top"><img src="{template_url}/images/spacer.gif" alt="" width="19" height="19" /></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tablebottom">
+        <tr> 
+          <td width="6" nowrap><img src="{template_url}/images/footer_left.gif" width="6" height="19" alt="" /></td>
+          <td width="100%"></td>
+          <td width="6" nowrap><img src="{template_url}/images/footer_right.gif" width="6" height="19" alt="" /></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+{footer}

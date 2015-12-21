@@ -1,0 +1,162 @@
+  ==========================================================
+             License Agreement for 4images
+  ==========================================================
+  
+  NOTE:
+  Please read this agreement carefully. By purchasing, downloading,
+  installing or using the software, you agree to be bound by the
+  provisions of this license agreement. If you do not agree to be
+  bound by the provisions of this license agreement, you must not
+  download, install or use the software.
+
+  
+  Property and proprietary rights
+  
+  This software - hereinafter referred to as "4images" - and the
+  source texts are the intellectual property of the company Dots
+  United GmbH - hereinafter referred to as "Dots United".
+
+  4images, including the entire documentation, remains the property of
+  Dots United even after the software has been transferred under
+  license. 
+
+  Dots United remains the proprietor of all rights to the programs
+  transferred under license, including the appertaining material and
+  the source texts, even if the user modifies them or links them to
+  his own programs or to those of a third party.
+  
+
+  Area of validity / Scope of utilization
+  
+  4images can be used free of charge for private and non-commercial
+  purposes. Commercial utilization is fundamentally said to exist
+  whenever the operator of 4images is not a private person, a
+  non-profit organization or an academic institution.
+  
+  Any commercial utilization requires the purchase of a license which
+  can be purchased through our Online-Shop:
+  http://www.4homepages.de/4images/order.php
+
+  
+  Scope of the license / Right of use
+  
+  The software may be installed on a server or on other storage media.
+  A single copy can be made on a data carrier for purposes of backing
+  up the data.
+
+  4images may be used on a domain or server for an indefinite period
+  of time. The simultaneous installation and use of the program for
+  more than one domain is not permitted. However, the use is also
+  permissible for those domains that are dependent, that are without
+  any visible content and that are only intended to lead to the main
+  domain.
+  
+  This right of use can be revoked or restricted if the software is
+  employed inappropriately and it ceases with immediate effect in case
+  of violation of this license agreement.
+
+  
+  Dissemination
+  
+  Any dissemination of a modified or unmodified version of 4images is
+  only permitted with the express written consent from Dots United.
+
+
+  Modifications
+  
+  Users of 4images can modify the software and/or adapt it for their
+  own use at their own risk. Any and all visible and non-visible
+  copyright information, including the hyperlinks in the source texts
+  contained in said copyright information, must not be altered,
+  removed or rendered unrecognizable or invisible.
+
+  The removal of the visible copyright information at the footer of
+  each output page of 4images can only be legalized through the
+  purchase of a copyright-removal license.
+
+  Accordingly, the user is entitled to modify the software, provided
+  that:
+  * this license agreement is not changed;
+  * no possessory claim is made to any part of this software;
+  * the copyright is not removed or altered, including but not
+    restricted to the copyright in the output HTML files and the
+    copyright in the source files;
+  * the name "4images" is not changed in any source file or output
+    file.
+    
+  A modification of the source files does not provide the user with a
+  copyright that goes beyond the modification.
+
+  
+  Warranty, warranty claims
+
+  Dots United does not provide any warranty or guarantee that the
+  software will function flawlessly. Any and all claims against Dots
+  United for damage due to or derived from improper functioning of the
+  software are hereby excluded.
+
+  Likewise, Dots United does not assume any liability for damage
+  caused by the use of 4images.
+
+  No guarantees are made pertaining to the data stored by 4images.
+
+  
+  Exclusion of liability
+  
+  4images must not be used in conjunction with the infringement of the
+  intellectual property of third parties. This includes (but is not
+  limited to), among other things, the infringement of copyrights,
+  registered trademarks, trade secrets, patents, designs or utility
+  models.
+  
+  Dots United is not obliged vis-à-vis the users of 4images to verify
+  whether the use of 4images or its contents violates the rights of
+  third parties or the laws of the Federal Republic of Germany, of
+  another country or of an international confederation of states;
+  users are solely responsible for this.
+
+  We hereby expressly refer to the legal provisions relating to
+  competitive and press rights as well as those for the protection of
+  trademarks, names, copyrights and industrial property rights and we
+  recommend that the contents be examined in terms of compliance with
+  said provisions before being released.
+
+  A violation of these laws or rights exists especially if 4images or
+  its contents contain prohibited pornographic or extremist political
+  information or offers. Furthermore, any and all publications that
+  incite hatred, are defamatory, insulting or factually incorrect must
+  be refrained from.
+
+  The user shall hold Dots United harmless from all claims put forward
+  against Dots United due to a possible violation of rights as a
+  result of the publication of contents using 4images. Insofar as
+  claims for damages or other claims are put forward or asserted
+  against Dots United, we reserve the right to fully obligate users to
+  compensate for any loss suffered.
+
+
+  Verification entitlement
+  
+  Dots United is entitled to verify at regular intervals whether this
+  license agreement is being observed. In this context, no personal
+  data and no information about the server will be collected. The only
+  information that will be verified is the domain and the observance
+  of this license agreement. If it is ascertained in this process that
+  this license agreement is not being observed, Dots United reserves
+  the right to take appropriate legal steps.
+
+  
+  Venue
+
+  The venue for any matter arising from the license agreement shall be
+  Mannheim, Germany.
+
+
+  Escape clause
+  
+  In the event that individual provisions of this license agreement or
+  the application of these provisions to individual persons or
+  circumstances are partially or completely invalid, or should they
+  contain a gap, the remainder of the license agreement or the
+  application of these provisions to other persons or circumstances
+  shall remain unaffected.

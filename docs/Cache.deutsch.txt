@@ -1,0 +1,93 @@
+  ==========================================================
+                         Cache
+  ==========================================================
+
+  Seit Version 1.7.1 verfügt 4images über ein internes
+  Caching System. Dieses System kann Ergebnisse die
+  von den Skripten generiert werden, zwischenspeichern.
+  Wenn ein Besucher das nächste Mal ein bestimmtes Skript
+  aufruft, kann das Ergebnis aus dem Zwischenspeicher geholt
+  und muss nicht neu generiert werden.
+
+  Dies bringt aber auch gewisse "Nachteile" mit sich.
+  Dynamische Daten wie Hits, Bewertungen, Zufallsbilder
+  und die "Wer ist online"-Anzeige werden ebenso
+  zwischengespeichert. Diese Daten werden dem Besucher
+  solange unverändert nagezeigt, bis die Daten im
+  Zwischenspeicher ungültig und neu generiert werden.
+
+  Wenn z.B. $cache_lifetime (wird weiter unten genauer
+  erklärt) auf 5 Minuten gesetzt wird, bleiben für den
+  Besucher für diesen Zeitraum dynamische Daten unverändert
+  sichtbar. Auch neu hinzugefüget Kategorien und Bilder
+  erscheinen nicht in der Galerie bis die zwischengespeicherten
+  Daten ungültig und neu generiert werden.
+
+  Das bedeutet, wenn Änderungen vorgenommen werden wie z.B.
+    - Hinzufügen/Bearbeiten von Bilder
+    - Hinzufügen/Bearbeiten von Kategorien
+    - Hinzufügen/Bearbeiten von Benutzern und Berechtigungen
+    - Hinzufügen/Bearbeiten von Templates
+    - Ändern der Standard-Sprache
+  muss der Zwischenspeicher geleert werden um sicherzustellen,
+  dass die Besucher keine alten Daten sehen.
+
+  Der Zwischenspeicher sollte außerdem grundsätzlich von Zeit
+  zu Zeit geleert werden.
+  Das kann manuell mit einem FTP-Programm oder mit dem Plugin
+  "Clear Cache" über das Control Panel gemacht werden.
+
+  Momentan werden folgende Seiten zwischengepeichert:
+    - Die Index-Seite (index.php)
+    - Die Kategorie-Seiten (categories.php)
+    - Die Top-Seite (top.php)
+    - Die RSS-Feeds (rss.php)
+
+  Außerdem werden einige interne Daten zwischengespeichert.
+
+  ----------------------------------------------------------
+  Das Caching System aktivieren:
+  ----------------------------------------------------------
+
+  1. Erstellen Sie ein neues Verzeichnis "cache" innerhalb des
+     4images Ordners. Stellen Sie sicher, dass der Ordner
+     Schreibzugriff erlaubt (chmod 777).
+     Sie sollten außerdem das Verzeichnis mit einer .htaccess
+     Datei gegen Zugriff von außen schützen.
+
+  2. Fügen Sie folgende Zeile in der Datei config.php ein:
+       $cache_enable = 1;
+
+  -- Erweiterte Kontrolle des Caching Systems ------------
+
+  Sie können das Caching System mit den folgende Anweisungen
+  in der Datei config.php konfigurieren:
+
+  - $cache_enable = 1;
+      Ein Wert von 1 aktiviert das Caching System, 0 deaktiviert es.
+      Der Standard-Wert ist 0.
+
+  - $cache_lifetime = 3600;
+      Die Lebensdauer der Dateien im Zwischenspeicher in Sekunden.
+      Der Standard-Wert ist 3600 (1 Stunde).
+
+  - $cache_path = './cache';
+      Der Pfad zum Ordern in welchem die Cache-Dateien gespeichert
+      werden. Sie sollten den Ordner außerhalb des DOCUMENT_ROOT
+      verschieben oder den Ordner mit einer .htaccess Datei schützen.
+
+  - $cache_page_index = 1;
+      Ein Wert von 0 dekativiert das Zwischenspeichern von Inhalten
+      generiert von index.php. Der Standard-Wert ist 1.
+
+  - $cache_page_categories = 1;
+      Ein Wert von 0 dekativiert das Zwischenspeichern von Inhalten
+      generiert von categories.php. Der Standard-Wert ist 1.
+
+  - $cache_page_top = 1;
+      Ein Wert von 0 dekativiert das Zwischenspeichern von Inhalten
+      generiert von top.php. Der Standard-Wert ist 1.
+
+  - $cache_page_rss = 1;
+      Ein Wert von 0 dekativiert das Zwischenspeichern von Inhalten
+      generiert von rss.php. Der Standard-Wert ist 1.

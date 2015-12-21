@@ -1,0 +1,96 @@
+  ==========================================================
+                  4images Installation
+  ==========================================================
+
+  ----------------------------------------------------------
+  Systemvoraussetzungen:
+  ----------------------------------------------------------
+  - Ein Webserver oder ein Webhosting Account (Empfohlen wird Linux/Apache)
+  - PHP Version 4.0.5 oder höher (Empfohlen wird die jeweils aktuellste Version).
+    Um zu gewährleisten, dass 4images einwandfrei funktioniert, sollte "safe_mode"
+    deaktiviert sein ("safe_mode = off" in your php.ini).
+  - MySQL Version 3.23 oder höher (Empfohlen wird MySQL Version 3.23.33)
+
+  Optional:
+  - ImageMagick (http://www.imagemagick.org) oder GD (http://www.boutell.com/gd)
+  - Um Thumbnails und verkleinerte Bilder erstellen zu können, wird PHP mit Unterstützung
+    der GD Bibliothek (http://www.boutell.com/gd) oder das ImageMagick
+    "convert" Programm (http://www.imagemagick.org) oder NetPBM (http://netpbm.sourceforge.net)
+    benötigt.
+
+
+  ----------------------------------------------------------
+  Installation:
+  ----------------------------------------------------------
+  (Für Update von älteren Versionen siehe Update.deutsch.txt)
+
+  1. Entpacken Sie das .zip Archiv (z.B. mit WinZip) und übertragen Sie alle Dateien
+     in ein geeignetes Verzeichnis auf Ihren Webserver (Achten Sie darauf, dass die
+     Verzeichnisstruktur erhalten bleibt) und rufen Sie dieses Verzeichnis
+     über Ihren Browser auf.
+
+  2. Nun erscheint die Installationsmaske von 4images. Tragen Sie alle
+     geforderten Daten in das Formular ein und klicken Sie auf "Installation starten".
+
+  3. Es werden jetzt die benötigten Tabellen in Ihrer Datenbank erstellt und
+     Grundeinstellungen vorgenommen.
+
+  4. Der Installer erstellt während der Installation eine Konfigurationsdatei mit dem
+     Namen config.php im gewählten Installationsverzeichnis.
+     Sollte der Installer diese Datei nicht direkt auf Ihrem Server speichern können
+     (z.B. wenn er nicht die erforderlichen Schreibrechte besitzt), erscheint am Ende
+     der Installation ein Hinweis und die Möglichkeit diese Datei herunterzuladen.
+     Laden Sie sich die Datei herunter und übertragen Sie diese auf Ihren Webserver.
+
+  5. Setzen die angegebenen Zugriffsrechte für folgende Verzeichnisse:
+
+     chmod 777 (drwxrwxrwx) : data
+     chmod 777 (drwxrwxrwx) : data/database
+     chmod 777 (drwxrwxrwx) : data/media
+     chmod 777 (drwxrwxrwx) : data/thumbnails
+     chmod 777 (drwxrwxrwx) : data/tmp_media
+     chmod 777 (drwxrwxrwx) : data/tmp_thumbnails
+     chmod 777 (drwxrwxrwx) : templates
+     chmod 777 (drwxrwxrwx) : templates/default
+     chmod 777 (drwxrwxrwx) : templates/default/media
+     chmod 777 (drwxrwxrwx) : templates/default_960px
+     chmod 777 (drwxrwxrwx) : templates/default_960px/media
+     chmod 777 (drwxrwxrwx) : templates/default_full
+     chmod 777 (drwxrwxrwx) : templates/default_full/media   
+
+     Setzen die angegebenen Zugriffsrechte für folgende Dateien:
+
+     chmod 666 (-rw-rw-rw-) : alle Dateien im Verzeichnis "templates/default"
+     chmod 666 (-rw-rw-rw-) : alle Dateien im Verzeichnis "templates/default/media"
+     chmod 666 (-rw-rw-rw-) : alle Dateien im Verzeichnis "templates/default_960px"
+     chmod 666 (-rw-rw-rw-) : alle Dateien im Verzeichnis "templates/default_960px/media"
+     chmod 666 (-rw-rw-rw-) : alle Dateien im Verzeichnis "templates/default_full"
+     chmod 666 (-rw-rw-rw-) : alle Dateien im Verzeichnis "templates/default_full/media"          
+
+     Dies können Sie z.B. mit FTP-Programmen wie Filezilla, CuteFTP oder WS_FTP tun.
+
+  6. Löschen Sie die Datei "install.php" und alle "update_*_to_*.php" von Ihrem Server.
+     Zusätzlich können Sie die Dateien im Ordner "data/database/default" und den
+     Ordner "docs" löschen.
+
+  7. Die Installation ist nun abgeschlossen. Sie können sich nun mit Ihrem bei der
+     Installation gewählten Usernamen und Passwort in den Administrationsbereich
+     einloggen und unter "Allgemein -> Einstellungen" Die Einstellungen für Ihre Galerie
+     vornehmen.
+
+  8. Seit Version 1.7.1 enthält 4images ein internes Caching-System.
+     Ausführliche Informationen finden sie in der Datei docs/Cache.deutsch.txt.
+     
+     Seit der Version 1.7.9 enthält 4images einen eingbauten Schutz gegen Cross-Site 
+     Request Forgery (CSRF) Angriffe.
+     Ausführliche Informationen finden sie in der Datei docs/CSRF.deutsch.txt.
+     
+     Seit Version 1.7.10 kann definiert werden wie einzelnen Felder für die Suche
+     indiziert werden sollen. Die Einstellung kann in includes/search_utils.php 
+     gemacht werden. Es gibt 3 Modi:
+
+     "fulltext": Der String wird aufgesplittet und normalisiert.
+     "keywords": Der String wird anhand der Kommas aufgesplittet und nomalisiert.
+     "phrase": Der String wird nicht aufgesplittet und nicht normalisiert.
+
+     Die Werte können auch in der config.php gesetzt werden.

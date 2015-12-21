@@ -1,0 +1,108 @@
+<br />
+<script language="JavaScript" type="text/javascript">
+tag_prompt = "{lang_tag_prompt}";
+
+link_text_prompt = "{lang_link_text_prompt}";
+link_url_prompt = "{lang_link_url_prompt}";
+link_email_prompt = "{lang_link_email_prompt}";
+
+list_type_prompt = "{lang_list_type_prompt}";
+list_item_prompt = "{lang_list_item_prompt}";
+
+tags = new Array();
+
+function getarraysize(thearray) {
+  for (i = 0; i < thearray.length; i++) {
+    if ((thearray[i] == "undefined") || (thearray[i] == "") || (thearray[i] == null)) {
+      return i;
+    }
+  }
+  return thearray.length;
+}
+
+function arraypush(thearray,value) {
+  thearraysize = getarraysize(thearray);
+  thearray[thearraysize] = value;
+}
+
+function arraypop(thearray) {
+  thearraysize = getarraysize(thearray);
+  retval = thearray[thearraysize - 1];
+  delete thearray[thearraysize - 1];
+  return retval;
+}
+
+function bbcode(theform,bbcode,prompttext) {
+  inserttext = prompt(tag_prompt+"\n["+bbcode+"]xxx[/"+bbcode+"]",prompttext);
+  if ((inserttext != null) && (inserttext != "")) {
+    theform.comment_text.value += "["+bbcode+"]"+inserttext+"[/"+bbcode+"] ";
+    theform.comment_text.focus();
+  }
+}
+
+function namedlink(theform,thetype) {
+  linktext = prompt(link_text_prompt,"");
+  var prompttext;
+  if (thetype == "URL") {
+    prompt_text = link_url_prompt;
+    prompt_contents = "http://";
+  }
+  else {
+    prompt_text = link_email_prompt;
+    prompt_contents = "";
+  }
+  linkurl = prompt(prompt_text,prompt_contents);
+  if ((linkurl != null) && (linkurl != "")) {
+    if ((linktext != null) && (linktext != "")) {
+      theform.comment_text.value += "["+thetype+"="+linkurl+"]"+linktext+"[/"+thetype+"] ";
+    }
+    else {
+      theform.comment_text.value += "["+thetype+"]"+linkurl+"[/"+thetype+"] ";
+    }
+  }
+  theform.comment_text.focus();
+}
+
+function dolist(theform) {
+  listtype = prompt(list_type_prompt, "");
+  if ((listtype == "a") || (listtype == "1")) {
+    thelist = "[list="+listtype+"]\n";
+    listend = "[/list="+listtype+"] ";
+  }
+  else {
+    thelist = "[list]\n";
+    listend = "[/list] ";
+  }
+  listentry = "initial";
+  while ((listentry != "") && (listentry != null)) {
+    listentry = prompt(list_item_prompt, "");
+    if ((listentry != "") && (listentry != null)) {
+      thelist = thelist+"[*]"+listentry+"[/*]\n";
+    }
+  }
+  theform.comment_text.value += thelist+listend;
+  theform.comment_text.focus();
+}
+</script>
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="head1"> 
+      <table border="0" cellspacing="1" cellpadding="3">
+        <tr> 
+          <td class="head1">{lang_bbcode}</td>
+        </tr>
+        <tr> 
+          <td class="row1"> 
+            <input type="button" value=" B " onclick="bbcode(this.form,'B','')" name="button" class="button" />
+            <input type="button" value=" I " onclick="bbcode(this.form,'I','')" name="button" class="button" />
+            <input type="button" value=" U " onclick="bbcode(this.form,'U','')" name="button" class="button" />
+            <input type="button" value="IMG" title="IMG" onclick="bbcode(this.form,'IMG','http://')" name="button" class="button" />
+            <input type="button" value="http://" title="URL" onclick="namedlink(this.form,'URL')" name="button" class="button" />
+            <input type="button" value="Code" title="CODE" onclick="bbcode(this.form,'code','')" name="button" class="button" />
+            <input type="button" value="List" title="LIST" onclick="dolist(this.form)" name="button" class="button" />
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

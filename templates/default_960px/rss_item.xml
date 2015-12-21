@@ -1,0 +1,16 @@
+    <item>
+      <title>{item_title}</title>
+      <link>{item_link}</link>
+      <pubDate>{item_pubdate}</pubDate>
+      <description><![CDATA[{item_description}]]></description>
+    {if item_category}
+      <category domain="{item_category_domain}">{item_category_name}</category>
+    {endif item_category}
+    {if item_author}
+      <author><![CDATA[{item_author_email} ({item_author_name})]]></author>
+    {endif item_author}
+    {if item_enclosure}
+      <enclosure url="{item_enclosure_url}" length="{item_enclosure_length}" type="{item_enclosure_type}" />
+    {endif item_enclosure}
+      <guid isPermaLink="false">{item_link}</guid>
+    </item>

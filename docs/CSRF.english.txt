@@ -1,0 +1,101 @@
+  ==========================================================
+                       CSRF protection
+  ==========================================================
+
+  Since version 1.7.9, 4images has automatic protection
+  against Cross-Site Request Forgery (CSRF) attacks.
+  You'll find general informations about CSRF at:
+  http://en.wikipedia.org/wiki/CSRF
+
+  ----------------------------------------------------------
+  How to enable the CSRF protection:
+  ----------------------------------------------------------
+
+  The CSRF protection is enabled by default.
+
+  -- Advanced control of the CSRF protection ---------------
+
+  You can control the CSRF protection in your config.php with
+  the following configuration variables:
+
+  - $csrf_protection_enable = 1;
+      A value of 1 enables the CSRF protection, 0 disables it.
+      Default value is 1.
+
+  - $csrf_protection_frontend = 1;
+      A value of 1 enables the CSRF protection for the
+      frontend, 0 disables it.
+      Default value is 1.
+
+  - $csrf_protection_backend = 1;
+      A value of 1 enables the CSRF protection for the
+      backend (Admin Control Panel), 0 disables it.
+      Default value is 1.
+
+  - $csrf_protection_expires = 7200;
+      Amount of seconds a token is valid.
+      Default value is 7200 (2 hours).
+
+  - $csrf_protection_name = '__csrf';
+      Name of input field (hidden) which contains the token.
+      Default value is '__csrf'.
+
+  - $csrf_protection_xhtml = 1;
+      A value of 1 creates the input field (hidden) as
+      valid XHTML, 0 as normal HTML.
+      Default value is 1.
+
+  ----------------------------------------------------------
+  CSRF protection for older versions of 4images:
+  ----------------------------------------------------------
+
+  1. Download the latest version of 4images and copy the file
+     includes/csrf_utils.php from the zip to your 4images
+     installation.
+
+  2. Open global.php and search for the following line:
+
+         @include(ROOT_PATH.'config.php');
+
+     Insert the following code ABOVE this line:
+
+         // Initialize CSRF protection configuration
+         $csrf_protection_enable      = 1;
+         $csrf_protection_frontend    = 1;
+         $csrf_protection_backend     = 1;
+         $csrf_protection_expires     = 7200;
+         $csrf_protection_name        = '__csrf';
+         $csrf_protection_xhtml       = 1;
+
+     In the same file, search for the line:
+
+         include_once(ROOT_PATH.'includes/captcha_utils.php');
+
+     Insert the following code BELOW this line:
+
+         //-----------------------------------------------------
+         //--- CSRF protection ---------------------------------
+         //-----------------------------------------------------
+         include_once(ROOT_PATH.'includes/csrf_utils.php');
+
+  3. Open includes/page_header.php and search for the
+     following line (at the end for the file):
+
+         ?>
+
+     Insert the following code ABOVE this line:
+
+         if ($csrf_protection_enable && $csrf_protection_frontend) {
+           csrf_start(true);
+         }
+
+  4. Open admin/admin_global.php and search for the
+     following line:
+
+         include_once(ROOT_PATH.'admin/admin_functions.php');
+
+     Insert the following code BELOW this line:
+
+         if ($csrf_protection_enable && $csrf_protection_backend) {
+           csrf_start();
+         }

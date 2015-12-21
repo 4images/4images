@@ -1,0 +1,107 @@
+  ==========================================================
+                      4images Update
+  ==========================================================
+
+  1. Backup your data!
+
+  2. First you should rename or copy your existing "config.php" to a temporary location.
+
+  3. Decompress the .zip archive and upload all files to the same location as your previous
+     installation. Overwrite the existing files.
+
+  4. Next delete the newly uploaded copy of config.php and replace it with your existing
+     copy (ie. rename or move back the copy you saved previously).
+
+  5. If you update from version older than 1.5 or the folders don't exist,
+     create in your "data" folder two new directories "tmp_media" and "tmp_thumbnails".
+     Set permissions for this directories:
+
+     chmod 777 (drwxrwxrwx) : data/tmp_media
+     chmod 777 (drwxrwxrwx) : data/tmp_thumbnails
+
+  6. You should now run the following update-scripts (in this order, one at a time)
+     and follow the instructions.
+
+       Update RC-1 -> 1.7.13
+       ...............................
+       1. update_RC-1_to_RC-2.php
+       2. update_1.0_to_1.5.php
+       3. update_1.5_to_1.6.php
+       4. update_1.6.1_to_1.7.php
+       
+       Update RC-2 -> 1.7.13
+       ...............................
+       1. update_1.0_to_1.5.php
+       2. update_1.5_to_1.6.php
+       3. update_1.6.1_to_1.7.php
+
+       Update 1.0 -> 1.7.13
+       ...............................
+       1. update_1.0_to_1.5.php
+       2. update_1.5_to_1.6.php
+       3. update_1.6.1_to_1.7.php
+
+       Update 1.5 -> 1.7.13
+       ...............................
+       1. update_1.5_to_1.6.php
+       2. update_1.6.1_to_1.7.php
+
+       Update 1.6 -> 1.7.13
+       ...............................
+       1. update_1.6.1_to_1.7.php
+
+       Update 1.6.1 -> 1.7.13
+       ...............................
+       1. update_1.6.1_to_1.7.php
+
+       Update 1.7 -> 1.7.13
+       ...............................
+       - No update-script required
+
+       Update 1.7.1 -> 1.7.13
+       ...............................
+       - No update-script required
+
+       Update 1.7.2 -> 1.7.13
+       ...............................
+       - No update-script required
+
+       Update 1.7.3 -> 1.7.13
+       ...............................
+       - No update-script required
+
+       Update 1.7.4 -> 1.7.13
+       ...............................
+       - No update-script required
+
+       Update 1.7.5 -> 1.7.13
+       ...............................
+       - No update-script required
+       
+       Update 1.7.6 -> 1.7.13
+       ...............................
+       - No update-script required       
+
+       Update 1.7.7 -> 1.7.13
+       ...............................
+       - No update-script required
+
+       Update 1.7.8 -> 1.7.13
+       ...............................
+       - No update-script required
+       
+       Update 1.7.9 -> 1.7.13
+       ...............................
+       - No update-script required
+
+       Update 1.7.10 -> 1.7.13
+       ...............................
+       - No update-script required
+
+  7. You must ensure you remove "install.php" and any "update_*_to_*.php" files.
+     Additionally you may delete all files in "data/database/default" and
+     the "docs" directory if you wish.
+     
+  8. Since version 1.7.8 keywords are saved in a different format. If you make an
+     update from a version older than 1.7.8 please run the "Migrate Keywords" PlugIn
+     in the Admin Control Panel to convert the keywords into the new format.

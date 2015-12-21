@@ -1,0 +1,178 @@
+/**************************************************************************
+ *                                                                        *
+ *    4images - A Web Based Image Gallery Management System               *
+ *    ----------------------------------------------------------------    *
+ *                                                                        *
+ *             File: cpstyle.css                                          *
+ *        Copyright: (C) 2002-2015 4homepages.de                          *
+ *            Email: jan@4homepages.de                                    * 
+ *              Web: http://www.4homepages.de                             * 
+ *    Scriptversion: 1.7.13                                               *
+ *                                                                        *
+ *    Never released without support from: Nicky (http://www.nicky.net)   *
+ *                                                                        *
+ **************************************************************************
+ *                                                                        *
+ *    Dieses Script ist KEINE Freeware. Bitte lesen Sie die Lizenz-       *
+ *    bedingungen (Lizenz.txt) für weitere Informationen.                 *
+ *    ---------------------------------------------------------------     *
+ *    This script is NOT freeware! Please read the Copyright Notice       *
+ *    (Licence.txt) for further information.                              *
+ *                                                                        *
+ *************************************************************************/
+
+BODY {
+  COLOR: #004c75;
+  FONT-FAMILY: Tahoma,Arial,Helvetica,sans-serif;
+  FONT-SIZE: 11px;
+  /* this attribute sets the basis for all the other scrollbar colors (Internet Explorer 5.5+ only) */
+  SCROLLBAR-BASE-COLOR:  #004c75;
+  SCROLLBAR-ARROW-COLOR: #FCDC43;
+}
+
+UL, LI, P, TD, TR {
+  COLOR: #004c75;
+  FONT-FAMILY: Tahoma,Arial,Helvetica,sans-serif;
+  FONT-SIZE: 11px;
+}
+
+.headline {
+  FONT-FAMILY: Tahoma,Arial,Helvetica,sans-serif;
+  FONT-SIZE: 18px;
+  FONT-WEIGHT: bold;
+}
+
+.smalltext {
+  FONT-FAMILY: Tahoma,Arial,Helvetica,sans-serif;
+  FONT-SIZE: 10px;
+  FONT-WEIGHT: normal;
+}
+
+.marktext {
+  COLOR: #FF0000;
+}
+.msg {
+  FONT-FAMILY: Tahoma,Arial,Helvetica,sans-serif;
+  FONT-SIZE: 11px;
+  COLOR: #FF0000;
+  FONT-WEIGHT:bold;
+}
+.rowtitle {
+  FONT-WEIGHT:bold;
+}
+a:link, a:visited, a:active {
+  color: #0F5475;
+}
+a:hover {
+  COLOR: #FCDC43;
+  BACKGROUND-COLOR: #004c75;
+}
+FORM {
+  FONT-FAMILY: Tahoma,Arial,Helvetica,sans-serif;
+  FONT-SIZE: 11px;
+}
+SELECT, INPUT, TEXTAREA {
+  FONT-FAMILY: Tahoma,Arial,Helvetica,sans-serif;
+  COLOR: #0F5475;
+  FONT-SIZE: 11px;
+}
+.dropdownmarker {
+  BACKGROUND-COLOR: #EEEEEE;
+  COLOR: #136C99;
+  FONT-SIZE: 11px;
+  FONT-WEIGHT: bold;
+}
+
+/*-- Tables ----------------------------------------------*/
+
+.tplmarktag {
+  COLOR: #ffffff;
+  FONT-WEIGHT: bold;
+  BACKGROUND-COLOR: #ff0000;
+}
+
+/*-- Tables ----------------------------------------------*/
+
+.tableheader {
+  COLOR: #FCDC43;
+  FONT-WEIGHT: bold;
+  BACKGROUND-COLOR: #004c75;
+}
+.tableseparator {
+  COLOR: #FCDC43;
+  FONT-WEIGHT: bold;
+  BACKGROUND-COLOR: #004c75;
+}
+.tablerow {
+  BACKGROUND-COLOR: #E5E5E5;
+}
+.tablerow2 {
+  BACKGROUND-COLOR: #F5F5F5;
+}
+.tablefooter {
+  COLOR: #FCDC43;
+  FONT-WEIGHT: bold;
+  BACKGROUND-COLOR: #004c75;
+}
+.tableborder {
+  BACKGROUND-COLOR: #004c75;
+}
+
+
+
+/*-- Navigation ------------------------------------------*/
+
+.navheader {
+  COLOR: #FFFFFF;
+  FONT-WEIGHT: bold;
+  BACKGROUND-COLOR: #004c75;
+}
+.navlink, navlink:visited, navlink:acitive {
+  COLOR: #0F5475;
+}
+
+.navlink:hover {
+  COLOR: #0F5475;
+  BACKGROUND-COLOR: #FFE673;
+}
+
+.button {
+  FONT-FAMILY: MS Sans Serif, Tahoma,Arial, Helvetica, sans-serif;
+  BACKGROUND-COLOR: #004c75;
+  COLOR: #FCDC43;
+  FONT-SIZE: 11px;
+  FONT-WEIGHT: bold;
+}
+
+/*-- Calendar ------------------------------------------*/
+
+.calendar_dayname {
+	background-color: #eeeeee;
+	border: 1px solid #c0c0c0;
+	font-family: Arial, Verdana, Helvetica, Sans-Serif;
+	font-size: 8pt;
+	text-align: center;
+}
+
+.calendar_day {
+	background-color: #eeeeee;
+	color: #000000;
+	font-family: Arial, Verdana, Helvetica, Sans-Serif;
+	font-size: 8pt;
+}
+
+.calendar_today {
+	background-color: #ffffff;
+	border: 1px solid #c0c0c0;
+	font-family: Arial, Verdana, Helvetica, Sans-Serif;
+	font-size: 8pt;
+}
+
+.calendar {
+	background-color: #CCCCCC;
+	border: 1px outset #004C75;
+	visibility: hidden;
+	position: absolute;
+	top: 1px;
+	left: 1px;
+}
