@@ -5,17 +5,15 @@
  *    ----------------------------------------------------------------    *
  *                                                                        *
  *             File: validateimages.php                                   *
- *        Copyright: (C) 2002-2015 4homepages.de                          *
- *            Email: jan@4homepages.de                                    * 
+ *        Copyright: (C) 2002-2023 4homepages.de                          *
+ *            Email: 4images@4homepages.de                                * 
  *              Web: http://www.4homepages.de                             * 
- *    Scriptversion: 1.7.13                                               *
- *                                                                        *
- *    Never released without support from: Nicky (http://www.nicky.net)   *
+ *    Scriptversion: 1.10                                                 *
  *                                                                        *
  **************************************************************************
  *                                                                        *
  *    Dieses Script ist KEINE Freeware. Bitte lesen Sie die Lizenz-       *
- *    bedingungen (Lizenz.txt) für weitere Informationen.                 *
+ *    bedingungen (Lizenz.txt) fÃ¼r weitere Informationen.                 *
  *    ---------------------------------------------------------------     *
  *    This script is NOT freeware! Please read the Copyright Notice       *
  *    (Licence.txt) for further information.                              *
@@ -225,6 +223,8 @@ if ($action == "editimage") {
 
 if ($action == "saveimages") {
   $image_list = (isset($HTTP_POST_VARS['image_list'])) ? $HTTP_POST_VARS['image_list'] : "";
+  $number_of_changes = 0;
+
   if (!empty($image_list)) {
     $image_id_sql = "";
     foreach ($image_list as $key => $val) {
@@ -242,6 +242,10 @@ if ($action == "saveimages") {
     }
 
     foreach ($image_list as $key => $val) {
+      if ($val == 2) {
+          continue;
+      }
+
       flush();
       $image_name = addslashes($image_cache[$key]['image_name']);
       $cat_id = $image_cache[$key]['cat_id'];
@@ -303,7 +307,7 @@ if ($action == "saveimages") {
           echo $lang['image_add_error'].": <b>".format_text(stripslashes($image_name), 2)."</b> (".$image_media_file.")<br />";
         }
       }
-      else {
+      elseif ($val == 0) {
         $sql = "DELETE FROM ".IMAGES_TEMP_TABLE."
                 WHERE image_id = $key";
         $site_db->query($sql);
@@ -311,11 +315,13 @@ if ($action == "saveimages") {
         @unlink($old_thumb_path);
         echo $lang['image_delete_success'].": <b>".format_text(stripslashes($image_name), 2)."</b> (".$image_media_file.")<br />";
       }
-    }
 
+      $number_of_changes++;
+    }
   }
-  else {
-    echo "<b>Just relaxing because you give me nothing to do!</b>";
+
+  if ($number_of_changes === 0) {
+      echo "<b>Just relaxing because you give me nothing to do!</b>";
   }
 }
 
@@ -327,11 +333,21 @@ if ($action == "validateimages") {
     $condition .= " AND i.cat_id = $cat_id";
   }
 
+  $orderbyOptions = array(
+    'i.image_name' => $lang['field_image_name'],
+    'i.cat_id' => $lang['field_category'],
+    'i.image_date' => $lang['field_date'],
+    get_user_table_field("u.", "user_name") => $lang['field_username']
+  );
+
+  $orderby = "i.image_date";
+
   if (isset($HTTP_GET_VARS['orderby']) || isset($HTTP_POST_VARS['orderby'])) {
-    $orderby = (isset($HTTP_GET_VARS['orderby'])) ? stripslashes(trim($HTTP_GET_VARS['orderby'])) : stripslashes(trim($HTTP_POST_VARS['orderby']));
-  }
-  else {
-    $orderby = "i.image_date";
+    $requestedOrderby = (isset($HTTP_GET_VARS['orderby'])) ? stripslashes(trim($HTTP_GET_VARS['orderby'])) : stripslashes(trim($HTTP_POST_VARS['orderby']));
+
+    if (isset($orderbyOptions[$requestedOrderby])) {
+      $orderby = $requestedOrderby;
+    }
   }
 
   $limitstart = (isset($HTTP_POST_VARS['limitstart'])) ? trim($HTTP_POST_VARS['limitstart']) : "";
@@ -349,11 +365,13 @@ if ($action == "validateimages") {
     $limitnumber = 10;
   }
 
+  $direction = "ASC";
   if (isset($HTTP_GET_VARS['direction']) || isset($HTTP_POST_VARS['direction'])) {
-    $direction = (isset($HTTP_GET_VARS['direction'])) ? trim($HTTP_GET_VARS['direction']) : trim($HTTP_POST_VARS['direction']);
-  }
-  else {
-    $direction = "ASC";
+    $requestedDirection = (isset($HTTP_GET_VARS['direction'])) ? trim($HTTP_GET_VARS['direction']) : trim($HTTP_POST_VARS['direction']);
+
+    if ('DESC' === $requestedDirection) {
+      $direction = "DESC";
+    }
   }
 
   show_form_header("validateimages.php", "validateimages");
@@ -362,10 +380,9 @@ if ($action == "validateimages") {
   ?>
   <tr class="<?php echo get_row_bg(); ?>"><td><p><b><?php echo $lang['order_by'] ?></b></p></td><td><p>
   <select name="orderby">
-  <option value="i.image_name" selected><?php echo $lang['field_image_name'] ?></option>
-  <option value="i.cat_id"><?php echo $lang['field_category'] ?></option>
-  <option value="i.image_date"><?php echo $lang['field_date'] ?></option>
-  <option value="<?php echo get_user_table_field("u.", "user_name"); ?>"><?php echo $lang['field_username'] ?></option>
+  <?php foreach ($orderbyOptions as $field => $label): ?>
+  <option value="<?php echo $field; ?>"><?php echo $label; ?></option>
+  <?php endforeach; ?>
   </select>
   <select name="direction">
   <option selected value="ASC"><?php echo $lang['asc'] ?></option>
@@ -402,7 +419,7 @@ if ($action == "validateimages") {
   echo "<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" align=\"center\"><tr><td class=\"tableborder\">\n<table cellpadding=\"3\" cellspacing=\"1\" border=\"0\" width=\"100%\">\n";
   if ($countimages['images'] > 0) {
     echo "<tr class=\"tableseparator\">\n";
-    echo "<td class=\"tableseparator\">".$lang['validate']."</td>\n<td class=\"tableseparator\">".$lang['delete']."</td>\n<td class=\"tableseparator\"> </td>\n<td class=\"tableseparator\">".$lang['field_image_name']."</td>\n<td class=\"tableseparator\">".$lang['field_category']."</td>\n<td class=\"tableseparator\">".$lang['field_username']."</td>\n<td class=\"tableseparator\">".$lang['field_date']."</td>\n<td class=\"tableseparator\">".$lang['options']."</td>\n</tr>\n";
+    echo "<td class=\"tableseparator\">".$lang['validate']."</td>\n<td class=\"tableseparator\">".$lang['delete']."</td>\n<td class=\"tableseparator\">".$lang['ignore']."</td>\n<td class=\"tableseparator\"> </td>\n<td class=\"tableseparator\">".$lang['field_image_name']."</td>\n<td class=\"tableseparator\">".$lang['field_category']."</td>\n<td class=\"tableseparator\">".$lang['field_username']."</td>\n<td class=\"tableseparator\">".$lang['field_date']."</td>\n<td class=\"tableseparator\">".$lang['options']."</td>\n</tr>\n";
 
     $sql = "SELECT i.image_id, i.cat_id, i.user_id, i.image_name, i.image_date, i.image_media_file".get_user_table_field(", u.", "user_name")."
             FROM ".IMAGES_TEMP_TABLE." i
@@ -420,6 +437,7 @@ if ($action == "validateimages") {
 
       echo "<td><input type=\"radio\" name=\"image_list[".$image_row['image_id']."]\" value=\"1\"></td>";
       echo "<td><input type=\"radio\" name=\"image_list[".$image_row['image_id']."]\" value=\"0\"></td>";
+      echo "<td><input type=\"radio\" name=\"image_list[".$image_row['image_id']."]\" value=\"2\" checked></td>";
       echo "<td><a href=\"".$image_path."\" target=\"_blank\"><img src=\"".$file_src."\" border=\"1\" height=\"50\"></a></td>";
       echo "<td><b><a href=\"".$image_path."\" target=\"_blank\">".format_text($image_row['image_name'], 2)."</a></b> (".$image_row['image_media_file'];
 

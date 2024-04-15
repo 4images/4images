@@ -2,24 +2,24 @@
                         RSS Feeds
   ==========================================================
 
-  Seit Version 1.7.3 unterstützt 4images RSS Feeds.
-  Bei Browsern die standardmäßig RSS Feeds unterstützen
+  Seit Version 1.7.3 unterstÃ¼tzt 4images RSS Feeds.
+  Bei Browsern die standardmÃ¤ÃŸig RSS Feeds unterstÃ¼tzen
   (wie z.B. Firefox), wird automatisch das RSS Icon
-  eingeblendet und der entsprechende Feedlässt sich
+  eingeblendet und der entsprechende FeedlÃ¤sst sich
   abonnieren.
-  Ausserdem wird zusätzlich ein Icon am Fußende der Seite
-  abgezeigt über das die Adresse des Feeds abgerufen werden
+  Ausserdem wird zusÃ¤tzlich ein Icon am FuÃŸende der Seite
+  abgezeigt Ã¼ber das die Adresse des Feeds abgerufen werden
   kann.
 
-  Es werden folgende Feeds unterstützt:
+  Es werden folgende Feeds unterstÃ¼tzt:
 
   - Die neuesten Bilder der Galerie
   - Die neuesten Bilder aus einer Kategorie
   - Die neuesten Kommentare eines Bildes
 
-  Die Ausgabe der Feeds lässt sich über das integrierte
-  Caching-System zwischenspeichern. Nähere Informationen
+  Die Ausgabe der Feeds lÃ¤sst sich Ã¼ber das integrierte
+  Caching-System zwischenspeichern. NÃ¤here Informationen
   dazu finden Sie in der Datei docs/Cache.deutsch.txt.
 	
-  Die Ausgabe des XML-Codes lässt sich über die Templates
+  Die Ausgabe des XML-Codes lÃ¤sst sich Ã¼ber die Templates
   rss.xml und rss_item.xml anpassen.

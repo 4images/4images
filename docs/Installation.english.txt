@@ -6,10 +6,10 @@
   System Requirements:
   ----------------------------------------------------------
   - A webserver or web hosting account (Linux/Apache recommended).
-  - PHP version 4.0.5 or higher (we recommend to use always the latest stable version).
+  - PHP version 5.2 or higher (we recommend to use always the latest stable version).
     To ensure that 4images is functioning properly, "safe_mode" should be disabled
     ("safe_mode = off" in your php.ini).
-  - MySQL version 3.23 or higher (we recommend MySQL version 3.23.33)
+  - MySQL version 5.1 up to 5.7. MySQL version 8 is currently not supported.
 
   Optional:
   - In order to make thumbnails and reduced size images you need PHP compiled with

@@ -1,0 +1,5 @@
+.gitattributes export-ignore
+.gitignore export-ignore
+
+Dockerfile.dist export-ignore
+docker-compose.yml.dist export-ignore

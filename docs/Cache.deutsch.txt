@@ -2,10 +2,10 @@
                          Cache
   ==========================================================
 
-  Seit Version 1.7.1 verfügt 4images über ein internes
+  Seit Version 1.7.1 verfÃ¼gt 4images Ã¼ber ein internes
   Caching System. Dieses System kann Ergebnisse die
   von den Skripten generiert werden, zwischenspeichern.
-  Wenn ein Besucher das nächste Mal ein bestimmtes Skript
+  Wenn ein Besucher das nÃ¤chste Mal ein bestimmtes Skript
   aufruft, kann das Ergebnis aus dem Zwischenspeicher geholt
   und muss nicht neu generiert werden.
 
@@ -13,29 +13,29 @@
   Dynamische Daten wie Hits, Bewertungen, Zufallsbilder
   und die "Wer ist online"-Anzeige werden ebenso
   zwischengespeichert. Diese Daten werden dem Besucher
-  solange unverändert nagezeigt, bis die Daten im
-  Zwischenspeicher ungültig und neu generiert werden.
+  solange unverÃ¤ndert nagezeigt, bis die Daten im
+  Zwischenspeicher ungÃ¼ltig und neu generiert werden.
 
   Wenn z.B. $cache_lifetime (wird weiter unten genauer
-  erklärt) auf 5 Minuten gesetzt wird, bleiben für den
-  Besucher für diesen Zeitraum dynamische Daten unverändert
-  sichtbar. Auch neu hinzugefüget Kategorien und Bilder
+  erklÃ¤rt) auf 5 Minuten gesetzt wird, bleiben fÃ¼r den
+  Besucher fÃ¼r diesen Zeitraum dynamische Daten unverÃ¤ndert
+  sichtbar. Auch neu hinzugefÃ¼get Kategorien und Bilder
   erscheinen nicht in der Galerie bis die zwischengespeicherten
-  Daten ungültig und neu generiert werden.
+  Daten ungÃ¼ltig und neu generiert werden.
 
-  Das bedeutet, wenn Änderungen vorgenommen werden wie z.B.
-    - Hinzufügen/Bearbeiten von Bilder
-    - Hinzufügen/Bearbeiten von Kategorien
-    - Hinzufügen/Bearbeiten von Benutzern und Berechtigungen
-    - Hinzufügen/Bearbeiten von Templates
-    - Ändern der Standard-Sprache
+  Das bedeutet, wenn Ã„nderungen vorgenommen werden wie z.B.
+    - HinzufÃ¼gen/Bearbeiten von Bilder
+    - HinzufÃ¼gen/Bearbeiten von Kategorien
+    - HinzufÃ¼gen/Bearbeiten von Benutzern und Berechtigungen
+    - HinzufÃ¼gen/Bearbeiten von Templates
+    - Ã„ndern der Standard-Sprache
   muss der Zwischenspeicher geleert werden um sicherzustellen,
   dass die Besucher keine alten Daten sehen.
 
-  Der Zwischenspeicher sollte außerdem grundsätzlich von Zeit
+  Der Zwischenspeicher sollte auÃŸerdem grundsÃ¤tzlich von Zeit
   zu Zeit geleert werden.
   Das kann manuell mit einem FTP-Programm oder mit dem Plugin
-  "Clear Cache" über das Control Panel gemacht werden.
+  "Clear Cache" Ã¼ber das Control Panel gemacht werden.
 
   Momentan werden folgende Seiten zwischengepeichert:
     - Die Index-Seite (index.php)
@@ -43,7 +43,7 @@
     - Die Top-Seite (top.php)
     - Die RSS-Feeds (rss.php)
 
-  Außerdem werden einige interne Daten zwischengespeichert.
+  AuÃŸerdem werden einige interne Daten zwischengespeichert.
 
   ----------------------------------------------------------
   Das Caching System aktivieren:
@@ -52,15 +52,15 @@
   1. Erstellen Sie ein neues Verzeichnis "cache" innerhalb des
      4images Ordners. Stellen Sie sicher, dass der Ordner
      Schreibzugriff erlaubt (chmod 777).
-     Sie sollten außerdem das Verzeichnis mit einer .htaccess
-     Datei gegen Zugriff von außen schützen.
+     Sie sollten auÃŸerdem das Verzeichnis mit einer .htaccess
+     Datei gegen Zugriff von auÃŸen schÃ¼tzen.
 
-  2. Fügen Sie folgende Zeile in der Datei config.php ein:
+  2. FÃ¼gen Sie folgende Zeile in der Datei config.php ein:
        $cache_enable = 1;
 
   -- Erweiterte Kontrolle des Caching Systems ------------
 
-  Sie können das Caching System mit den folgende Anweisungen
+  Sie kÃ¶nnen das Caching System mit den folgende Anweisungen
   in der Datei config.php konfigurieren:
 
   - $cache_enable = 1;
@@ -73,8 +73,8 @@
 
   - $cache_path = './cache';
       Der Pfad zum Ordern in welchem die Cache-Dateien gespeichert
-      werden. Sie sollten den Ordner außerhalb des DOCUMENT_ROOT
-      verschieben oder den Ordner mit einer .htaccess Datei schützen.
+      werden. Sie sollten den Ordner auÃŸerhalb des DOCUMENT_ROOT
+      verschieben oder den Ordner mit einer .htaccess Datei schÃ¼tzen.
 
   - $cache_page_index = 1;
       Ein Wert von 0 dekativiert das Zwischenspeichern von Inhalten

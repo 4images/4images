@@ -33,11 +33,11 @@
   
   function right(e) {
     if ((document.layers || (document.getElementById && !document.all)) && (e.which == 2 || e.which == 3)) {
-      alert("© Copyright by {site_name}");
+      alert("Â© Copyright by {site_name}");
       return false;
     }
     else if (event.button == 2 || event.button == 3) {
-      alert("© Copyright by {site_name}");
+      alert("Â© Copyright by {site_name}");
       return false;
     }
     return true;
@@ -51,7 +51,7 @@
     document.onmousedown = right;
   }
 
-	document.oncontextmenu = new Function("alert('© Copyright by {site_name}');return false");
+	document.oncontextmenu = new Function("alert('Â© Copyright by {site_name}');return false");
 
 // -->
 </script>

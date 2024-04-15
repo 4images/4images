@@ -22,79 +22,99 @@
   6. You should now run the following update-scripts (in this order, one at a time)
      and follow the instructions.
 
-       Update RC-1 -> 1.7.13
+       Update RC-1 -> 1.7
        ...............................
        1. update_RC-1_to_RC-2.php
        2. update_1.0_to_1.5.php
        3. update_1.5_to_1.6.php
        4. update_1.6.1_to_1.7.php
        
-       Update RC-2 -> 1.7.13
+       Update RC-2 -> 1.7
        ...............................
        1. update_1.0_to_1.5.php
        2. update_1.5_to_1.6.php
        3. update_1.6.1_to_1.7.php
 
-       Update 1.0 -> 1.7.13
+       Update 1.0 -> 1.7
        ...............................
        1. update_1.0_to_1.5.php
        2. update_1.5_to_1.6.php
        3. update_1.6.1_to_1.7.php
 
-       Update 1.5 -> 1.7.13
+       Update 1.5 -> 1.7
        ...............................
        1. update_1.5_to_1.6.php
        2. update_1.6.1_to_1.7.php
 
-       Update 1.6 -> 1.7.13
+       Update 1.6 -> 1.7
        ...............................
        1. update_1.6.1_to_1.7.php
 
-       Update 1.6.1 -> 1.7.13
+       Update 1.6.1 -> 1.7
        ...............................
        1. update_1.6.1_to_1.7.php
 
-       Update 1.7 -> 1.7.13
+       Update 1.7 -> 1.8
        ...............................
        - No update-script required
 
-       Update 1.7.1 -> 1.7.13
+       Update 1.7.1 -> 1.8
        ...............................
        - No update-script required
 
-       Update 1.7.2 -> 1.7.13
+       Update 1.7.2 -> 1.8
        ...............................
        - No update-script required
 
-       Update 1.7.3 -> 1.7.13
+       Update 1.7.3 -> 1.8
        ...............................
        - No update-script required
 
-       Update 1.7.4 -> 1.7.13
+       Update 1.7.4 -> 1.8
        ...............................
        - No update-script required
 
-       Update 1.7.5 -> 1.7.13
+       Update 1.7.5 -> 1.8
        ...............................
        - No update-script required
        
-       Update 1.7.6 -> 1.7.13
+       Update 1.7.6 -> 1.8
        ...............................
        - No update-script required       
 
-       Update 1.7.7 -> 1.7.13
+       Update 1.7.7 -> 1.8
        ...............................
        - No update-script required
 
-       Update 1.7.8 -> 1.7.13
+       Update 1.7.8 -> 1.8
        ...............................
        - No update-script required
        
-       Update 1.7.9 -> 1.7.13
+       Update 1.7.9 -> 1.8
        ...............................
        - No update-script required
 
-       Update 1.7.10 -> 1.7.13
+       Update 1.7.10 -> 1.8
+       ...............................
+       - No update-script required
+	   
+       Update 1.7.11 -> 1.8
+       ...............................
+       - No update-script required
+	   
+       Update 1.7.12 -> 1.8
+       ...............................
+       - No update-script required	   	   
+
+       Update 1.7.13 -> 1.8
+       ...............................
+       - No update-script required	  
+
+       Update 1.8 -> 1.9
+       ...............................
+       - No update-script required
+
+       Update 1.9 -> 1.10
        ...............................
        - No update-script required
 
@@ -105,3 +125,7 @@
   8. Since version 1.7.8 keywords are saved in a different format. If you make an
      update from a version older than 1.7.8 please run the "Migrate Keywords" PlugIn
      in the Admin Control Panel to convert the keywords into the new format.
+
+  9. Since version 1.10.0 the execution of PHP code in templates is disabled by
+     default. You can override this by setting the value 'EXEC_PHP_CODE' in
+     "includes/constants.php" to 1.

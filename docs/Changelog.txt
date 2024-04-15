@@ -1,7 +1,39 @@
 =========================================================
+ChangeLog Version 1.10
+=========================================================
+- Added ability to ignore images on "Validate images" page
+- Fixed wrong results when searching on "Edit images" page (thanks to kp, https://www.4homepages.de/forum/index.php?topic=33113.0)
+- Fixed error when checking for new images in currently empty categories (thanks to kp, https://www.4homepages.de/forum/index.php?topic=33113.0)
+- Fixed missing functions for error output in install.php (thanks to qBass17, https://www.4homepages.de/forum/index.php?topic=33114.0)
+- Fixed incomplete downloadable configuration file in install.php
+- Fixed uncaught file system permission error in install.php
+- Fixed error when logging in with invalid credentials
+- Fixed several warnings related to undefined variables
+- Security fix for XSS in category descriptions (thanks to rishaldwivedi)
+- Security fix for XSS in /admin/index.php login (thanks to Piyush Patil)
+- Security fix for SQL injection in /admin/images.php (thanks to Andrey Stoykov)
+- Disabled PHP execution in templates by default and added notice to update docs (thanks to Andrey Stoykov)
+- Added notice about MySQL 8.x not being supported to installation docs
+
+
+=========================================================
+ChangeLog Version 1.9
+=========================================================
+- PHP8 compatibility
+
+
+=========================================================
+ChangeLog Version 1.8
+=========================================================
+- [1.7 - 1.7.13] Multiple security fixes (thanks to Ahmed Sultan)
+- PHP7 compatibility
+- Fixed charset setting for emails in /includes/email.php
+
+
+=========================================================
 ChangeLog Version 1.7.13
 =========================================================
-- Multiple security fixes
+- [1.7 - 1.7.12] Multiple security fixes
 - Regression fixes introduced in 1.7.12
 
 
@@ -28,7 +60,7 @@ ChangeLog Version 1.7.11
 - Fixed email notification to user after activation by admin (http://www.4homepages.de/forum/index.php?topic=29623.0)
 - Fixed sql error if apostrophe in name of image (http://www.4homepages.de/forum/index.php?topic=29950.0)
 - Changed DB default settings from TYPE to ENGINE (http://www.4homepages.de/forum/index.php?topic=29627.0)
-- template with 960px width used as default
+- Template with 960px width used as default
 
 
 =========================================================
@@ -73,7 +105,7 @@ Neue Dateien / New Files:
 - includes/csrf_utils.php
 
 
-Geänderte Dateien / Changed Files:
+GeÃ¤nderte Dateien / Changed Files:
 ---------------------------------------
 global.php
 member.php
@@ -133,7 +165,7 @@ Neue Dateien / New Files:
 - admin/plugins/migrate_keywords.php
 
 
-Geänderte Dateien / Changed Files:
+GeÃ¤nderte Dateien / Changed Files:
 ---------------------------------------
 config.new.php
 categories.php
@@ -230,7 +262,7 @@ Neue Dateien / New Files:
 - Folder: templates/default_full/
 - favicon.ico
 
-Geänderte Dateien / Changed Files:
+GeÃ¤nderte Dateien / Changed Files:
 ---------------------------------------
 global.php
 install.php
@@ -248,7 +280,7 @@ lang/english/admin.php
 lang/english/stop_searchterms.txt renamed to /lang/english/search_stopterms.txt
 
 
-Geänderte Templates / Changed Templates:
+GeÃ¤nderte Templates / Changed Templates:
 ---------------------------------------
 - header.html
 - category_dropdown_form.html
@@ -258,9 +290,9 @@ Geänderte Templates / Changed Templates:
 Sprache / Language:
 ---------------------------------------
 - admin.php
-    geändert/edited: $lang['permissions_edit_success'] (lang/deutsch/admin.php only)
+    geÃ¤ndert/edited: $lang['permissions_edit_success'] (lang/deutsch/admin.php only)
 - main.php
-    geändert/edited: $lang['activation_success'] (lang/deutsch/main.php only)
+    geÃ¤ndert/edited: $lang['activation_success'] (lang/deutsch/main.php only)
 
 
 =========================================================
@@ -273,7 +305,7 @@ ChangeLog Version 1.7.6
 - Added possibility to sort by filenames in CP image search form
 - Added onchange javascript for "per page" dropdown
 
-Geänderte Dateien / Changed Files:
+GeÃ¤nderte Dateien / Changed Files:
 ---------------------------------------
 - admin/admin_global.php
 - admin/images.php
@@ -285,7 +317,7 @@ Geänderte Dateien / Changed Files:
 - lightbox.php
 - postcard.php
 
-Geänderte Templates / Changed Templates:
+GeÃ¤nderte Templates / Changed Templates:
 ---------------------------------------
 - postcard_preview.html
 - lightbox.html
@@ -315,7 +347,7 @@ ChangeLog Version 1.7.5
 - Bugfix: [BUG] 1.7.4 Postcard Vorschau | Postcard Preview (http://www.4homepages.de/forum/index.php?topic=19925.0)
 - Bugfix: Cache Problem 1.7.4 | Index Seite Error 404 (http://www.4homepages.de/forum/index.php?topic=16886.0)
 
-Geänderte Dateien / Changed Files:
+GeÃ¤nderte Dateien / Changed Files:
 ---------------------------------------
 - admin/admin_global.php
 - admin/images.php
@@ -348,7 +380,7 @@ ChangeLog Version 1.7.4
 - Bugfix: [1.7 - 1.7.3] Thumbnailer in ACP doesnt work with single quote ( ' ) in filenames (http://www.4homepages.de/forum/index.php?topic=14417.0)
 - Bugfix [1.7.3] Kleiner Fehler in 1.7.3 (http://www.4homepages.de/forum/index.php?topic=14912.0)
 
-Geänderte Dateien / Changed Files:
+GeÃ¤nderte Dateien / Changed Files:
 ---------------------------------------
 - details.php
 - download.php
@@ -365,7 +397,7 @@ Geänderte Dateien / Changed Files:
 - admin/thumbnailer.php
 - admin/usergroups.php
 
-Geänderte Templates / Changed Templates:
+GeÃ¤nderte Templates / Changed Templates:
 ---------------------------------------
 - search_form.html
 
@@ -383,7 +415,7 @@ ChangeLog Version 1.7.3
 - Fixed sharing sessions for multiple installations under the same domain
 - Fixed bug for wrong bbcode url parsing
 - Added new tag {image_url} which points to the detail page of an image and can be used in templates (ie. thumbmail_bit.html)
-- Added EXIF support (similar to IPTC support, thanks to Dennis Häfner)
+- Added EXIF support (similar to IPTC support, thanks to Dennis HÃ¤fner)
 - Added rel="nofollow" attribute in automatically parsed urls (http://googleblog.blogspot.com/2005/01/preventing-comment-spam.html)
 - Added support for {ifno ..} tags in addition to {ifnot ..}
 - Added anchor for direct access to comments in comment_bit.html (ie. for RSS)
@@ -405,7 +437,7 @@ Neue Dateien / New Files:
 - Folder: /captcha/
 - rss.php
 
-Geänderte Dateien / Changed Files:
+GeÃ¤nderte Dateien / Changed Files:
 ---------------------------------------
 - categories.php
 - details.php
@@ -451,7 +483,7 @@ Sprache / Language:
     new: $lang['exif_aperture']
     new: $lang['exif_focallen']
 
-Geänderte Templates / Changed Templates:
+GeÃ¤nderte Templates / Changed Templates:
 ---------------------------------------
 - comment_bit.html
 - comment_form.html
@@ -515,7 +547,7 @@ Neue Dateien / New Files:
 - admin/images/plus.gif
 - admin/phpinfo.php
 
-Geänderte Dateien / Changed Files:
+GeÃ¤nderte Dateien / Changed Files:
 ---------------------------------------
 - categories.php
 - details.php
@@ -552,7 +584,7 @@ Geänderte Dateien / Changed Files:
 - admin/users.php
 - admin/validateimages.php
 
-Geänderte Templates / Changed Templates:
+GeÃ¤nderte Templates / Changed Templates:
 ---------------------------------------
 - postcard_create.html
 - postcard_preview.html
@@ -594,7 +626,7 @@ Neue Dateien / New Files:
 ---------------------------------------
 - includes/cache_utils.php
 
-Geänderte Dateien / Changed Files:
+GeÃ¤nderte Dateien / Changed Files:
 ---------------------------------------
 - categories.php
 - details.php
@@ -619,7 +651,7 @@ Geänderte Dateien / Changed Files:
 - admin/images.php
 - admin/users.php
 
-Geänderte Templates / Changed Templates:
+GeÃ¤nderte Templates / Changed Templates:
 ---------------------------------------
 - member_uploadform.html
 
@@ -627,28 +659,28 @@ Geänderte Templates / Changed Templates:
 =========================================================
 ChangeLog Version 1.7
 =========================================================
-- Auto-Login gilt auch für Control Panel (ADMIN_SAFE_LOGIN auf 1 setzen in constants.php macht diese -nderung rückgängig)
-- Stylesheet für Clickstream
-- beim Hinzufügen/Bearbeiten von Bildern User wählbar
-- Statistiken zurücksetzen für einzelne Kategorien
-- System-Buttons (Leuchtkasten, Download etc.) können jetzt sprachabhängig angezeigt werden.
+- Auto-Login gilt auch fÃ¼r Control Panel (ADMIN_SAFE_LOGIN auf 1 setzen in constants.php macht diese -nderung rÃ¼ckgÃ¤ngig)
+- Stylesheet fÃ¼r Clickstream
+- beim HinzufÃ¼gen/Bearbeiten von Bildern User wÃ¤hlbar
+- Statistiken zurÃ¼cksetzen fÃ¼r einzelne Kategorien
+- System-Buttons (Leuchtkasten, Download etc.) kÃ¶nnen jetzt sprachabhÃ¤ngig angezeigt werden.
   Einen neue Ordner erstellen ("templates/<template_pack>/images_<language_name>") und Bilder darin plazieren.
-  Darüberhinaus kann nun das Tag {template_lang_image_url} in den Templates verwendet werden welches den Pfad
-  zu diesem Ordner sprachabhängig erzeugt.
-- Bilder freischalten: Bilddateien werden nun beim vom Server gelöscht wenn "löschen" gewählt wurde
-- Nächstes/vorheriges Bild auf der Detailseite werde nun abhängig davon abgezeigt woher der User kommt
+  DarÃ¼berhinaus kann nun das Tag {template_lang_image_url} in den Templates verwendet werden welches den Pfad
+  zu diesem Ordner sprachabhÃ¤ngig erzeugt.
+- Bilder freischalten: Bilddateien werden nun beim vom Server gelÃ¶scht wenn "lÃ¶schen" gewÃ¤hlt wurde
+- NÃ¤chstes/vorheriges Bild auf der Detailseite werde nun abhÃ¤ngig davon abgezeigt woher der User kommt
   (Kategorien, Leuchtkasten, Suche)
-- Auto-Thumbaniler und Auto-Resizer erlauben nun Bildverkleinerung proportional oder mit fester Höhe oder Breite.
-- Es gibt jetzt drei Optionen für die Userfreischaltung: Keine, per Email, durch den Admin
+- Auto-Thumbaniler und Auto-Resizer erlauben nun Bildverkleinerung proportional oder mit fester HÃ¶he oder Breite.
+- Es gibt jetzt drei Optionen fÃ¼r die Userfreischaltung: Keine, per Email, durch den Admin
 - Es wird nun auch eine Email mit den Zugangsdaten an neu registrierte User gesendet,
   wenn Account Aktivierung auf "Keine" steht.
-- Charset und direction können nun in den Sprachdateien für einzelne Sprachen festgelegt werden.
-- User können nun ihre eigenen Bilder un zugehörigen Kommentare bearbeiten/löschen.
+- Charset und direction kÃ¶nnen nun in den Sprachdateien fÃ¼r einzelne Sprachen festgelegt werden.
+- User kÃ¶nnen nun ihre eigenen Bilder un zugehÃ¶rigen Kommentare bearbeiten/lÃ¶schen.
   Jede Funktion kann einzeln in den Einstellungen deaktiviert werden.
-- Es könne nun mehrere Bilder/Kommentare/User auf einmal gelöscht werden.
+- Es kÃ¶nne nun mehrere Bilder/Kommentare/User auf einmal gelÃ¶scht werden.
 
 
-Geänderte Dateien / Changes files:
+GeÃ¤nderte Dateien / Changes files:
 ---------------------------------------
 - admin/admin_functions.php
 - admin/admin_global.php
@@ -701,7 +733,7 @@ Sprache / Language:
 main.php
   neu: $lang['charset']
   neu: $lang['direction']
-  gelöscht: $lang['invalid_username'] und $lang['invalid_passwort']
+  gelÃ¶scht: $lang['invalid_username'] und $lang['invalid_passwort']
   neu: $lang['invalid_login']
   neu: $lang['image_edit']
   neu: $lang['image_edit_success']
@@ -716,13 +748,13 @@ main.php
   neu: $lang['comment_delete_success']
   neu: $lang['comment_delete_error']
   neu: $lang['comment_delete_confirm']
-  geändert: $lang['register_success']
+  geÃ¤ndert: $lang['register_success']
   neu: $lang['register_success_none']
   neu: $lang['register_success_admin']
 
 admin.php
-  geändert: $lang['resize_dimension_desc']
-  geändert: $lang['convert_thumbnail_dimension']
+  geÃ¤ndert: $lang['resize_dimension_desc']
+  geÃ¤ndert: $lang['convert_thumbnail_dimension']
   neu: $lang['resize_proportions_desc']
   neu: $lang['resize_proportionally']
   neu: $lang['resize_fixed_width']
@@ -731,10 +763,10 @@ admin.php
   neu: $setting['user_delete_image']
   neu: $setting['user_edit_comments']
   neu: $setting['user_delete_comments']
-  geändert: $setting['auto_thumbnail_dimension']
+  geÃ¤ndert: $setting['auto_thumbnail_dimension']
   neu: $setting['auto_thumbnail_resize_type']
   neu: $auto_thumbnail_resize_type_optionlist
-  geändert: $setting['account_activation']
+  geÃ¤ndert: $setting['account_activation']
   neu: $account_activation_optionlist
 
 Email templates:
@@ -742,13 +774,13 @@ Email templates:
   neu: activation_success.html
   neu: admin_activation.html
   neu: register_activation_admin.html
-  geändert: upload_notify.html ({validation_url} hinzugefügt)
+  geÃ¤ndert: upload_notify.html ({validation_url} hinzugefÃ¼gt)
 
 Templates:
 ---------------------------------------
-- style.css (.clickstream hinzugefügt)
+- style.css (.clickstream hinzugefÃ¼gt)
 - header.html
-  {charset} und {direction} hinzugefügt
+  {charset} und {direction} hinzugefÃ¼gt
 - comment_bit.html
     bild tags angepasst
 - neu: member_editimage.html
@@ -764,16 +796,16 @@ ChangeLog Version 1.6.1
   http://www.4homepages.de/forum/viewtopic.php?t=839
   http://www.4homepages.de/forum/viewtopic.php?t=840
 - Bugfix bei der Suche mit "AND"
-- Bug beim Upload von mehreren verschiedenen Dateien über das CP gefixt
+- Bug beim Upload von mehreren verschiedenen Dateien Ã¼ber das CP gefixt
 - Sprachausgabe gefixt wenn Account-Aktivierung abgeschaltet ist
 - Bildbeschreibung erlaubt wieder HTML-Code
-- Bugfix bei der _berprüfung der Dateigröîe bei Bilderupload
-- Bugfix beim Auslesen der Bildgröîe und der IPTC-Tags
+- Bugfix bei der _berprÃ¼fung der DateigrÃ¶Ã®e bei Bilderupload
+- Bugfix beim Auslesen der BildgrÃ¶Ã®e und der IPTC-Tags
 - Bugfix beim Parsen der Email-Templates
 - Bugfix beim Verkleinern von Thumbnails
-- Bugfix bei "Check new images" bei Hinzufügen aus dem media-Verzeichnis
+- Bugfix bei "Check new images" bei HinzufÃ¼gen aus dem media-Verzeichnis
 
-  Geänderte Dateien / Changed files:
+  GeÃ¤nderte Dateien / Changed files:
   ---------------------------------------
   - includes/functions.php
   - includes/upload.php
@@ -797,17 +829,17 @@ ChangeLog Version 1.6.1
 ChangeLog Version 1.6
 =========================================================
 - Bugs beim Download von Medien mit aktiviertem Safe Mode gefixt
-- User können wählen ob Sie Emails von den Administratoren empfangen wollen
-- Administratoren können nun einstellen, ob User nach der Registrierung
-  Ihren Account per Email aktivieren müssen
+- User kÃ¶nnen wÃ¤hlen ob Sie Emails von den Administratoren empfangen wollen
+- Administratoren kÃ¶nnen nun einstellen, ob User nach der Registrierung
+  Ihren Account per Email aktivieren mÃ¼ssen
 - In der Suchmaske kann jetzt auch nach Usernamen gesucht werden
-- Individuelle Befugnisse für jeden User
-- Leichtes Hinzufügen von neuen User-Feldern (siehe "includes/db_field_definitions.php")
+- Individuelle Befugnisse fÃ¼r jeden User
+- Leichtes HinzufÃ¼gen von neuen User-Feldern (siehe "includes/db_field_definitions.php")
 - URL Felder bei Bildern und Download URL akzeptieren relative Pfade
 - Automatische Thumbnailerstellung bei User-Uploads
-- Optimierung bezüglich des Suchindex
+- Optimierung bezÃ¼glich des Suchindex
 
-  Geänderte Dateien / Changed files:
+  GeÃ¤nderte Dateien / Changed files:
   ---------------------------------------
   - includes/constants.php
   - includes/db_field_definitions.php
@@ -854,7 +886,7 @@ ChangeLog Version 1.6
       neu: $setting['auto_thumbnail']
       neu: $setting['auto_thumbnail_dimension']
       neu: $setting['auto_thumbnail_quality']
-      geändert: $setting['im_convert_path'] zu $setting['convert_tool_path']
+      geÃ¤ndert: $setting['im_convert_path'] zu $setting['convert_tool_path']
 
   - main.php
       neu: $lang['allow_admin_emails']
@@ -864,10 +896,10 @@ ChangeLog Version 1.6
   Templates:
   ---------------------------------------
   - search_form.html
-      Name der "search_field" Radios geändert
-      Neues Textfeld für die Suche nach Usernamen
+      Name der "search_field" Radios geÃ¤ndert
+      Neues Textfeld fÃ¼r die Suche nach Usernamen
   - member_editprofile.html
-      Zeile hinzugefügt für die Einstellung ob der User Emails vom Admin erhalten will
+      Zeile hinzugefÃ¼gt fÃ¼r die Einstellung ob der User Emails vom Admin erhalten will
   - member_profile.html
       Schreibfehler: tarbet zu target
 
@@ -877,18 +909,18 @@ ChangeLog Version 1.5
 =========================================================
 - Geschwindigkeits-Optimierung
 - Poskarten-Modul
-- Usergruppenverwaltung mit detailierter Rechtevergabe für jede Kategorie
-- Upload durch User möglich
+- Usergruppenverwaltung mit detailierter Rechtevergabe fÃ¼r jede Kategorie
+- Upload durch User mÃ¶glich
 - Parsen von IPTC-Tags (http://www.iptc.org)
-- vereinfachte Integration von neuen Datenbankfelder für Bilder
-  (siehe "inludes/db_field_definitions.php" für nähere Informationen)
+- vereinfachte Integration von neuen Datenbankfelder fÃ¼r Bilder
+  (siehe "inludes/db_field_definitions.php" fÃ¼r nÃ¤here Informationen)
 - Freies Anordnen der Kategorie-Reihenfolge
-- Statt Upload von Bilder können URLs als Quelle angegeben werden
-- Optionale Angabe einer URL für den Download-Link (z.B. zur Verlinkung auf Websites)
-- Medien können optional gezippt heruntergeladen werden
-- Alle im Leuchtkasten befindlichen Medien können in einem .zip heruntergeladen werden
+- Statt Upload von Bilder kÃ¶nnen URLs als Quelle angegeben werden
+- Optionale Angabe einer URL fÃ¼r den Download-Link (z.B. zur Verlinkung auf Websites)
+- Medien kÃ¶nnen optional gezippt heruntergeladen werden
+- Alle im Leuchtkasten befindlichen Medien kÃ¶nnen in einem .zip heruntergeladen werden
 
-  Geänderte Templates / Changed Templates:
+  GeÃ¤nderte Templates / Changed Templates:
   ---------------------------------------
   - category_bit.html
   - details.php
@@ -915,16 +947,16 @@ ChangeLog Version 1.5
 =========================================================
 ChangeLog Version 1.0
 =========================================================
-- Bug bezüglich Erkennung von Dateiendungen in Groîbuchstaben
+- Bug bezÃ¼glich Erkennung von Dateiendungen in GroÃ®buchstaben
   gefixt.
 - In der Detailansicht der Bilder kann nun bei den Links zum
-  nächsten oder vorherigen Bild zusätzlich zum Link die Bilddatei
+  nÃ¤chsten oder vorherigen Bild zusÃ¤tzlich zum Link die Bilddatei
   angezeigt werden.
-- Bug bezüglich doppelter Session Variablen in der Datenbank gefixt
-- Anzeige der neue Bilder erfolgt nun über die Suchfunktion.
+- Bug bezÃ¼glich doppelter Session Variablen in der Datenbank gefixt
+- Anzeige der neue Bilder erfolgt nun Ã¼ber die Suchfunktion.
   Datei new.php und entsprechendes Template new.html wurden entfernt.
 - Bilddateien werden bei fehlgeschlagener Bildverkleinerung
-  nicht mehr gelöscht.
+  nicht mehr gelÃ¶scht.
 
 
 =========================================================
@@ -932,17 +964,17 @@ ChangeLog Version 1.0 RC-2
 =========================================================
 - Language File und Template Verwaltung umgestellt.
   Keine Sprachausgabe mehr in den Templates.
-- Englisches Sprach-File hinzugefügt.
-- Eigene Templates für JPG, GIF und PNG
-- Suche komplett umgestellt. Suche erfolgt nun über einen
-  Index und nicht mehr über die komplette Datenbank.
-- Kategorieverwaltung umgestellt. Es wird nun ein Ordner für jede
+- Englisches Sprach-File hinzugefÃ¼gt.
+- Eigene Templates fÃ¼r JPG, GIF und PNG
+- Suche komplett umgestellt. Suche erfolgt nun Ã¼ber einen
+  Index und nicht mehr Ã¼ber die komplette Datenbank.
+- Kategorieverwaltung umgestellt. Es wird nun ein Ordner fÃ¼r jede
   Kategorie erstellt (Name ist identisch mit der ID der Kategorie).
-  Grund: Linux hat einen erhöhten Verwaltungswaufwand bei Ordner
+  Grund: Linux hat einen erhÃ¶hten Verwaltungswaufwand bei Ordner
   mit mehr als 1024 Dateien.
 - Auf manchen Servern ging die Weiterleitung nach dem Einloggen
   ins Control Panel ins Leere. Dieser Bug ist (hoffentlich) gefixt.
-- Bugfix bezüglich MimeType-Erkennung bei Opera gefixt.
+- Bugfix bezÃ¼glich MimeType-Erkennung bei Opera gefixt.
 
 =========================================================
 ChangeLog Version 1.0 RC-1

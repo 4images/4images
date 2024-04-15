@@ -5,17 +5,15 @@
  *    ----------------------------------------------------------------    *
  *                                                                        *
  *             File: index.php                                            *
- *        Copyright: (C) 2002-2015 4homepages.de                          *
- *            Email: jan@4homepages.de                                    *
+ *        Copyright: (C) 2002-2023 4homepages.de                          *
+ *            Email: 4images@4homepages.de                                *
  *              Web: http://www.4homepages.de                             *
- *    Scriptversion: 1.7.13                                               *
- *                                                                        *
- *    Never released without support from: Nicky (http://www.nicky.net)   *
+ *    Scriptversion: 1.10                                                 *
  *                                                                        *
  **************************************************************************
  *                                                                        *
  *    Dieses Script ist KEINE Freeware. Bitte lesen Sie die Lizenz-       *
- *    bedingungen (Lizenz.txt) für weitere Informationen.                 *
+ *    bedingungen (Lizenz.txt) fÃ¼r weitere Informationen.                 *
  *    ---------------------------------------------------------------     *
  *    This script is NOT freeware! Please read the Copyright Notice       *
  *    (Licence.txt) for further information.                              *
@@ -27,27 +25,26 @@ define('ROOT_PATH', './../');
 require('admin_global.php');
 
 if ($redirect != "") {
-  if (strpos($redirect, '://') === false) {
-    show_admin_header("<meta http-equiv=\"Refresh\" content=\"0; URL=".$site_sess->url($redirect)."\">");
-    echo "<p><a href=\"".$site_sess->url($redirect)."\">".$lang['admin_login_redirect']."</a></p>";
-    show_admin_footer();
-  } else {
-      redirect('home.php');
-  }
-  exit;
+    if (strpos($redirect, '://') === false) {
+        show_admin_header("<meta http-equiv=\"Refresh\" content=\"0; URL=".$site_sess->url($redirect)."\">");
+        echo "<p><a href=\"".$site_sess->url($redirect)."\">".$lang['admin_login_redirect']."</a></p>";
+        show_admin_footer();
+    } else {
+        redirect('home.php');
+    }
+    exit;
 }
+
 if ($action == "") {
-  $action = "frames";
+    $action = "frames";
 }
 
 if ($action == "frames") {
-  if ($goto != "" && strpos($goto, '://') === false) {
-    $framesrc = $site_sess->url($goto);
-  }
-  else {
-    $framesrc = $site_sess->url("home.php");
-  }
-?>
+    if ($goto != "" && strpos($goto, '://') === false) {
+        $framesrc = $site_sess->url($goto);
+    } else {
+        $framesrc = $site_sess->url("home.php");
+    } ?>
 <html dir="<?php echo $lang['direction']; ?>">
   <head>
     <title><?php echo $config['site_name']; ?> Control Panel</title>
@@ -65,7 +62,7 @@ if ($action == "frames") {
 }
 
 if ($action == "head") {
-?>
+    ?>
 <html dir="<?php echo $lang['direction']; ?>">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $lang['charset']; ?>">
@@ -104,7 +101,7 @@ if ($action == "head") {
 }
 
 if ($action == "nav") {
-?>
+    ?>
 <html dir="<?php echo $lang['direction']; ?>">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $lang['charset']; ?>">
@@ -121,56 +118,54 @@ if ($action == "nav") {
           <table width="199" border="0" cellpadding="0" cellspacing="0" bgcolor="#EEEEEE">
           <?php
           show_nav_header($lang['nav_categories_main']);
-          show_nav_option($lang['nav_categories_edit'], "categories.php?action=modifycats");
-          show_nav_option($lang['nav_categories_add'], "categories.php?action=addcat");
+    show_nav_option($lang['nav_categories_edit'], "categories.php?action=modifycats");
+    show_nav_option($lang['nav_categories_add'], "categories.php?action=addcat");
 
-          show_nav_header($lang['nav_images_main']);
-          show_nav_option($lang['nav_images_edit'], "images.php?action=modifyimages");
-          show_nav_option($lang['nav_images_add'], "images.php?action=addimages");
-          show_nav_option($lang['nav_images_validate'], "validateimages.php?action=validateimages");
-          show_nav_option($lang['nav_images_check'], "checkimages.php?action=checkimages");
-          show_nav_option($lang['nav_images_thumbnailer'], "thumbnailer.php?action=checkthumbnails");
-          show_nav_option($lang['nav_images_resizer'], "resizer.php?action=selectoptions");
+    show_nav_header($lang['nav_images_main']);
+    show_nav_option($lang['nav_images_edit'], "images.php?action=modifyimages");
+    show_nav_option($lang['nav_images_add'], "images.php?action=addimages");
+    show_nav_option($lang['nav_images_validate'], "validateimages.php?action=validateimages");
+    show_nav_option($lang['nav_images_check'], "checkimages.php?action=checkimages");
+    show_nav_option($lang['nav_images_thumbnailer'], "thumbnailer.php?action=checkthumbnails");
+    show_nav_option($lang['nav_images_resizer'], "resizer.php?action=selectoptions");
 
-          show_nav_header($lang['nav_comments_main']);
-          show_nav_option($lang['nav_comments_edit'], "comments.php?action=modifycomments");
+    show_nav_header($lang['nav_comments_main']);
+    show_nav_option($lang['nav_comments_edit'], "comments.php?action=modifycomments");
 
-          show_nav_header($lang['nav_users_main']);
-          show_nav_option($lang['nav_users_edit'], "users.php?action=modifyusers");
-          if (!defined('USER_INTEGRATION')) {
-            show_nav_option($lang['nav_users_add'], "users.php?action=addusers");
-          }
-          show_nav_option($lang['nav_usergroups'], "usergroups.php?action=modifygroups");
-          if (!defined('USER_INTEGRATION')) {
-            show_nav_option($lang['nav_users_email'], "email.php?action=emailusers");
-          }
+    show_nav_header($lang['nav_users_main']);
+    show_nav_option($lang['nav_users_edit'], "users.php?action=modifyusers");
+    if (!defined('USER_INTEGRATION')) {
+        show_nav_option($lang['nav_users_add'], "users.php?action=addusers");
+    }
+    show_nav_option($lang['nav_usergroups'], "usergroups.php?action=modifygroups");
+    if (!defined('USER_INTEGRATION')) {
+        show_nav_option($lang['nav_users_email'], "email.php?action=emailusers");
+    }
 
-          show_nav_header($lang['nav_general_main']);
-          show_nav_option($lang['nav_general_settings'], "settings.php?action=modifysettings");
-          show_nav_option($lang['nav_general_templates'], "templates.php?action=modifytemplates");
-          show_nav_option($lang['nav_general_backup'], "backup.php?action=modifybackups");
-          show_nav_option($lang['nav_general_stats'], "stats.php?action=resetstats");
-          show_nav_option("phpinfo()", "phpinfo.php");
+    show_nav_header($lang['nav_general_main']);
+    show_nav_option($lang['nav_general_settings'], "settings.php?action=modifysettings");
+    show_nav_option($lang['nav_general_templates'], "templates.php?action=modifytemplates");
+    show_nav_option($lang['nav_general_backup'], "backup.php?action=modifybackups");
+    show_nav_option($lang['nav_general_stats'], "stats.php?action=resetstats");
+    show_nav_option("phpinfo()", "phpinfo.php");
 
-          if (@is_dir("plugins")) {
-            show_nav_header("PlugIns");
-            $handle = @opendir("plugins/");
-            while ($file = @readdir($handle)) {
-              if (get_file_extension($file) != "php") {
+    if (@is_dir("plugins")) {
+        show_nav_header("PlugIns");
+        $handle = @opendir("plugins/");
+        while ($file = @readdir($handle)) {
+            if (get_file_extension($file) != "php") {
                 continue;
-              }
-              $plugin_file = file("./plugins/".$file);
-              $plugin_file[0] = trim($plugin_file[0]);
-              if (preg_match("/PLUGIN_TITLE:(.+)/", $plugin_file[0], $regs)) {
-                show_nav_option(trim($regs[1]), "./plugins/".$file);
-              }
-              else {
-                show_nav_option($file, "./plugins/".$file);
-              }
             }
-            @closedir($handle);
-          }
-          ?>
+            $plugin_file = file("./plugins/".$file);
+            $plugin_file[0] = trim($plugin_file[0]);
+            if (preg_match("/PLUGIN_TITLE:(.+)/", $plugin_file[0], $regs)) {
+                show_nav_option(trim($regs[1]), "./plugins/".$file);
+            } else {
+                show_nav_option($file, "./plugins/".$file);
+            }
+        }
+        @closedir($handle);
+    } ?>
           </table>
         </td>
         <td bgcolor="#004C75" width="1"><img src="images/spacer.gif"></td>

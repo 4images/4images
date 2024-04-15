@@ -2,12 +2,12 @@
                         CAPTCHA
   ==========================================================
 
-  Seit Version 1.7.3 verfügt 4images über die Möglichkeit,
-  Formulare per CAPTCHA zu schützen.
+  Seit Version 1.7.3 verfÃ¼gt 4images Ã¼ber die MÃ¶glichkeit,
+  Formulare per CAPTCHA zu schÃ¼tzen.
   Allgemeine Informationen zu CAPTCHAS finden Sie hier:
   http://de.wikipedia.org/wiki/Captcha
 
-  Folgende Formulare lassen sich per CAPTCHA schützen:
+  Folgende Formulare lassen sich per CAPTCHA schÃ¼tzen:
     - Registrierung
     - E-Cards
     - Kommentare
@@ -19,33 +19,33 @@
   Im Ordner "captcha" befinden sie die Basis-Dateien die
   zur Generierung der CAPTCHA Bilder verwendet werden.
 
-  Der Ordner "captcha/backgrounds" enthält Bild-Vorlagen
-  für den Hintergrund. Es wird zufallsmäßig ein Bild aus
-  diesem Ordner gewählt. Neue Hintergrund-Bilder können
-  einfach diesem Ordner hinzugefügt werden und werden
+  Der Ordner "captcha/backgrounds" enthÃ¤lt Bild-Vorlagen
+  fÃ¼r den Hintergrund. Es wird zufallsmÃ¤ÃŸig ein Bild aus
+  diesem Ordner gewÃ¤hlt. Neue Hintergrund-Bilder kÃ¶nnen
+  einfach diesem Ordner hinzugefÃ¼gt werden und werden
   sofort verwendet.
 
-  Der Ordner "captcha/fonts" enthält Schriftarten die für
+  Der Ordner "captcha/fonts" enthÃ¤lt Schriftarten die fÃ¼r
   den dargestellten Text verwendet werden. Es wird
-  zufallsmäßig eine Schriftart aus diesem Ordner gewählt.
-  Neue Schriftarten können einfach diesem Ordner hinzugefügt
+  zufallsmÃ¤ÃŸig eine Schriftart aus diesem Ordner gewÃ¤hlt.
+  Neue Schriftarten kÃ¶nnen einfach diesem Ordner hinzugefÃ¼gt
   werden und werden sofort verwendet.
 
-  Die Datei "captcha/wordlist.txt" enthält eine Liste mit
-  Worten welche an Stelle von zufällig generierten
-  Zeichenfolgen verwendet werden können. Diese Funktion wird
-  über die Konfigurationseinstellung $captcha_wordfile
+  Die Datei "captcha/wordlist.txt" enthÃ¤lt eine Liste mit
+  Worten welche an Stelle von zufÃ¤llig generierten
+  Zeichenfolgen verwendet werden kÃ¶nnen. Diese Funktion wird
+  Ã¼ber die Konfigurationseinstellung $captcha_wordfile
   aktiviert.
 
   ----------------------------------------------------------
   Das CAPTCHA System aktivieren:
   ----------------------------------------------------------
 
-  Das CAPTCHA System ist standardmäßig aktiviert.
+  Das CAPTCHA System ist standardmÃ¤ÃŸig aktiviert.
 
   -- Erweiterte Kontrolle des CAPTCHA Systems ------------
 
-  Sie können das CAPTCHA System in der config.php mit den 
+  Sie kÃ¶nnen das CAPTCHA System in der config.php mit den 
   folgende Anweisungen konfigurieren:
 
   - $captcha_enable = 1;
@@ -54,22 +54,22 @@
       Der Standard-Wert ist 1.
 
   - $captcha_enable_comments = 1;
-      Ein Wert von 1 aktiviert das CAPTCHA System für das
+      Ein Wert von 1 aktiviert das CAPTCHA System fÃ¼r das
       Kommentar-Formular, 0 deaktiviert es.
       Der Standard-Wert ist 1.
 
   - $captcha_enable_upload = 1;
-      Ein Wert von 1 aktiviert das CAPTCHA System für das
+      Ein Wert von 1 aktiviert das CAPTCHA System fÃ¼r das
       Upload-Formular, 0 deaktiviert es.
       Der Standard-Wert ist 1.
 
   - $captcha_enable_registration = 1;
-      Ein Wert von 1 aktiviert das CAPTCHA System für das
+      Ein Wert von 1 aktiviert das CAPTCHA System fÃ¼r das
       Registrierungs-Formular, 0 deaktiviert es.
       Der Standard-Wert ist 1.
 
   - $captcha_enable_postcards = 1;
-      Ein Wert von 1 aktiviert das CAPTCHA System für das
+      Ein Wert von 1 aktiviert das CAPTCHA System fÃ¼r das
       E-Cards-Formular, 0 deaktiviert es.
       Der Standard-Wert ist 1.
 
@@ -78,19 +78,19 @@
       (backgrounds, fonts) liegen.
 
   - $captcha_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-      Eine Liste mit Zeichen und/oder Ziffern die für
-      die zufällig generierten Zeichenfolgen verwendet
+      Eine Liste mit Zeichen und/oder Ziffern die fÃ¼r
+      die zufÃ¤llig generierten Zeichenfolgen verwendet
       werden.
       Der Standard-Wert ist "abcdefghijklmnopqrstuvwxyz123456789".
 
   - $captcha_length = 6;
-      Anzahl der Zeichen und/oder Ziffern der zufällig
+      Anzahl der Zeichen und/oder Ziffern der zufÃ¤llig
       generierten Zeichenfolgen.
       Der Standard-Wert ist 6.
 
   - $captcha_wordfile = 0;
       Ist diese Anweisung auf 1 gesetzt, wird anstatt einer
-      generierten Zeichenfolge ein zufällig ausgewähltes Wort
+      generierten Zeichenfolge ein zufÃ¤llig ausgewÃ¤hltes Wort
       aus der Datei "captcha/words.txt" verwendet.
       Der Standard-Wert ist 0.
 
@@ -99,7 +99,7 @@
       Der Standard-Wert ist 200.
 
   - $captcha_height = 70;
-      Höhe des angezeigte CAPTCHA Bilder in Pixel.
+      HÃ¶he des angezeigte CAPTCHA Bilder in Pixel.
       Der Standard-Wert ist 70.
 
   - $captcha_text_color = "#000000";
@@ -107,11 +107,11 @@
       Der Standard-Wert ist "#000000" (schwarz).
 
   - $captcha_text_size = 25;
-      Schriftgröße des angezeigten CAPTCHA Textes.
+      SchriftgrÃ¶ÃŸe des angezeigten CAPTCHA Textes.
       Der Standard-Wert ist 25.
 
   - $captcha_text_transparency = 65;
-      Transparenz-Wert für den CAPTCHA Text.
+      Transparenz-Wert fÃ¼r den CAPTCHA Text.
       Der Standard-Wert ist 65.
 
   - $captcha_filter_text = 1;

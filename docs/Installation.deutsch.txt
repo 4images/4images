@@ -6,43 +6,43 @@
   Systemvoraussetzungen:
   ----------------------------------------------------------
   - Ein Webserver oder ein Webhosting Account (Empfohlen wird Linux/Apache)
-  - PHP Version 4.0.5 oder höher (Empfohlen wird die jeweils aktuellste Version).
-    Um zu gewährleisten, dass 4images einwandfrei funktioniert, sollte "safe_mode"
+  - PHP Version 5.2 oder hÃ¶her (Empfohlen wird die jeweils aktuellste Version).
+    Um zu gewÃ¤hrleisten, dass 4images einwandfrei funktioniert, sollte "safe_mode"
     deaktiviert sein ("safe_mode = off" in your php.ini).
-  - MySQL Version 3.23 oder höher (Empfohlen wird MySQL Version 3.23.33)
+  - MySQL Version 5.1 bis 5.7. MySQL Version 8 wird aktuell nicht unterstÃ¼tzt.
 
   Optional:
   - ImageMagick (http://www.imagemagick.org) oder GD (http://www.boutell.com/gd)
-  - Um Thumbnails und verkleinerte Bilder erstellen zu können, wird PHP mit Unterstützung
+  - Um Thumbnails und verkleinerte Bilder erstellen zu kÃ¶nnen, wird PHP mit UnterstÃ¼tzung
     der GD Bibliothek (http://www.boutell.com/gd) oder das ImageMagick
     "convert" Programm (http://www.imagemagick.org) oder NetPBM (http://netpbm.sourceforge.net)
-    benötigt.
+    benÃ¶tigt.
 
 
   ----------------------------------------------------------
   Installation:
   ----------------------------------------------------------
-  (Für Update von älteren Versionen siehe Update.deutsch.txt)
+  (FÃ¼r Update von Ã¤lteren Versionen siehe Update.deutsch.txt)
 
-  1. Entpacken Sie das .zip Archiv (z.B. mit WinZip) und übertragen Sie alle Dateien
+  1. Entpacken Sie das .zip Archiv (z.B. mit WinZip) und Ã¼bertragen Sie alle Dateien
      in ein geeignetes Verzeichnis auf Ihren Webserver (Achten Sie darauf, dass die
      Verzeichnisstruktur erhalten bleibt) und rufen Sie dieses Verzeichnis
-     über Ihren Browser auf.
+     Ã¼ber Ihren Browser auf.
 
   2. Nun erscheint die Installationsmaske von 4images. Tragen Sie alle
      geforderten Daten in das Formular ein und klicken Sie auf "Installation starten".
 
-  3. Es werden jetzt die benötigten Tabellen in Ihrer Datenbank erstellt und
+  3. Es werden jetzt die benÃ¶tigten Tabellen in Ihrer Datenbank erstellt und
      Grundeinstellungen vorgenommen.
 
-  4. Der Installer erstellt während der Installation eine Konfigurationsdatei mit dem
-     Namen config.php im gewählten Installationsverzeichnis.
-     Sollte der Installer diese Datei nicht direkt auf Ihrem Server speichern können
+  4. Der Installer erstellt wÃ¤hrend der Installation eine Konfigurationsdatei mit dem
+     Namen config.php im gewÃ¤hlten Installationsverzeichnis.
+     Sollte der Installer diese Datei nicht direkt auf Ihrem Server speichern kÃ¶nnen
      (z.B. wenn er nicht die erforderlichen Schreibrechte besitzt), erscheint am Ende
-     der Installation ein Hinweis und die Möglichkeit diese Datei herunterzuladen.
-     Laden Sie sich die Datei herunter und übertragen Sie diese auf Ihren Webserver.
+     der Installation ein Hinweis und die MÃ¶glichkeit diese Datei herunterzuladen.
+     Laden Sie sich die Datei herunter und Ã¼bertragen Sie diese auf Ihren Webserver.
 
-  5. Setzen die angegebenen Zugriffsrechte für folgende Verzeichnisse:
+  5. Setzen die angegebenen Zugriffsrechte fÃ¼r folgende Verzeichnisse:
 
      chmod 777 (drwxrwxrwx) : data
      chmod 777 (drwxrwxrwx) : data/database
@@ -58,7 +58,7 @@
      chmod 777 (drwxrwxrwx) : templates/default_full
      chmod 777 (drwxrwxrwx) : templates/default_full/media   
 
-     Setzen die angegebenen Zugriffsrechte für folgende Dateien:
+     Setzen die angegebenen Zugriffsrechte fÃ¼r folgende Dateien:
 
      chmod 666 (-rw-rw-rw-) : alle Dateien im Verzeichnis "templates/default"
      chmod 666 (-rw-rw-rw-) : alle Dateien im Verzeichnis "templates/default/media"
@@ -67,25 +67,25 @@
      chmod 666 (-rw-rw-rw-) : alle Dateien im Verzeichnis "templates/default_full"
      chmod 666 (-rw-rw-rw-) : alle Dateien im Verzeichnis "templates/default_full/media"          
 
-     Dies können Sie z.B. mit FTP-Programmen wie Filezilla, CuteFTP oder WS_FTP tun.
+     Dies kÃ¶nnen Sie z.B. mit FTP-Programmen wie Filezilla, CuteFTP oder WS_FTP tun.
 
-  6. Löschen Sie die Datei "install.php" und alle "update_*_to_*.php" von Ihrem Server.
-     Zusätzlich können Sie die Dateien im Ordner "data/database/default" und den
-     Ordner "docs" löschen.
+  6. LÃ¶schen Sie die Datei "install.php" und alle "update_*_to_*.php" von Ihrem Server.
+     ZusÃ¤tzlich kÃ¶nnen Sie die Dateien im Ordner "data/database/default" und den
+     Ordner "docs" lÃ¶schen.
 
-  7. Die Installation ist nun abgeschlossen. Sie können sich nun mit Ihrem bei der
-     Installation gewählten Usernamen und Passwort in den Administrationsbereich
-     einloggen und unter "Allgemein -> Einstellungen" Die Einstellungen für Ihre Galerie
+  7. Die Installation ist nun abgeschlossen. Sie kÃ¶nnen sich nun mit Ihrem bei der
+     Installation gewÃ¤hlten Usernamen und Passwort in den Administrationsbereich
+     einloggen und unter "Allgemein -> Einstellungen" Die Einstellungen fÃ¼r Ihre Galerie
      vornehmen.
 
-  8. Seit Version 1.7.1 enthält 4images ein internes Caching-System.
-     Ausführliche Informationen finden sie in der Datei docs/Cache.deutsch.txt.
+  8. Seit Version 1.7.1 enthÃ¤lt 4images ein internes Caching-System.
+     AusfÃ¼hrliche Informationen finden sie in der Datei docs/Cache.deutsch.txt.
      
-     Seit der Version 1.7.9 enthält 4images einen eingbauten Schutz gegen Cross-Site 
+     Seit der Version 1.7.9 enthÃ¤lt 4images einen eingbauten Schutz gegen Cross-Site 
      Request Forgery (CSRF) Angriffe.
-     Ausführliche Informationen finden sie in der Datei docs/CSRF.deutsch.txt.
+     AusfÃ¼hrliche Informationen finden sie in der Datei docs/CSRF.deutsch.txt.
      
-     Seit Version 1.7.10 kann definiert werden wie einzelnen Felder für die Suche
+     Seit Version 1.7.10 kann definiert werden wie einzelnen Felder fÃ¼r die Suche
      indiziert werden sollen. Die Einstellung kann in includes/search_utils.php 
      gemacht werden. Es gibt 3 Modi:
 
@@ -93,4 +93,4 @@
      "keywords": Der String wird anhand der Kommas aufgesplittet und nomalisiert.
      "phrase": Der String wird nicht aufgesplittet und nicht normalisiert.
 
-     Die Werte können auch in der config.php gesetzt werden.
+     Die Werte kÃ¶nnen auch in der config.php gesetzt werden.

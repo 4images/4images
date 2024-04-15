@@ -5,17 +5,15 @@
  *    ----------------------------------------------------------------    *
  *                                                                        *
  *             File: thumbnailer.php                                      *
- *        Copyright: (C) 2002-2015 4homepages.de                          *
- *            Email: jan@4homepages.de                                    * 
+ *        Copyright: (C) 2002-2023 4homepages.de                          *
+ *            Email: 4images@4homepages.de                                * 
  *              Web: http://www.4homepages.de                             * 
- *    Scriptversion: 1.7.13                                               *
- *                                                                        *
- *    Never released without support from: Nicky (http://www.nicky.net)   *
+ *    Scriptversion: 1.10                                                 *
  *                                                                        *
  **************************************************************************
  *                                                                        *
  *    Dieses Script ist KEINE Freeware. Bitte lesen Sie die Lizenz-       *
- *    bedingungen (Lizenz.txt) für weitere Informationen.                 *
+ *    bedingungen (Lizenz.txt) fÃ¼r weitere Informationen.                 *
  *    ---------------------------------------------------------------     *
  *    This script is NOT freeware! Please read the Copyright Notice       *
  *    (Licence.txt) for further information.                              *
@@ -132,13 +130,15 @@ if (isset($HTTP_POST_VARS['action']) && $HTTP_POST_VARS['action'] == "checkthumb
       if (!$exists && (file_exists(MEDIA_PATH."/".$image_row['cat_id']."/".$image_row['image_media_file']) || is_remote($image_row['image_media_file']))) {
         $src = is_remote($image_row['image_media_file']) ? $image_row['image_media_file'] : MEDIA_PATH."/".$image_row['cat_id']."/".$image_row['image_media_file'];
         $image_info = getimagesize($src);
-        if ($image_info[2] == 1 || $image_info[2] == 2 || $image_info[2] == 3) {
-          $imgs .= "<tr class=\"".get_row_bg()."\">";
-          $imgs .= "<td width=\"20%\"><input type=\"checkbox\" name=\"image_list[".$image_row['image_id']."]\" value=\"1\" checked=\"checked\"></td>\n";
-          $imgs .= "<td width=\"30%\"><b><a href=\"".$site_sess->url(ROOT_PATH."details.php?".URL_IMAGE_ID."=".$image_row['image_id'])."\" target=_blank>".format_text($image_row['image_name'], 2)."</a></b></td>\n";
-          $imgs .= "<td width=\"25%\">".$image_row['image_media_file']."</td>\n";
-          $imgs .= "<td width=\"25%\">".format_text($cat_cache[$image_row['cat_id']]['cat_name'], 2)."</td></tr>\n";
-          $image_counter++;
+        if ($image_info !== false) {
+            if ($image_info[2] == 1 || $image_info[2] == 2 || $image_info[2] == 3) {
+                $imgs .= "<tr class=\"".get_row_bg()."\">";
+                $imgs .= "<td width=\"20%\"><input type=\"checkbox\" name=\"image_list[".$image_row['image_id']."]\" value=\"1\" checked=\"checked\"></td>\n";
+                $imgs .= "<td width=\"30%\"><b><a href=\"".$site_sess->url(ROOT_PATH."details.php?".URL_IMAGE_ID."=".$image_row['image_id'])."\" target=_blank>".format_text($image_row['image_name'], 2)."</a></b></td>\n";
+                $imgs .= "<td width=\"25%\">".$image_row['image_media_file']."</td>\n";
+                $imgs .= "<td width=\"25%\">".format_text($cat_cache[$image_row['cat_id']]['cat_name'], 2)."</td></tr>\n";
+                $image_counter++;
+            }
         }
       }
       if ($image_counter == $num_newimages) {

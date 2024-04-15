@@ -5,17 +5,15 @@
  *    ----------------------------------------------------------------    *
  *                                                                        *
  *             File: images.php                                           *
- *        Copyright: (C) 2002-2015 4homepages.de                          *
- *            Email: jan@4homepages.de                                    *
- *              Web: http://www.4homepages.de                             *
- *    Scriptversion: 1.7.13                                               *
- *                                                                        *
- *    Never released without support from: Nicky (http://www.nicky.net)   *
+ *        Copyright: (C) 2002-2023 4homepages.de                          *
+ *            Email: 4images@4homepages.de                                * 
+ *              Web: http://www.4homepages.de                             * 
+ *    Scriptversion: 1.10                                                 *
  *                                                                        *
  **************************************************************************
  *                                                                        *
  *    Dieses Script ist KEINE Freeware. Bitte lesen Sie die Lizenz-       *
- *    bedingungen (Lizenz.txt) für weitere Informationen.                 *
+ *    bedingungen (Lizenz.txt) fÃ¼r weitere Informationen.                 *
  *    ---------------------------------------------------------------     *
  *    This script is NOT freeware! Please read the Copyright Notice       *
  *    (Licence.txt) for further information.                              *
@@ -35,6 +33,18 @@ $site_upload = new Upload();
 if ($action == "") {
   $action = "modifyimages";
 }
+
+$orderbyOptions = array(
+  'i.image_name' => $lang['field_image_name'],
+  'i.image_media_file' => $lang['field_image_file'],
+  'i.image_thumb_file' => $lang['field_thumb_file'],
+  'i.cat_id' => $lang['field_category'],
+  'i.image_date' => $lang['field_date'],
+  'i.image_downloads' => $lang['field_downloads'],
+  'i.image_rating' => $lang['field_rating'],
+  'i.image_votes' => $lang['field_votes'],
+  'i.image_hits' => $lang['field_hits'],
+);
 
 function delete_images($image_ids, $delfromserver = 1) {
   global $site_db, $lang;
@@ -631,15 +641,9 @@ if ($action == "modifyimages") {
   ?>
   <tr class="<?php echo get_row_bg(); ?>"><td><p><b><?php echo $lang['order_by'] ?></b></p></td><td><p>
   <select name="orderby">
-  <option value="i.image_name" selected><?php echo $lang['field_image_name'] ?></option>
-  <option value="i.image_media_file"><?php echo $lang['field_image_file'] ?></option>
-  <option value="i.image_thumb_file"><?php echo $lang['field_thumb_file'] ?></option>
-  <option value="i.cat_id"><?php echo $lang['field_category'] ?></option>
-  <option value="i.image_date"><?php echo $lang['field_date'] ?></option>
-  <option value="i.image_downloads"><?php echo $lang['field_downloads'] ?></option>
-  <option value="i.image_rating"><?php echo $lang['field_rating'] ?></option>
-  <option value="i.image_votes"><?php echo $lang['field_votes'] ?></option>
-  <option value="i.image_hits"><?php echo $lang['field_hits'] ?></option>
+  <?php foreach ($orderbyOptions as $field => $label): ?>
+  <option value="<?php echo $field; ?>"><?php echo $label; ?></option>
+  <?php endforeach; ?>
   </select>
   <select name="direction">
   <option selected value="ASC"><?php echo $lang['asc'] ?></option>
@@ -656,9 +660,12 @@ if ($action == "findimages") {
 
 	$condition = "1=1";
 
-  $image_id = intval($HTTP_POST_VARS['image_id']);
-  if ($image_id != "") {
-    $condition .= " AND INSTR(LCASE(i.image_id),'$image_id')>0";
+  if (array_key_exists('image_id', $HTTP_POST_VARS) && is_numeric($HTTP_POST_VARS['image_id'])) {
+      $image_id = intval($HTTP_POST_VARS['image_id']);
+
+      $condition .= " AND INSTR(LCASE(i.image_id),'$image_id')>0";
+  } else {
+      $image_id = '';
   }
   $image_name = trim($HTTP_POST_VARS['image_name']);
   if ($image_name != "") {
@@ -725,27 +732,29 @@ if ($action == "findimages") {
     $condition .= " AND i.image_hits > '$hitsupper'";
   }
   $orderby = trim($HTTP_POST_VARS['orderby']);
-  if ($orderby == "") {
+  if (!isset($orderbyOptions[$orderby])) {
     $orderby = "i.image_name";
   }
 
   $limitstart = (isset($HTTP_POST_VARS['limitstart'])) ? trim($HTTP_POST_VARS['limitstart']) : "";
-  if ($limitstart == "") {
+  if ($limitstart == "" || !is_numeric($limitstart)) {
     $limitstart = 0;
   }
   else {
     $limitstart--;
   }
   $limitnumber = trim($HTTP_POST_VARS['limitnumber']);
-  if ($limitnumber == "") {
+  if ($limitnumber == "" || !is_numeric($limitnumber)) {
     $limitnumber = 5000;
   }
 
+  $direction = "ASC";
   if (isset($HTTP_GET_VARS['direction']) || isset($HTTP_POST_VARS['direction'])) {
-    $direction = (isset($HTTP_GET_VARS['direction'])) ? trim($HTTP_GET_VARS['direction']) : trim($HTTP_POST_VARS['direction']);
-  }
-  else {
-    $direction = "ASC";
+    $requestedDirection = (isset($HTTP_GET_VARS['direction'])) ? trim($HTTP_GET_VARS['direction']) : trim($HTTP_POST_VARS['direction']);
+
+    if ('DESC' === $requestedDirection) {
+      $direction = "DESC";
+    }
   }
 
   $sql = "SELECT COUNT(*) AS images

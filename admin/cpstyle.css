@@ -4,17 +4,15 @@
  *    ----------------------------------------------------------------    *
  *                                                                        *
  *             File: cpstyle.css                                          *
- *        Copyright: (C) 2002-2015 4homepages.de                          *
- *            Email: jan@4homepages.de                                    * 
+ *        Copyright: (C) 2002-2023 4homepages.de                          *
+ *            Email: 4images@4homepages.de                                * 
  *              Web: http://www.4homepages.de                             * 
- *    Scriptversion: 1.7.13                                               *
- *                                                                        *
- *    Never released without support from: Nicky (http://www.nicky.net)   *
+ *    Scriptversion: 1.10                                                 *
  *                                                                        *
  **************************************************************************
  *                                                                        *
  *    Dieses Script ist KEINE Freeware. Bitte lesen Sie die Lizenz-       *
- *    bedingungen (Lizenz.txt) für weitere Informationen.                 *
+ *    bedingungen (Lizenz.txt) fÃ¼r weitere Informationen.                 *
  *    ---------------------------------------------------------------     *
  *    This script is NOT freeware! Please read the Copyright Notice       *
  *    (Licence.txt) for further information.                              *
@@ -22,157 +20,165 @@
  *************************************************************************/
 
 BODY {
-  COLOR: #004c75;
-  FONT-FAMILY: Tahoma,Arial,Helvetica,sans-serif;
-  FONT-SIZE: 11px;
+  color: #004c75;
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 11px;
   /* this attribute sets the basis for all the other scrollbar colors (Internet Explorer 5.5+ only) */
-  SCROLLBAR-BASE-COLOR:  #004c75;
-  SCROLLBAR-ARROW-COLOR: #FCDC43;
+  scrollbar-base-color: #004c75;
+  scrollbar-arrow-color: #fcdc43;
 }
 
-UL, LI, P, TD, TR {
-  COLOR: #004c75;
-  FONT-FAMILY: Tahoma,Arial,Helvetica,sans-serif;
-  FONT-SIZE: 11px;
+UL,
+LI,
+P,
+TD,
+TR {
+  color: #004c75;
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 11px;
 }
 
 .headline {
-  FONT-FAMILY: Tahoma,Arial,Helvetica,sans-serif;
-  FONT-SIZE: 18px;
-  FONT-WEIGHT: bold;
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .smalltext {
-  FONT-FAMILY: Tahoma,Arial,Helvetica,sans-serif;
-  FONT-SIZE: 10px;
-  FONT-WEIGHT: normal;
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: normal;
 }
 
 .marktext {
-  COLOR: #FF0000;
+  color: #ff0000;
 }
 .msg {
-  FONT-FAMILY: Tahoma,Arial,Helvetica,sans-serif;
-  FONT-SIZE: 11px;
-  COLOR: #FF0000;
-  FONT-WEIGHT:bold;
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #ff0000;
+  font-weight: bold;
 }
 .rowtitle {
-  FONT-WEIGHT:bold;
+  font-weight: bold;
 }
-a:link, a:visited, a:active {
-  color: #0F5475;
+a:link,
+a:visited,
+a:active {
+  color: #0f5475;
 }
 a:hover {
-  COLOR: #FCDC43;
-  BACKGROUND-COLOR: #004c75;
+  color: #fcdc43;
+  background-color: #004c75;
 }
 FORM {
-  FONT-FAMILY: Tahoma,Arial,Helvetica,sans-serif;
-  FONT-SIZE: 11px;
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 11px;
 }
-SELECT, INPUT, TEXTAREA {
-  FONT-FAMILY: Tahoma,Arial,Helvetica,sans-serif;
-  COLOR: #0F5475;
-  FONT-SIZE: 11px;
+SELECT,
+INPUT,
+TEXTAREA {
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  color: #0f5475;
+  font-size: 11px;
 }
 .dropdownmarker {
-  BACKGROUND-COLOR: #EEEEEE;
-  COLOR: #136C99;
-  FONT-SIZE: 11px;
-  FONT-WEIGHT: bold;
+  background-color: #eeeeee;
+  color: #136c99;
+  font-size: 11px;
+  font-weight: bold;
 }
 
 /*-- Tables ----------------------------------------------*/
 
 .tplmarktag {
-  COLOR: #ffffff;
-  FONT-WEIGHT: bold;
-  BACKGROUND-COLOR: #ff0000;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #ff0000;
 }
 
 /*-- Tables ----------------------------------------------*/
 
 .tableheader {
-  COLOR: #FCDC43;
-  FONT-WEIGHT: bold;
-  BACKGROUND-COLOR: #004c75;
+  color: #fcdc43;
+  font-weight: bold;
+  background-color: #004c75;
 }
 .tableseparator {
-  COLOR: #FCDC43;
-  FONT-WEIGHT: bold;
-  BACKGROUND-COLOR: #004c75;
+  color: #fcdc43;
+  font-weight: bold;
+  background-color: #004c75;
 }
 .tablerow {
-  BACKGROUND-COLOR: #E5E5E5;
+  background-color: #e5e5e5;
 }
 .tablerow2 {
-  BACKGROUND-COLOR: #F5F5F5;
+  background-color: #f5f5f5;
 }
 .tablefooter {
-  COLOR: #FCDC43;
-  FONT-WEIGHT: bold;
-  BACKGROUND-COLOR: #004c75;
+  color: #fcdc43;
+  font-weight: bold;
+  background-color: #004c75;
 }
 .tableborder {
-  BACKGROUND-COLOR: #004c75;
+  background-color: #004c75;
 }
-
-
 
 /*-- Navigation ------------------------------------------*/
 
 .navheader {
-  COLOR: #FFFFFF;
-  FONT-WEIGHT: bold;
-  BACKGROUND-COLOR: #004c75;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #004c75;
 }
-.navlink, navlink:visited, navlink:acitive {
-  COLOR: #0F5475;
+.navlink,
+navlink:visited,
+navlink:acitive {
+  color: #0f5475;
 }
 
 .navlink:hover {
-  COLOR: #0F5475;
-  BACKGROUND-COLOR: #FFE673;
+  color: #0f5475;
+  background-color: #ffe673;
 }
 
 .button {
-  FONT-FAMILY: MS Sans Serif, Tahoma,Arial, Helvetica, sans-serif;
-  BACKGROUND-COLOR: #004c75;
-  COLOR: #FCDC43;
-  FONT-SIZE: 11px;
-  FONT-WEIGHT: bold;
+  font-family: MS Sans Serif, Tahoma, Arial, Helvetica, sans-serif;
+  background-color: #004c75;
+  color: #fcdc43;
+  font-size: 11px;
+  font-weight: bold;
 }
 
 /*-- Calendar ------------------------------------------*/
 
 .calendar_dayname {
-	background-color: #eeeeee;
-	border: 1px solid #c0c0c0;
-	font-family: Arial, Verdana, Helvetica, Sans-Serif;
-	font-size: 8pt;
-	text-align: center;
+  background-color: #eeeeee;
+  border: 1px solid #c0c0c0;
+  font-family: Arial, Verdana, Helvetica, Sans-Serif;
+  font-size: 8pt;
+  text-align: center;
 }
 
 .calendar_day {
-	background-color: #eeeeee;
-	color: #000000;
-	font-family: Arial, Verdana, Helvetica, Sans-Serif;
-	font-size: 8pt;
+  background-color: #eeeeee;
+  color: #000000;
+  font-family: Arial, Verdana, Helvetica, Sans-Serif;
+  font-size: 8pt;
 }
 
 .calendar_today {
-	background-color: #ffffff;
-	border: 1px solid #c0c0c0;
-	font-family: Arial, Verdana, Helvetica, Sans-Serif;
-	font-size: 8pt;
+  background-color: #ffffff;
+  border: 1px solid #c0c0c0;
+  font-family: Arial, Verdana, Helvetica, Sans-Serif;
+  font-size: 8pt;
 }
 
 .calendar {
-	background-color: #CCCCCC;
-	border: 1px outset #004C75;
-	visibility: hidden;
-	position: absolute;
-	top: 1px;
-	left: 1px;
+  background-color: #cccccc;
+  border: 1px outset #004c75;
+  visibility: hidden;
+  position: absolute;
+  top: 1px;
+  left: 1px;
 }

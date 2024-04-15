@@ -5,17 +5,15 @@
  *    ----------------------------------------------------------------    *
  *                                                                        *
  *             File: functions.php                                        *
- *        Copyright: (C) 2002-2015 4homepages.de                          *
- *            Email: jan@4homepages.de                                    *
- *              Web: http://www.4homepages.de                             *
- *    Scriptversion: 1.7.13                                               *
- *                                                                        *
- *    Never released without support from: Nicky (http://www.nicky.net)   *
+ *        Copyright: (C) 2002-2023 4homepages.de                          *
+ *            Email: 4images@4homepages.de                                * 
+ *              Web: http://www.4homepages.de                             * 
+ *    Scriptversion: 1.10                                                 *
  *                                                                        *
  **************************************************************************
  *                                                                        *
  *    Dieses Script ist KEINE Freeware. Bitte lesen Sie die Lizenz-       *
- *    bedingungen (Lizenz.txt) für weitere Informationen.                 *
+ *    bedingungen (Lizenz.txt) fÃ¼r weitere Informationen.                 *
  *    ---------------------------------------------------------------     *
  *    This script is NOT freeware! Please read the Copyright Notice       *
  *    (Licence.txt) for further information.                              *
@@ -1213,7 +1211,7 @@ function get_categories($cat_id = 0) {
     $site_template->register_vars(array(
       "cat_id" => $category_id,
       "cat_name" => format_text($cat_cache[$category_id]['cat_name'], 2),
-      "cat_description" => format_text($cat_cache[$category_id]['cat_description'], 1),
+      "cat_description" => htmlspecialchars(format_text($cat_cache[$category_id]['cat_description'], 1)),
       "cat_hits" => $cat_cache[$category_id]['cat_hits'],
       "cat_is_new" => $is_new,
       "lang_new" => $lang['new'],

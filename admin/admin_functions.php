@@ -5,17 +5,15 @@
  *    ----------------------------------------------------------------    *
  *                                                                        *
  *             File: admin_functions.php                                  *
- *        Copyright: (C) 2002-2015 4homepages.de                          *
- *            Email: jan@4homepages.de                                    *
- *              Web: http://www.4homepages.de                             *
- *    Scriptversion: 1.7.13                                               *
- *                                                                        *
- *    Never released without support from: Nicky (http://www.nicky.net)   *
+ *        Copyright: (C) 2002-2023 4homepages.de                          *
+ *            Email: 4images@4homepages.de                                * 
+ *              Web: http://www.4homepages.de                             * 
+ *    Scriptversion: 1.10                                                 *
  *                                                                        *
  **************************************************************************
  *                                                                        *
  *    Dieses Script ist KEINE Freeware. Bitte lesen Sie die Lizenz-       *
- *    bedingungen (Lizenz.txt) für weitere Informationen.                 *
+ *    bedingungen (Lizenz.txt) fÃ¼r weitere Informationen.                 *
  *    ---------------------------------------------------------------     *
  *    This script is NOT freeware! Please read the Copyright Notice       *
  *    (Licence.txt) for further information.                              *
@@ -186,7 +184,7 @@ function show_admin_header($headinsert = "") {
   if ($newlangfile && strstr($self_url, "settings.php") === false) {
     $browser_language = getenv('HTTP_ACCEPT_LANGUAGE');
     if (strstr($browser_language, "de") !== false) {
-      $alert_msg = "Ihr in der Konfiguration angegebenes Language-Pack \\'\\'$old_language_dir\\'\\' wurde nicht gefunden. Bitte ändern Sie Ihre Spracheinstellungen unter \\'\\'Konfiguration -> Einstellungen -> Allgemeine Einstellungen\\'\\'.\\n Es wurde folgendes Pack gefunden und verwendet: \\'\\'$config[language_dir]\\'\\'.";
+      $alert_msg = "Ihr in der Konfiguration angegebenes Language-Pack \\'\\'$old_language_dir\\'\\' wurde nicht gefunden. Bitte Ã¤ndern Sie Ihre Spracheinstellungen unter \\'\\'Konfiguration -> Einstellungen -> Allgemeine Einstellungen\\'\\'.\\n Es wurde folgendes Pack gefunden und verwendet: \\'\\'$config[language_dir]\\'\\'.";
     }
     elseif (preg_match("/s(b|r)/", $browser_language)) {
       $alert_msg = "Vas Language-Pack \\'\\'$old_language_dir\\'\\' u konfiguraciji nemoze da bude nadjen. Molimo Vas da promenite ispod \\'\\'Konfiguracija -> Promena -> Generalne Promene\\'\\'.\\n Trenutno je sledeci jezik pronadjen i bice koriscen: \\'\\'$config[language_dir]\\'\\'.\\n\\nTranslation sponsored by: Nicky (http://www.nicky.net)";

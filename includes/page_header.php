@@ -5,17 +5,15 @@
  *    ----------------------------------------------------------------    *
  *                                                                        *
  *             File: page_header.php                                      *
- *        Copyright: (C) 2002-2015 4homepages.de                          *
- *            Email: jan@4homepages.de                                    *
- *              Web: http://www.4homepages.de                             *
- *    Scriptversion: 1.7.13                                               *
- *                                                                        *
- *    Never released without support from: Nicky (http://www.nicky.net)   *
+ *        Copyright: (C) 2002-2023 4homepages.de                          *
+ *            Email: 4images@4homepages.de                                * 
+ *              Web: http://www.4homepages.de                             * 
+ *    Scriptversion: 1.10                                                 *
  *                                                                        *
  **************************************************************************
  *                                                                        *
  *    Dieses Script ist KEINE Freeware. Bitte lesen Sie die Lizenz-       *
- *    bedingungen (Lizenz.txt) für weitere Informationen.                 *
+ *    bedingungen (Lizenz.txt) fÃ¼r weitere Informationen.                 *
  *    ---------------------------------------------------------------     *
  *    This script is NOT freeware! Please read the Copyright Notice       *
  *    (Licence.txt) for further information.                              *
@@ -82,7 +80,12 @@ if (!$data = get_cache_file($cache_id, null)) {
   $auth_cat_sql['auth_viewcat']['NOTIN'] = $data['auth_viewcat']['NOTIN'];
 }
 
-$file = get_file_name(basename(MAIN_SCRIPT));
+if (defined('MAIN_SCRIPT')) {
+  $file = get_file_name(basename(MAIN_SCRIPT));
+} else {
+  $file = null;
+}
+
 $array = array(
     "page_categories" => false,
     "page_details"    => false,
@@ -104,10 +107,10 @@ $array = array(
     "search"     => false,
     "top"        => false
 );
-if (isset($array[$file])) {
+if ($file !== null && isset($array[$file])) {
   $array[$file] = true;
 }
-if (isset($array["page_" . $file])) {
+if ($file !== null && isset($array["page_" . $file])) {
   $array["page_" . $file] = true;
 }
 $site_template->register_vars($array);
@@ -405,6 +408,10 @@ else {
 
 if ($csrf_protection_enable && $csrf_protection_frontend) {
     csrf_start(true);
+}
+
+if (!headers_sent()) {
+  header('Content-Type: text/html;charset=' . $lang['charset'], true);
 }
 
 ?>

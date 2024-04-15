@@ -5,17 +5,15 @@
  *    ----------------------------------------------------------------    *
  *                                                                        *
  *             File: paging.php                                           *
- *        Copyright: (C) 2002-2015 4homepages.de                          *
- *            Email: jan@4homepages.de                                    * 
+ *        Copyright: (C) 2002-2023 4homepages.de                          *
+ *            Email: 4images@4homepages.de                                * 
  *              Web: http://www.4homepages.de                             * 
- *    Scriptversion: 1.7.13                                               *
- *                                                                        *
- *    Never released without support from: Nicky (http://www.nicky.net)   *
+ *    Scriptversion: 1.10                                                 *
  *                                                                        *
  **************************************************************************
  *                                                                        *
  *    Dieses Script ist KEINE Freeware. Bitte lesen Sie die Lizenz-       *
- *    bedingungen (Lizenz.txt) für weitere Informationen.                 *
+ *    bedingungen (Lizenz.txt) fÃ¼r weitere Informationen.                 *
  *    ---------------------------------------------------------------     *
  *    This script is NOT freeware! Please read the Copyright Notice       *
  *    (Licence.txt) for further information.                              *
@@ -29,7 +27,7 @@ class Paging {
   var $page,$offset,$perpage,$num_rows_all,$link_args;
   var $first,$last,$total_pages,$config,$desc,$next,$back;
 
-  function Paging($page = 1, $perpage = 0, $num_rows_all = 0, $link_args = "") {
+  function __construct($page = 1, $perpage = 0, $num_rows_all = 0, $link_args = "") {
     global $lang, $config;
 
     $this->page = intval($page);

@@ -1,13 +1,13 @@
   ==========================================================
-             Lizenzbestimmungen für 4images
+             Lizenzbestimmungen fÃ¼r 4images
   ==========================================================
 
   HINWEIS:
 
-  Lesen Sie diese Bestimmungen sorgfältig durch. Mit dem Kauf, dem
-  Download, der Installation oder der Nutzung der Software erklären
-  Sie Ihr Einverständnis mit den vorliegenden Lizenzbestimmungen.
-  Sollten Sie mit den Bestimmungen nicht einverstanden sein, dürfen
+  Lesen Sie diese Bestimmungen sorgfÃ¤ltig durch. Mit dem Kauf, dem
+  Download, der Installation oder der Nutzung der Software erklÃ¤ren
+  Sie Ihr EinverstÃ¤ndnis mit den vorliegenden Lizenzbestimmungen.
+  Sollten Sie mit den Bestimmungen nicht einverstanden sein, dÃ¼rfen
   Sie die Software nicht downloaden, installieren oder benutzen.
 
 
@@ -17,153 +17,153 @@
   sind geistiges Eigentum der Firma Dots United GmbH -
   nachfolgend Dots United genannt.
 
-  4images verbleibt auch nach Überlassung einschließlich der gesamten
+  4images verbleibt auch nach Ãœberlassung einschlieÃŸlich der gesamten
   Dokumentation im Eigentum von Dots United.
 
-  Dots United bleibt Inhaber aller Rechte an den überlassenen
-  Programmen einschließlich des jeweils dazugehörigen Materials und
-  der Quelltexte, auch wenn der Anwender sie verändert oder mit seinen
+  Dots United bleibt Inhaber aller Rechte an den Ã¼berlassenen
+  Programmen einschlieÃŸlich des jeweils dazugehÃ¶rigen Materials und
+  der Quelltexte, auch wenn der Anwender sie verÃ¤ndert oder mit seinen
   eigenen Programmen oder denjenigen eines Dritten verbindet.
 
 
   Geltungsbereich / Nutzungsumfang
 
-  4images kann für den privaten und nicht-kommerziellen Gebrauch
+  4images kann fÃ¼r den privaten und nicht-kommerziellen Gebrauch
   kostenlos verwendet werden.
 
-  Eine kommerzielle Nutzung liegt grundsätzlich dann vor, wenn der
-  Betreiber von 4images keine Privatperson, kein gemeinnütziger Verein
+  Eine kommerzielle Nutzung liegt grundsÃ¤tzlich dann vor, wenn der
+  Betreiber von 4images keine Privatperson, kein gemeinnÃ¼tziger Verein
   und keine akademische Einrichtung ist.
 
-  Für die kommerzielle Verwendung muss eine Lizenz erworben werden.
-  Diese können Sie über unseren Online-Shop erwerben:
+  FÃ¼r die kommerzielle Verwendung muss eine Lizenz erworben werden.
+  Diese kÃ¶nnen Sie Ã¼ber unseren Online-Shop erwerben:
   http://www.4homepages.de/4images/order.php
 
 
   Lizenzumfang / Nutzungsrecht
 
   Die Software darf auf einem Server oder auf einem sonstigen
-  Speichermedium installiert werden. Für Datensicherungszwecke darf
-  eine Kopie auf Datenträger erstellt werden.
+  Speichermedium installiert werden. FÃ¼r Datensicherungszwecke darf
+  eine Kopie auf DatentrÃ¤ger erstellt werden.
 
-  4images darf auf einer Domain oder einem Server für eine unbegrenzte
+  4images darf auf einer Domain oder einem Server fÃ¼r eine unbegrenzte
   Zeit eingesetzt werden. Die gleichzeitige Installation und Nutzung
-  des Programms für mehr als eine Domain ist nicht zulässig. Die
-  Nutzung ist jedoch auch für solche Domains zulässig, die
-  unselbständig, ohne jeglichen sichtbaren Inhalt und lediglich dafür
+  des Programms fÃ¼r mehr als eine Domain ist nicht zulÃ¤ssig. Die
+  Nutzung ist jedoch auch fÃ¼r solche Domains zulÃ¤ssig, die
+  unselbstÃ¤ndig, ohne jeglichen sichtbaren Inhalt und lediglich dafÃ¼r
   gedacht sind, auf die Hauptdomain weiter zu leiten.
 
-  Dieses Nutzungsrecht kann bei unsachgemäßer Verwendung der Software
-  widerrufen oder eingeschränkt werden, es erlischt sofort beim
-  Verstoß gegen diese Lizenzvereinbarung.
+  Dieses Nutzungsrecht kann bei unsachgemÃ¤ÃŸer Verwendung der Software
+  widerrufen oder eingeschrÃ¤nkt werden, es erlischt sofort beim
+  VerstoÃŸ gegen diese Lizenzvereinbarung.
 
 
   Weitergabe
 
-  Die Weiterverbreitung einer geänderten oder unveränderten Version
-  von 4images ist nur mit ausdrücklicher, schriftlicher Genehmigung
+  Die Weiterverbreitung einer geÃ¤nderten oder unverÃ¤nderten Version
+  von 4images ist nur mit ausdrÃ¼cklicher, schriftlicher Genehmigung
   von Dots United gestattet.
 
 
-  Veränderungen
+  VerÃ¤nderungen
 
   Der Nutzer von 4images kann auf eigenes Risiko die Software
-  verändern und/oder für den eigenen Gebrauch anpassen.
+  verÃ¤ndern und/oder fÃ¼r den eigenen Gebrauch anpassen.
 
   Alle sichtbaren und nicht sichtbaren Copyrighthinweise inklusive der
-  darin enthaltenen Hyperlinks in den Quelltexten dürfen nicht
-  verändert, entfernt, unkenntlich oder unsichtbar gemacht werden.
+  darin enthaltenen Hyperlinks in den Quelltexten dÃ¼rfen nicht
+  verÃ¤ndert, entfernt, unkenntlich oder unsichtbar gemacht werden.
 
-  Die Entfernung des sichtbaren Copyrighthinweises am Fußende jeder
+  Die Entfernung des sichtbaren Copyrighthinweises am FuÃŸende jeder
   Ausgabeseite von 4images kann nur durch den Erwerb einer
   Copyright-Removal-Lizenz legalisiert werden.
 
   Der Nutzer ist demnach berechtigt die Software zu modifizieren
   solange:
-  * diese Lizenzvereinbarung nicht verändert werden
+  * diese Lizenzvereinbarung nicht verÃ¤ndert werden
   * kein Besitzanspruch auf jeglichen Teil dieser Software erhoben
     wird
-  * das Copyright nicht entfernt oder verändert wird, eingeschlossen
-    aber nicht beschränkt auf das Copyright in den ausgegebenen HTML
+  * das Copyright nicht entfernt oder verÃ¤ndert wird, eingeschlossen
+    aber nicht beschrÃ¤nkt auf das Copyright in den ausgegebenen HTML
     Dateien und das Copyright in denQuelldateien
   * der Name "4images" in keiner Quelldatei oder Ausgabedatei
-    verändert wird
+    verÃ¤ndert wird
 
-  Durch das Modifizieren der Quelldateien ergibt sich für den Nutzer
-  kein Copyright, das über die Modifikation hinausgeht.
+  Durch das Modifizieren der Quelldateien ergibt sich fÃ¼r den Nutzer
+  kein Copyright, das Ã¼ber die Modifikation hinausgeht.
 
 
-  Gewährleistung, Mängelansprüche
+  GewÃ¤hrleistung, MÃ¤ngelansprÃ¼che
 
-  Dots United übernimmt keinerlei Gewährleistung oder Garantie für die
+  Dots United Ã¼bernimmt keinerlei GewÃ¤hrleistung oder Garantie fÃ¼r die
   fehlerfreie Funktionsweise der Software. Eine Inanspruchnahme von
-  Dots United für Schäden, die aus einer nicht korrekten
+  Dots United fÃ¼r SchÃ¤den, die aus einer nicht korrekten
   Funktionsweise der Software herzuleiten sind, sind ausgeschlossen.
 
-  Dots United übernimmt gleichermaßen keinerlei Haftung für Schäden,
+  Dots United Ã¼bernimmt gleichermaÃŸen keinerlei Haftung fÃ¼r SchÃ¤den,
   die durch die Benutzung von 4images verursacht werden.
 
-  Es werden keine Gewährleistungen für die von 4images gespeicherten
-  Daten übernommen.
+  Es werden keine GewÃ¤hrleistungen fÃ¼r die von 4images gespeicherten
+  Daten Ã¼bernommen.
 
 
   Haftungsausschluss
 
   4images darf nicht im Zusammenhang mit der Verletzung geistigen
-  Eigentums Dritter benutzt werden. Dazu gehört unter anderem (aber
+  Eigentums Dritter benutzt werden. Dazu gehÃ¶rt unter anderem (aber
   nicht begrenzt auf) die Verletzung von Copyright Rechten,
-  eingetragenen Warenzeichen, Geschäftsgeheimnissen, Patenten,
+  eingetragenen Warenzeichen, GeschÃ¤ftsgeheimnissen, Patenten,
   Geschmacks- und Gebrauchsmuster.
 
-  Dots United ist gegenüber den Nutzern von 4images nicht verpflichtet
-  zu überprüfen, ob durch die Benutzung von 4images bzw. durch dessen
+  Dots United ist gegenÃ¼ber den Nutzern von 4images nicht verpflichtet
+  zu Ã¼berprÃ¼fen, ob durch die Benutzung von 4images bzw. durch dessen
   Inhalt Rechte Dritter oder die Gesetze der Bundesrepublik
   Deutschland, eines anderen Staates oder eines internationalen
-  Staatenbundes beeinträchtigt werden; hierfür ist allein der Nutzer
+  Staatenbundes beeintrÃ¤chtigt werden; hierfÃ¼r ist allein der Nutzer
   verantwortlich.
 
   Auf wettbewerbs- und presserechtliche Bestimmungen und solche zum
   Schutze von Marken-, Namen-, Urheber und gewerblichen Schutzrechten
-  weisen wir ausdrücklich hin und empfehlen, vor ihrer Freigabe die
-  Inhalte auf ihre Vereinbarkeit hiermit zu überprüfen.
+  weisen wir ausdrÃ¼cklich hin und empfehlen, vor ihrer Freigabe die
+  Inhalte auf ihre Vereinbarkeit hiermit zu Ã¼berprÃ¼fen.
 
-  Ein Verstoß gegen diese Gesetzte/Rechte liegt insbesondere dann vor,
+  Ein VerstoÃŸ gegen diese Gesetzte/Rechte liegt insbesondere dann vor,
   wenn 4images bzw. dessen Inhalt verbotene pornographische oder
   politisch extremistische Informationen oder Angebote beinhaltet.
   Ferner sind volksverhetzende, verleumderische, beleidigende oder
-  sachlich unrichtige Veröffentlichungen zu unterlassen.
+  sachlich unrichtige VerÃ¶ffentlichungen zu unterlassen.
 
-  Der Nutzer hat Dots United von allen Ansprüchen freizustellen, die
-  wegen einer möglichen Rechtsverletzung durch die Veröffentlichung
+  Der Nutzer hat Dots United von allen AnsprÃ¼chen freizustellen, die
+  wegen einer mÃ¶glichen Rechtsverletzung durch die VerÃ¶ffentlichung
   von Inhalten mit 4images an Dots United herangetragen werden. Sofern
-  Schadensersatzansprüche oder sonstige Inanspruchnahme an Dots United
+  SchadensersatzansprÃ¼che oder sonstige Inanspruchnahme an Dots United
   herangetragen werden oder erfolgen, behalten wir uns vor, den Nutzer
   auf Ersatz eines etwaigen Schadens voll zu verpflichten.
 
 
-  Überprüfungsberechtigung
+  ÃœberprÃ¼fungsberechtigung
 
-  Dots United ist berechtigt in regelmäßigen Abständen zu überprüfen
+  Dots United ist berechtigt in regelmÃ¤ÃŸigen AbstÃ¤nden zu Ã¼berprÃ¼fen
   ob diese Lizenzbestimmungen eingehalten werden. Dabei werden keine
-  persönlichen Daten und keine Informationen über den Server erhoben.
-  Die einzigen Informationen die überprüft werden sind die Domain und
+  persÃ¶nlichen Daten und keine Informationen Ã¼ber den Server erhoben.
+  Die einzigen Informationen die Ã¼berprÃ¼ft werden sind die Domain und
   die Einhaltung dieser Lizenzbestimmungen. Sollte dabei festgestellt
   werden, dass diese Lizenzbestimmungen nicht eingehalten werden,
-  behält sich Dots United vor, entsprechende rechtliche Schritte 
+  behÃ¤lt sich Dots United vor, entsprechende rechtliche Schritte 
   einzuleiten. 
 
 
   Gerichtsstand
 
-  Gerichtsstand für alle Belange, die sich aus den Lizenzbestimmungen
+  Gerichtsstand fÃ¼r alle Belange, die sich aus den Lizenzbestimmungen
   ergeben ist Mannheim, Deutschland.
 
 
   Salvatorische Klausel
 
   Sollten einzelne Bestimmungen dieser Lizenzbestimmungen oder die
-  Anwendung dieser Bestimmungen auf einzelne Personen oder Umstände
-  ganz oder teilweise unwirksam sein oder eine Regelungslücke
-  enthalten, so wird dadurch die Gültigkeit der übrigen
+  Anwendung dieser Bestimmungen auf einzelne Personen oder UmstÃ¤nde
+  ganz oder teilweise unwirksam sein oder eine RegelungslÃ¼cke
+  enthalten, so wird dadurch die GÃ¼ltigkeit der Ã¼brigen
   Lizenzbestimmungen oder die Anwendung dieser Bestimmungen auf andere
-  Personen oder Umstände nicht berührt.
+  Personen oder UmstÃ¤nde nicht berÃ¼hrt.

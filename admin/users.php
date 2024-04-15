@@ -5,17 +5,15 @@
  *    ----------------------------------------------------------------    *
  *                                                                        *
  *             File: users.php                                            *
- *        Copyright: (C) 2002-2015 4homepages.de                          *
- *            Email: jan@4homepages.de                                    *
- *              Web: http://www.4homepages.de                             *
- *    Scriptversion: 1.7.13                                               *
- *                                                                        *
- *    Never released without support from: Nicky (http://www.nicky.net)   *
+ *        Copyright: (C) 2002-2023 4homepages.de                          *
+ *            Email: 4images@4homepages.de                                * 
+ *              Web: http://www.4homepages.de                             * 
+ *    Scriptversion: 1.10                                                 *
  *                                                                        *
  **************************************************************************
  *                                                                        *
  *    Dieses Script ist KEINE Freeware. Bitte lesen Sie die Lizenz-       *
- *    bedingungen (Lizenz.txt) für weitere Informationen.                 *
+ *    bedingungen (Lizenz.txt) fÃ¼r weitere Informationen.                 *
  *    ---------------------------------------------------------------     *
  *    This script is NOT freeware! Please read the Copyright Notice       *
  *    (Licence.txt) for further information.                              *
@@ -29,6 +27,13 @@ require('admin_global.php');
 if ($action == "") {
   $action = "modifyusers";
 }
+
+$orderbyOptions = array(
+  get_user_table_field("", "user_name") => $lang['field_username'],
+  get_user_table_field("", "user_email") => $lang['field_email'],
+  get_user_table_field("", "user_joindate") => $lang['field_joindate'],
+  get_user_table_field("", "user_lastaction") => $lang['field_lastaction'],
+);
 
 function delete_users($user_ids, $delcomments = 1, $delimages = 1) {
   global $site_db, $lang, $user_table_fields;
@@ -371,10 +376,9 @@ if ($action == "modifyusers") {
   ?>
   <tr class="<?php echo get_row_bg(); ?>"><td><p><b><?php echo $lang['order_by']; ?></b></p></td><td><p>
   <select name="orderby">
-  <option value="<?php echo get_user_table_field("", "user_name"); ?>" selected><?php echo $lang['field_username']; ?></option>
-  <option value="<?php echo get_user_table_field("", "user_email"); ?>"><?php echo $lang['field_email']; ?></option>
-  <option value="<?php echo get_user_table_field("", "user_joindate"); ?>"><?php echo $lang['field_joindate']; ?></option>
-  <option value="<?php echo get_user_table_field("", "user_lastaction"); ?>"><?php echo $lang['field_lastaction']; ?></option>
+  <?php foreach ($orderbyOptions as $field => $label): ?>
+  <option value="<?php echo $field; ?>"><?php echo $label; ?></option>
+  <?php endforeach; ?>
   </select>
   <select name="direction">
   <option selected value="ASC"><?php echo $lang['asc']; ?></option>
@@ -420,7 +424,7 @@ if ($action == "findusers") {
     $condition .= " AND ".get_user_table_field("", "user_lastaction")." < UNIX_TIMESTAMP('$lastactionbefore')";
   }
   $orderby = trim($HTTP_POST_VARS['orderby']);
-  if ($orderby == "") {
+  if (!isset($orderbyOptions[$orderby])) {
     $orderby = get_user_table_field("", "user_name");
   }
   $limitstart = (isset($HTTP_POST_VARS['limitstart'])) ? trim($HTTP_POST_VARS['limitstart']) : "";
@@ -435,11 +439,13 @@ if ($action == "findusers") {
     $limitnumber = 5000;
   }
 
+  $direction = "ASC";
   if (isset($HTTP_GET_VARS['direction']) || isset($HTTP_POST_VARS['direction'])) {
-    $direction = (isset($HTTP_GET_VARS['direction'])) ? trim($HTTP_GET_VARS['direction']) : trim($HTTP_POST_VARS['direction']);
-  }
-  else {
-    $direction = "ASC";
+    $requestedDirection = (isset($HTTP_GET_VARS['direction'])) ? trim($HTTP_GET_VARS['direction']) : trim($HTTP_POST_VARS['direction']);
+
+    if ('DESC' === $requestedDirection) {
+      $direction = "DESC";
+    }
   }
 
   $sql = "SELECT COUNT(*) AS users

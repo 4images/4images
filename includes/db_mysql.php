@@ -5,17 +5,15 @@
  *    ----------------------------------------------------------------    *
  *                                                                        *
  *             File: db_mysql.php                                         *
- *        Copyright: (C) 2002-2015 4homepages.de                          *
- *            Email: jan@4homepages.de                                    *
- *              Web: http://www.4homepages.de                             *
- *    Scriptversion: 1.7.13                                               *
- *                                                                        *
- *    Never released without support from: Nicky (http://www.nicky.net)   *
+ *        Copyright: (C) 2002-2023 4homepages.de                          *
+ *            Email: 4images@4homepages.de                                * 
+ *              Web: http://www.4homepages.de                             * 
+ *    Scriptversion: 1.10                                                 *
  *                                                                        *
  **************************************************************************
  *                                                                        *
  *    Dieses Script ist KEINE Freeware. Bitte lesen Sie die Lizenz-       *
- *    bedingungen (Lizenz.txt) für weitere Informationen.                 *
+ *    bedingungen (Lizenz.txt) fÃ¼r weitere Informationen.                 *
  *    ---------------------------------------------------------------     *
  *    This script is NOT freeware! Please read the Copyright Notice       *
  *    (Licence.txt) for further information.                              *
@@ -34,17 +32,18 @@ class Db {
   var $query_array = array();
   var $table_fields = array();
 
-  function Db($db_host, $db_user, $db_password = "", $db_name = "", $db_pconnect = 0) {
+  function __construct($db_host, $db_user, $db_password = "", $db_name = "", $db_pconnect = 0) {
     $connect_handle = ($db_pconnect) ? "mysql_pconnect" : "mysql_connect";
     if (!$this->connection = @$connect_handle($db_host, $db_user, $db_password)) {
-      $this->error("Could not connect to the database server ($db_host, $db_user).", 1);
+      $this->error("Could not connect to the database server (".safe_htmlspecialchars($db_host).", ".safe_htmlspecialchars($db_user).").", 1);
     }
     if ($db_name != "") {
       if (!@mysql_select_db($db_name)) {
         @mysql_close($this->connection);
-        $this->error("Could not select database ($db_name).", 1);
+        $this->error("Could not select database (".safe_htmlspecialchars($db_name).").", 1);
       }
     }
+    mysql_set_charset('utf8', $this->connection);
     return $this->connection;
   }
 
@@ -71,7 +70,7 @@ class Db {
         $startsqltime = explode(" ", microtime());
       }
       if (!$this->query_id = @mysql_query($query, $this->connection)) {
-        $this->error("<b>Bad SQL Query</b>: ".htmlentities($query)."<br /><b>".mysql_error()."</b>");
+        $this->error("<b>Bad SQL Query</b>: ".safe_htmlspecialchars($query)."<br /><b>".safe_htmlspecialchars(mysql_error())."</b>");
       }
       if ((defined("PRINT_QUERIES") && PRINT_QUERIES == 1) || (defined("PRINT_STATS") && PRINT_STATS == 1)) {
         $endsqltime = explode(" ", microtime());

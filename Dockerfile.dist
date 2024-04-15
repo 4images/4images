@@ -1,0 +1,11 @@
+FROM php:8.0-apache
+
+RUN apt-get update
+RUN apt-get install -y imagemagick libmagickwand-dev --no-install-recommends
+RUN pecl install imagick
+RUN docker-php-ext-enable imagick
+
+RUN apt-get install -y zip unzip libzip-dev
+RUN docker-php-ext-install mysqli pdo pdo_mysql zip && a2enmod rewrite
+
+RUN docker-php-ext-configure pcntl --enable-pcntl && docker-php-ext-install pcntl

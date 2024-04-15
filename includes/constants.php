@@ -5,24 +5,22 @@
  *    ----------------------------------------------------------------    *
  *                                                                        *
  *             File: constants.php                                        *
- *        Copyright: (C) 2002-2015 4homepages.de                          *
- *            Email: jan@4homepages.de                                    *
+ *        Copyright: (C) 2002-2023 4homepages.de                          *
+ *            Email: 4images@4homepages.de                                *
  *              Web: http://www.4homepages.de                             *
- *    Scriptversion: 1.7.13                                               *
- *                                                                        *
- *    Never released without support from: Nicky (http://www.nicky.net)   *
+ *    Scriptversion: 1.10                                                 *
  *                                                                        *
  **************************************************************************
  *                                                                        *
  *    Dieses Script ist KEINE Freeware. Bitte lesen Sie die Lizenz-       *
- *    bedingungen (Lizenz.txt) für weitere Informationen.                 *
+ *    bedingungen (Lizenz.txt) fÃ¼r weitere Informationen.                 *
  *    ---------------------------------------------------------------     *
  *    This script is NOT freeware! Please read the Copyright Notice       *
  *    (Licence.txt) for further information.                              *
  *                                                                        *
  *************************************************************************/
 if (!defined('ROOT_PATH')) {
-  die("Security violation");
+    die("Security violation");
 }
 
 // If 4images has problems to find out the right URL, define it here.
@@ -129,7 +127,7 @@ define('CHECK_REMOTE_FILES', 0);
 
 
 // Allow execution of PHP code in templates
-define('EXEC_PHP_CODE', 1);
+define('EXEC_PHP_CODE', 0);
 
 // Data paths
 define('MEDIA_DIR', 'data/media');
@@ -141,12 +139,10 @@ define('TEMPLATE_DIR', 'templates');
 
 
 // Script version
-define('SCRIPT_VERSION', '1.7.13');
+define('SCRIPT_VERSION', '1.10');
 
 
 // Debug contants
 // define("PRINT_STATS", 1);
 // define("PRINT_QUERIES", 1);
 // define('PRINT_CACHE_MESSAGES', 1);
-
-?>

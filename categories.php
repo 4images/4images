@@ -5,17 +5,15 @@
  *    ----------------------------------------------------------------    *
  *                                                                        *
  *             File: categories.php                                       *
- *        Copyright: (C) 2002-2015 4homepages.de                          *
- *            Email: jan@4homepages.de                                    *
- *              Web: http://www.4homepages.de                             *
- *    Scriptversion: 1.7.13                                               *
- *                                                                        *
- *    Never released without support from: Nicky (http://www.nicky.net)   *
+ *        Copyright: (C) 2002-2023 4homepages.de                          *
+ *            Email: 4images@4homepages.de                                * 
+ *              Web: http://www.4homepages.de                             * 
+ *    Scriptversion: 1.10                                                 *
  *                                                                        *
  **************************************************************************
  *                                                                        *
  *    Dieses Script ist KEINE Freeware. Bitte lesen Sie die Lizenz-       *
- *    bedingungen (Lizenz.txt) für weitere Informationen.                 *
+ *    bedingungen (Lizenz.txt) fÃ¼r weitere Informationen.                 *
  *    ---------------------------------------------------------------     *
  *    This script is NOT freeware! Please read the Copyright Notice       *
  *    (Licence.txt) for further information.                              *
@@ -81,7 +79,7 @@ $random_cat_image = (defined("SHOW_RANDOM_IMAGE") && SHOW_RANDOM_IMAGE == 0) ? "
 $site_template->register_vars(array(
   "categories" => get_categories($cat_id),
   "cat_name" => format_text($cat_cache[$cat_id]['cat_name'], 2),
-  "cat_description" => format_text($cat_cache[$cat_id]['cat_description'], 1, 0, 1),
+  "cat_description" => htmlspecialchars(format_text($cat_cache[$cat_id]['cat_description'], 1, 0, 1)),
   "cat_hits" => $cat_cache[$cat_id]['cat_hits'],
   "upload_url" => $upload_url,
   "upload_button" => $upload_button,

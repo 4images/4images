@@ -5,17 +5,15 @@
  *    ----------------------------------------------------------------    *
  *                                                                        *
  *             File: search_utils.php                                     *
- *        Copyright: (C) 2002-2015 4homepages.de                          *
- *            Email: jan@4homepages.de                                    *
- *              Web: http://www.4homepages.de                             *
- *    Scriptversion: 1.7.13                                               *
- *                                                                        *
- *    Never released without support from: Nicky (http://www.nicky.net)   *
+ *        Copyright: (C) 2002-2023 4homepages.de                          *
+ *            Email: 4images@4homepages.de                                * 
+ *              Web: http://www.4homepages.de                             * 
+ *    Scriptversion: 1.10                                                 *
  *                                                                        *
  **************************************************************************
  *                                                                        *
  *    Dieses Script ist KEINE Freeware. Bitte lesen Sie die Lizenz-       *
- *    bedingungen (Lizenz.txt) für weitere Informationen.                 *
+ *    bedingungen (Lizenz.txt) fÃ¼r weitere Informationen.                 *
  *    ---------------------------------------------------------------     *
  *    This script is NOT freeware! Please read the Copyright Notice       *
  *    (Licence.txt) for further information.                              *
@@ -25,7 +23,7 @@ if (!defined('ROOT_PATH')) {
   die("Security violation");
 }
 
-if (!$search_match_fields) {
+if (!isset($search_match_fields) || !$search_match_fields) {
   $search_match_fields = array(
     "image_name"        => "name_match",
     "image_description" => "desc_match",
@@ -33,7 +31,7 @@ if (!$search_match_fields) {
   );
 }
 
-if (!$search_index_types) {
+if (!isset($search_index_types) || !$search_index_types) {
   /*
    * Types are:
    *
@@ -54,13 +52,13 @@ function convert_special($text) {
   return strtr(
     $text,
     array(
-      "Ä" => "AE",
-      "Ö" => "OE",
-      "Ü" => "UE",
-      "ä" => "ae",
-      "ö" => "oe",
-      "ü" => "ue",
-      "ß" => "ss"
+      "Ã„" => "AE",
+      "Ã–" => "OE",
+      "Ãœ" => "UE",
+      "Ã¤" => "ae",
+      "Ã¶" => "oe",
+      "Ã¼" => "ue",
+      "ÃŸ" => "ss"
     )
   );
 }
@@ -79,7 +77,7 @@ function normalize_search_word($val) {
     "/&(?!(#[0-9]+|[a-z]+);)/si",
     "#([^]_a-z0-9-=\"'\/])([a-z]+?)://([^, \(\)<>\n\r]+)#si",
     "#([^]_a-z0-9-=\"'\/])www\.([a-z0-9\-]+)\.([a-z0-9\-.\~]+)((?:/[^, \(\)<>\n\r]*)?)#si",
-    "#[-_'`´\^\$\(\)<>\"\|,@\?%~\+\.\[\]{}:\/=!§\\\\]+#s"
+    "#[-_'`Â´\^\$\(\)<>\"\|,@\?%~\+\.\[\]{}:\/=!Â§\\\\]+#s"
   );
 
   $replace_array = array(

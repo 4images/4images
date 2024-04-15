@@ -5,18 +5,15 @@
  *    ----------------------------------------------------------------    *
  *                                                                        *
  *             File: checkimages.php                                      *
- *        Copyright: (C) 2002-2015 4homepages.de                          *
- *            Email: jan@4homepages.de                                    *
- *              Web: http://www.4homepages.de                             *
- *    Scriptversion: 1.7.13                                               *
- *     Rewritten by: V@no (http://vano.org)                               *
- *                                                                        *
- *    Never released without support from: Nicky (http://www.nicky.net)   *
+ *        Copyright: (C) 2002-2023 4homepages.de                          *
+ *            Email: 4images@4homepages.de                                * 
+ *              Web: http://www.4homepages.de                             * 
+ *    Scriptversion: 1.10                                                 *
  *                                                                        *
  **************************************************************************
  *                                                                        *
  *    Dieses Script ist KEINE Freeware. Bitte lesen Sie die Lizenz-       *
- *    bedingungen (Lizenz.txt) für weitere Informationen.                 *
+ *    bedingungen (Lizenz.txt) fÃ¼r weitere Informationen.                 *
  *    ---------------------------------------------------------------     *
  *    This script is NOT freeware! Please read the Copyright Notice       *
  *    (Licence.txt) for further information.                              *
@@ -836,7 +833,7 @@ if (isset($HTTP_POST_VARS['action']) && $action == "checkimages")
 			{
 				break;
 			}
-			if (!@in_array($image_list_all[$key][$i], $image_list_sql[$key]))
+            if (!array_key_exists($key, $image_list_sql) || !@in_array($image_list_all[$key][$i], $image_list_sql[$key]))
 			{
 				$image_list[$key][] = $image_list_all[$key][$i];
 				$image_counter++;
